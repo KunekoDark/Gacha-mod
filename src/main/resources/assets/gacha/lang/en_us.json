@@ -4,5 +4,7 @@
   "item.gacha.platinum_ticket": "Platinum Ticket",
   "item.gacha.legend_ticket": "Legend Ticket",
 
-  "itemGroup.gachaModTab": "Gacha"
+  "tooltip.gacha.ticket_tooltip": "Right-Click to use",
+
+  "itemGroup.gachaModTab": ":)"
 }
