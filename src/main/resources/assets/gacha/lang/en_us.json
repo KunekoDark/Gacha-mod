@@ -3,6 +3,11 @@
   "item.gacha.rare_ticket": "Rare Ticket",
   "item.gacha.platinum_ticket": "Platinum Ticket",
   "item.gacha.legend_ticket": "Legend Ticket",
+  "item.gacha.cannon_base": "Cannon Base",
+  "item.gacha.cannon_shaft": "Cannon Shaft",
+  "item.gacha.cannon_charge_module": "Cannon Charge Module",
+  "item.gacha.cannon_component": "Cannon Component",
+  "item.gacha.cannon_handheld_module": "Cannon Handheld Module",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
 
