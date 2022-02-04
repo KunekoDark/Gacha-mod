@@ -1,9 +1,13 @@
 package com.gachamod.gacha;
 
 import com.gachamod.gacha.block.ModBlocks;
+
 import com.gachamod.gacha.item.ModItems;
+
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -36,7 +40,6 @@ public class Gacha
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
@@ -58,6 +61,8 @@ public class Gacha
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
+
+
 
     }
 

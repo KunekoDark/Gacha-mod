@@ -1,6 +1,7 @@
 package com.gachamod.gacha.block;
 
 import com.gachamod.gacha.Gacha;
+
 import com.gachamod.gacha.item.ModItemGroup;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -30,6 +31,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> JIZO_STEEL_BLOCK = registerBlock("jizo_steel_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
+
+
 
 
 
