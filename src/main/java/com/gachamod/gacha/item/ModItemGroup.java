@@ -10,7 +10,5 @@ public class ModItemGroup {
         public ItemStack createIcon(){
             return new ItemStack(ModItems.LEGEND_TICKET.get());
         }
-
-
     };
 }
