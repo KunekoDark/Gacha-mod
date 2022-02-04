@@ -44,6 +44,23 @@ public class ModItems {
     public static final RegistryObject<Item> CANNON_HANDHELD_MODULE = ITEMS.register("cannon_handheld_module",
             () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> JIZO_GOLD = ITEMS.register("jizo_gold",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> METEORITE_CHUNK = ITEMS.register("meteorite_chunk",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> SPROCKETS = ITEMS.register("sprockets",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> BEAST_BONES = ITEMS.register("beast_bones",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> RELIC_FOSSIL = ITEMS.register("relic_fossil",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+
+
 
 
 
