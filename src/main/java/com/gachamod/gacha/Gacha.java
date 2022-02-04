@@ -1,5 +1,6 @@
 package com.gachamod.gacha;
 
+import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -34,6 +35,7 @@ public class Gacha
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

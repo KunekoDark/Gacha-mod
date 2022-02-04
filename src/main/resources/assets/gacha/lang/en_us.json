@@ -9,6 +9,8 @@
   "item.gacha.cannon_component": "Cannon Component",
   "item.gacha.cannon_handheld_module": "Cannon Handheld Module",
 
+  "block.gacha.jizo_gold_block": "Jizo Gold Block",
+
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
 
   "itemGroup.gachaModTab": "Gacha"

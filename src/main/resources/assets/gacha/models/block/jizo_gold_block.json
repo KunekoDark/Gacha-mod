@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "gacha:block/jizo_gold_block"
+  }
+}
