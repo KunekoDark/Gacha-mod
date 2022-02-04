@@ -1,0 +1,10 @@
+{
+  "item.gacha.normal_ticket": "Normal Ticket",
+  "item.gacha.rare_ticket": "Rare Ticket",
+  "item.gacha.platinum_ticket": "Platinum Ticket",
+  "item.gacha.legend_ticket": "Legend Ticket",
+
+  "tooltip.gacha.ticket_tooltip": "Right-Click to use",
+
+  "itemGroup.gachaModTab": ":)"
+}

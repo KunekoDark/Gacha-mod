@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: gacha
+Specification-Vendor: gachasareus
+Specification-Version: 1
+Implementation-Title: Gacha-mod
+Implementation-Version: 1.16.5-1.0
+Implementation-Vendor: gachasareus
+Implementation-Timestamp: 2022-02-03T20:05:37-0600
+
