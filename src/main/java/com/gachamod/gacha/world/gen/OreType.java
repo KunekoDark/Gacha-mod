@@ -6,7 +6,7 @@ import net.minecraftforge.common.util.Lazy;
 
 public enum OreType {
 
-    JIZO_GOLD(Lazy.of(ModBlocks.JIZO_GOLD_ORE), 8, 10, 45),
+    JIZO_GOLD(Lazy.of(ModBlocks.JIZO_GOLD_ORE), 4, 10, 45),
     /* Add more ores here */;
 
     ;
