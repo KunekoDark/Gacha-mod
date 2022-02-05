@@ -5,11 +5,14 @@ import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.item.ModItems;
 
 
+import com.gachamod.gacha.world.gen.ModOreGeneration;
+import com.gachamod.gacha.world.gen.ModWorldEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
