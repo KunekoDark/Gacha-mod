@@ -1,6 +1,7 @@
 package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.api.cannonitem.CannonItem;
 import com.gachamod.gacha.api.ticketdrops.TicketDropLegend;
 import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
 import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
@@ -58,6 +59,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> RELIC_FOSSIL = ITEMS.register("relic_fossil",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
+            () -> new CannonItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
 
 
 

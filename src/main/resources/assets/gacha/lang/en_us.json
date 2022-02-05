@@ -18,6 +18,7 @@
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
+  "tooltip.gacha.cannonitemtooltip": "",
 
   "itemGroup.gachaModTab": "Gacha"
 }
