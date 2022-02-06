@@ -36,7 +36,7 @@ public class ModItems {
     public static final RegistryObject<Item> CANNON_SHAFT = ITEMS.register("cannon_shaft",
             () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> CANNON_POWER_MODULE = ITEMS.register("cannon_charge_module",
+    public static final RegistryObject<Item> CANNON_CHARGE_MODULE = ITEMS.register("cannon_charge_module",
             () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> CANNON_COMPONENT = ITEMS.register("cannon_component",

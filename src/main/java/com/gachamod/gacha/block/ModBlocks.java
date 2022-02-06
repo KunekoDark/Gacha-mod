@@ -2,6 +2,7 @@ package com.gachamod.gacha.block;
 
 import com.gachamod.gacha.Gacha;
 
+import com.gachamod.gacha.block.custom.EngineerTableBlock;
 import com.gachamod.gacha.item.ModItemGroup;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -35,7 +36,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> JIZO_GOLD_ORE = registerBlock("jizo_gold_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
 
-
+    public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
+            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(5f)));
 
 
 
