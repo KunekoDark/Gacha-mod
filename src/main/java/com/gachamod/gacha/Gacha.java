@@ -2,10 +2,14 @@ package com.gachamod.gacha;
 
 import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.container.ModContainers;
 import com.gachamod.gacha.item.ModItems;
+import com.gachamod.gacha.screen.EngineerTableScreen;
+import com.gachamod.gacha.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,6 +46,8 @@ public class Gacha
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModContainers.register(eventBus);
+        ModTileEntities.register(eventBus);
         ModEntityType.ENTITIES.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -65,6 +71,8 @@ public class Gacha
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         registerEntityModles(event.getMinecraftSupplier());
+        ScreenManager.registerFactory(ModContainers.ENGINEER_TABLE_CONTAINER.get(),
+                EngineerTableScreen::new);
 
     }
     private void registerEntityModles(Supplier<Minecraft> minecraft){
