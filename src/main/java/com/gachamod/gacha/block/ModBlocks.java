@@ -36,7 +36,7 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
-            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(5f).sound(SoundType.WOOD)));
+            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(1f).sound(SoundType.WOOD)));
 
 
 
