@@ -2,22 +2,21 @@ package com.gachamod.gacha.block;
 
 import com.gachamod.gacha.Gacha;
 
-import com.gachamod.gacha.block.custom.EngineerTableBlock;
+import com.gachamod.gacha.api.blocks.EngineerTableBlock;
 import com.gachamod.gacha.item.ModItemGroup;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Properties;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -28,16 +27,16 @@ public class ModBlocks {
     //Normal Blocks
 
     public static final RegistryObject<Block> JIZO_GOLD_BLOCK = registerBlock("jizo_gold_block",
-            () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+            () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> JIZO_STEEL_BLOCK = registerBlock("jizo_steel_block",
-            () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+            () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> JIZO_GOLD_ORE = registerBlock("jizo_gold_ore",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
-            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(5f)));
+            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(5f).sound(SoundType.WOOD)));
 
 
 

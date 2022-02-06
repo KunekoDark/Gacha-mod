@@ -13,12 +13,17 @@
   "item.gacha.sprockets": "Sprockets",
   "item.gacha.beast_bones": "Beast Bones",
   "item.gacha.relic_fossil": "Relic Fossil",
+  "item.gacha.cat_cannon": "CaT CaNNoN",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
+  "block.gacha.jizo_steel_block": "Jizo Steel Block",
+  "block.gacha.engineer_table": "Engineer Table",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
-  "tooltip.gacha.cannonitemtooltip": "",
+  "tooltip.gacha.cannonitemtooltip": "With the power of cats and anime",
+
+  "screen.gacha.engineer_table": "Engineer table",
 
   "itemGroup.gachaModTab": "Gacha"
 }

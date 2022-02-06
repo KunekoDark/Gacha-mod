@@ -3,6 +3,7 @@ package com.gachamod.gacha.api.cannonitem;
 import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.api.entity.projectile.CannonFireEntity;
 import com.gachamod.gacha.item.ModItems;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.item.ArrowItem;
@@ -13,12 +14,25 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class CannonItem extends Item {
 
     public CannonItem(Properties properties) {
         super(properties);
+    }
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(new TranslationTextComponent("tooltip.gacha.cannonitemtooltip"));
     }
 
     @Override
