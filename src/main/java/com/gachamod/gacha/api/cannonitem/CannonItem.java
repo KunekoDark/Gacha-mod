@@ -43,7 +43,7 @@ public class CannonItem extends Item {
             cannonFire.setShooter(playerIn);
             cannonFire.setDirectionAndMovement(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
             worldIn.addEntity(cannonFire);
-            worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_DRAGON_FIREBALL_EXPLODE, SoundCategory.PLAYERS, 0.2F, 1.0F);
+            worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_CAT_AMBIENT, SoundCategory.PLAYERS, 0.2F, 1.0F);
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

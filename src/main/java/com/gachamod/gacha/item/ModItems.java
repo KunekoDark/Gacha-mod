@@ -15,6 +15,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModItems {
 
+    // wacky items
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Gacha.MOD_ID);
 
     public static final RegistryObject<TicketDropNormal> NORMAL_TICKET = ITEMS.register("normal_ticket",
@@ -28,6 +30,8 @@ public class ModItems {
 
     public static final RegistryObject<TicketDropLegend> LEGEND_TICKET = ITEMS.register("legend_ticket",
             () -> new TicketDropLegend(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
+
+
 
     //Normal Items
 
