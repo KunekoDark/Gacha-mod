@@ -65,14 +65,23 @@ public class ModItems {
     public static final RegistryObject<Item> RELIC_FOSSIL = ITEMS.register("relic_fossil",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
+    //weapons
+
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
-            () -> new CannonItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
+            () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(100)));
+
 
     //spawn eggs
 
     public static final RegistryObject<Item> KASAJIZO_SPAWN = ITEMS.register("kasajizo_spawnegg",
             () -> new ModSpawnEggItem(ModEntityType.KASAJIZO, 0x000000, 0xFFFFFF,
                     new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
+
+
+    //projectile items
+    
+    public static final RegistryObject<Item> CAT_CANNON_PROJECTILE = ITEMS.register("cat_cannon_projectile",
+            () -> new Item(new Item.Properties()));
 
 
 
