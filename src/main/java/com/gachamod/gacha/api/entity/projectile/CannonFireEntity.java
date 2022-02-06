@@ -1,33 +1,36 @@
 package com.gachamod.gacha.api.entity.projectile;
 
-import com.gachamod.gacha.api.entity.ModEntityType;
-import com.gachamod.gacha.item.ModItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.ProjectileItemEntity;
-import net.minecraft.item.Item;
+import net.minecraft.entity.projectile.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.IPacket;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class CannonFireEntity extends ProjectileItemEntity {
-    public CannonFireEntity(EntityType<CannonFireEntity> type, World world) {
-        super(type, world);
+public class CannonFireEntity extends AbstractFireballEntity {
+
+    public CannonFireEntity(EntityType<? extends AbstractFireballEntity> p_i50166_1_, World p_i50166_2_) {
+        super(p_i50166_1_, p_i50166_2_);
     }
 
-    public CannonFireEntity(LivingEntity entity, World world) {
-        super(ModEntityType.CANNON_PROJECTILE.get(), entity, world);
+    public CannonFireEntity(EntityType<? extends AbstractFireballEntity> p_i50167_1_, double p_i50167_2_, double p_i50167_4_, double p_i50167_6_, double p_i50167_8_, double p_i50167_10_, double p_i50167_12_, World p_i50167_14_) {
+        super(p_i50167_1_, p_i50167_2_, p_i50167_4_, p_i50167_6_, p_i50167_8_, p_i50167_10_, p_i50167_12_, p_i50167_14_);
     }
 
-    public CannonFireEntity(double x, double y, double z, World world) {
-        super(ModEntityType.CANNON_PROJECTILE.get(), x, y, z, world);
+    public CannonFireEntity(EntityType<? extends AbstractFireballEntity> p_i50168_1_, LivingEntity p_i50168_2_, double p_i50168_3_, double p_i50168_5_, double p_i50168_7_, World p_i50168_9_) {
+        super(p_i50168_1_, p_i50168_2_, p_i50168_3_, p_i50168_5_, p_i50168_7_, p_i50168_9_);
     }
+
+
 
     @Override
-    protected Item getDefaultItem() {
-        return ModItems.PLATINUM_TICKET.get().asItem();
+    protected void registerData() {
+
     }
+
+
     @Override
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);

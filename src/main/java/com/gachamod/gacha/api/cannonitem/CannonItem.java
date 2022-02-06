@@ -4,6 +4,7 @@ import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.api.entity.projectile.CannonFireEntity;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.*;
 import net.minecraft.item.ArrowItem;
@@ -28,6 +29,8 @@ public class CannonItem extends Item {
     public CannonItem(Properties properties) {
         super(properties);
     }
+
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
@@ -39,7 +42,7 @@ public class CannonItem extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         if(!worldIn.isRemote){
-            CannonFireEntity cannonFire = new CannonFireEntity(playerIn, worldIn);
+            CannonFireEntity cannonFire = new CannonFireEntity(ModEntityType.CANNON_PROJECTILE.get(), worldIn);
             cannonFire.setShooter(playerIn);
             cannonFire.setDirectionAndMovement(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
             worldIn.addEntity(cannonFire);
