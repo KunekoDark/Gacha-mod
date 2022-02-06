@@ -12,6 +12,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +29,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -75,6 +78,7 @@ public class Gacha
                 EngineerTableScreen::new);
 
     }
+    @OnlyIn(Dist.CLIENT)
     private void registerEntityModles(Supplier<Minecraft> minecraft){
         ItemRenderer renderer = minecraft.get().getItemRenderer();
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.CANNON_PROJECTILE.get(), (rendererManager)-> new SpriteRenderer<>(rendererManager,renderer));
