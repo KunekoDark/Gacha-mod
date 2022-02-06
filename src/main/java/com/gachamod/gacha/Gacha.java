@@ -1,21 +1,19 @@
 package com.gachamod.gacha;
 
+import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.block.ModBlocks;
-
 import com.gachamod.gacha.item.ModItems;
-
-
-import com.gachamod.gacha.world.gen.ModOreGeneration;
-import com.gachamod.gacha.world.gen.ModWorldEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemRenderer;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -26,6 +24,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -43,6 +42,7 @@ public class Gacha
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModEntityType.ENTITIES.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
@@ -64,8 +64,12 @@ public class Gacha
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
+        registerEntityModles(event.getMinecraftSupplier());
 
-
+    }
+    private void registerEntityModles(Supplier<Minecraft> minecraft){
+        ItemRenderer renderer = minecraft.get().getItemRenderer();
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.CANNON_PROJECTILE.get(), (rendererManager)-> new SpriteRenderer<>(rendererManager,renderer));
 
     }
 
