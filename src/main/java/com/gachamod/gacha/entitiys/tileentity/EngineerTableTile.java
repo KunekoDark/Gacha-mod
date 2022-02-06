@@ -1,4 +1,4 @@
-package com.gachamod.gacha.tileentity;
+package com.gachamod.gacha.entitiys.tileentity;
 
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.BlockState;

@@ -1,12 +1,11 @@
 package com.gachamod.gacha.api.blocks;
 
 import com.gachamod.gacha.container.EngineerTableContainer;
-import com.gachamod.gacha.tileentity.EngineerTableTile;
-import com.gachamod.gacha.tileentity.ModTileEntities;
+import com.gachamod.gacha.entitiys.tileentity.EngineerTableTile;
+import com.gachamod.gacha.entitiys.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
-import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -28,7 +27,6 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
-import org.lwjgl.system.CallbackI;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;

@@ -1,16 +1,19 @@
 package com.gachamod.gacha;
 
 import com.gachamod.gacha.api.entity.ModEntityType;
+import com.gachamod.gacha.api.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
+import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.EngineerTableScreen;
-import com.gachamod.gacha.tileentity.ModTileEntities;
+import com.gachamod.gacha.entitiys.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.ItemRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -29,7 +32,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -51,7 +53,7 @@ public class Gacha
         ModBlocks.register(eventBus);
         ModContainers.register(eventBus);
         ModTileEntities.register(eventBus);
-        ModEntityType.ENTITIES.register(eventBus);
+        ModEntityType.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
@@ -76,6 +78,7 @@ public class Gacha
         registerEntityModles(event.getMinecraftSupplier());
         ScreenManager.registerFactory(ModContainers.ENGINEER_TABLE_CONTAINER.get(),
                 EngineerTableScreen::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(), KasaJizoRenderer::new);
 
     }
     @OnlyIn(Dist.CLIENT)

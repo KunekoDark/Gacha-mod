@@ -2,6 +2,7 @@ package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.cannonitem.CannonItem;
+import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.api.ticketdrops.TicketDropLegend;
 import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
 import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
@@ -62,6 +63,12 @@ public class ModItems {
 
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
             () -> new CannonItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
+
+    //spawn eggs
+
+    public static final RegistryObject<Item> KASAJIZO_SPAWN = ITEMS.register("kasajizo_spawnegg",
+            () -> new ModSpawnEggItem(ModEntityType.KASAJIZO, 0x000000, 0xFFFFFF,
+                    new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
 
 
 
