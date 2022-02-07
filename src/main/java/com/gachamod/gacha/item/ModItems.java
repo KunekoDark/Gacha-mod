@@ -8,6 +8,7 @@ import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
 import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
 import com.gachamod.gacha.api.ticketdrops.TicketDropRare;
 import net.minecraft.item.Item;
+import net.minecraft.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -69,6 +70,30 @@ public class ModItems {
 
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
             () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(100)));
+
+    //cat fruit
+
+    public static final RegistryObject<Item> BLUE_CATFRUIT = ITEMS.register("blue_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> PURPLE_CATFRUIT = ITEMS.register("purple_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> RED_CATFRUIT = ITEMS.register("red_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> YELLOW_CATFRUIT = ITEMS.register("yellow_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> GREEN_CATFRUIT = ITEMS.register("green_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> RAINBOW_CATFRUIT = ITEMS.register("rainbow_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> RELIC_CATFRUIT = ITEMS.register("relic_catfruit",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
+
 
 
     //spawn eggs
