@@ -22,6 +22,14 @@ public class ModContainers {
                 return new EngineerTableContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<UpgradeTableContainer>> UPGRADE_TABLE_CONTAINER
+            = CONTAINERS.register("upgrade_table_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new UpgradeTableContainer(windowId, world, pos, inv, inv.player);
+            })));
+
 
 
 

@@ -17,17 +17,17 @@ import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EngineerTableTile extends TileEntity {
+public class UpgradeTableTile extends TileEntity {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
 
-    public EngineerTableTile(TileEntityType<?> tileEntityTypeIn) {
+    public UpgradeTableTile(TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
     }
 
-    public EngineerTableTile(){
-        this(ModTileEntities.ENGINEER_TABLE_TILE.get());
+    public UpgradeTableTile(){
+        this(ModTileEntities.UPGRADE_TABLE_TILE.get());
     }
 
     // read and write save nbt data/ the contents into the world
@@ -57,10 +57,7 @@ public class EngineerTableTile extends TileEntity {
                     case 0: return stack.getItem() == ModItems.CANNON_BASE.get();
                     case 1: return stack.getItem() == ModItems.CANNON_COMPONENT.get();
                     case 2: return stack.getItem() == ModItems.CANNON_HANDHELD_MODULE.get();
-                    case 3: return stack.getItem() == ModItems.CANNON_SHAFT.get();
-                    case 4: return stack.getItem() == ModItems.CANNON_CHARGE_MODULE.get();
-                    //output slots
-                    case 5: return stack.getItem() == ModItems.CAT_CANNON.get();
+
 
                     default:
                         return false;
