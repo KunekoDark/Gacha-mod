@@ -89,7 +89,7 @@ public class UpgradeTableTile extends TileEntity {
         return super.getCapability(cap, side);
     }
 
-    public void allComponentsInSlots(){
+    /*public void allComponentsInSlots(){
         boolean hasCannonBaseInFirstSlot = this.itemHandler.getStackInSlot(0).getItem() == ModItems.CANNON_BASE.get();
         boolean hasCannonComponentInSecondSlot = this.itemHandler.getStackInSlot(1).getItem() == ModItems.CANNON_COMPONENT.get();
         boolean hasCannonHandheldModuleInThirdSlot = this.itemHandler.getStackInSlot(2).getItem() == ModItems.CANNON_HANDHELD_MODULE.get();
@@ -112,5 +112,5 @@ public class UpgradeTableTile extends TileEntity {
 
             }
         }
-    }
+    }*/
 }
