@@ -19,6 +19,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.IBooleanFunction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
@@ -26,6 +30,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
+import java.util.stream.Stream;
 
 public class UpgradeTableBlock extends Block {
     public UpgradeTableBlock(Properties properties) {
@@ -52,6 +57,19 @@ public class UpgradeTableBlock extends Block {
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(FACEING);
+    }
+
+    private static final VoxelShape SHAPE = Stream.of(
+            Block.makeCuboidShape(5, 1, 5, 11, 9, 11),
+            Block.makeCuboidShape(4, 0, 4, 12, 1, 12),
+            Block.makeCuboidShape(4, 9, 4, 12, 10, 12),
+            Block.makeCuboidShape(2, 10, 2, 14, 12, 14)
+    ).reduce((v1, v2) ->  {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
+
+
+    @Override
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+        return SHAPE;
     }
 
 
