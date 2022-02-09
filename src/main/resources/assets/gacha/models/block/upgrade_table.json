@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "gacha:block/upgrade_table",
 		"1": "gacha:block/cat",
-		"particle": "upgrade_table"
+		"particle": "gacha:block/upgrade_table"
 	},
 	"elements": [
 		{
