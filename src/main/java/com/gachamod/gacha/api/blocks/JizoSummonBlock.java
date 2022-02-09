@@ -23,6 +23,7 @@ public class JizoSummonBlock extends Block {
         kasaJizo.onInitialSpawn(world, world.getDifficultyForLocation(pos), SPAWNER, null, null);
         world.addEntity(kasaJizo);
         kasaJizo.spawnExplosionParticle();
+
     }
     @Override
     public void spawnAdditionalDrops(BlockState state, ServerWorld worldIn, BlockPos pos, ItemStack stack) {
