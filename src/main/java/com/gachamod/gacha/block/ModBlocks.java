@@ -11,6 +11,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Rarity;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -24,6 +25,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, Gacha.MOD_ID);
 
+
     //Normal Blocks
 
     public static final RegistryObject<Block> JIZO_GOLD_BLOCK = registerBlock("jizo_gold_block",
@@ -34,6 +36,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> JIZO_GOLD_ORE = registerBlock("jizo_gold_ore",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.STONE)));
+
 
     //Crafting Interfaces
 
@@ -49,9 +52,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> JIZO_FURNACE = registerBlock("jizo_furnace",
             () -> new JizoFurnaceBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
 
+
     //Boss Spawn Block
 
-    public static final RegistryObject<Block> JIZO_SUMMON_BLOCK = registerBlock("jizo_summon_block",
+    public static final RegistryObject<Block> JIZO_SUMMON_BLOCK = registerSpawnBlock("jizo_summon_block",
             () -> new JizoSummonBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.2f).sound(SoundType.STONE)));
 
 
@@ -62,11 +66,25 @@ public class ModBlocks {
 
         return toReturn;
     }
-
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
     }
+
+    //spawn block and item register
+    private static <T extends Block>RegistryObject<T> registerSpawnBlock(String name, Supplier<T> block){
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        registerSpawnBlockItem(name, toReturn);
+
+        return toReturn;
+    }
+    private static <T extends Block> void registerSpawnBlockItem(String name, RegistryObject<T> block){
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().rarity(Rarity.EPIC)));
+    }
+
+
 
     public static void register(IEventBus eventbus){
         BLOCKS.register(eventbus);

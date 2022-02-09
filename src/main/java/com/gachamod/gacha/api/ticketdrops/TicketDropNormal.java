@@ -39,7 +39,7 @@ public class TicketDropNormal extends Item {
         playerIn.giveExperiencePoints(10);
         TicketLoot loot = new TicketLoot();
         Random rand = new Random();
-        int randAmtDrop = rand.nextInt(4);
+        int randAmtDrop = rand.nextInt(4)+2;
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
         for(int i =0; i != randAmtDrop; i++){
             int randId = rand.nextInt(loot.getNormalTicketLoot().size());
