@@ -1,5 +1,6 @@
 package com.gachamod.gacha.api.ticketdrops;
 
+import com.gachamod.gacha.item.ModItems;
 import io.netty.util.concurrent.DefaultEventExecutor;
 import net.minecraft.client.particle.SweepAttackParticle;
 import net.minecraft.client.util.ITooltipFlag;
@@ -19,6 +20,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -31,6 +33,7 @@ public class TicketDropNormal extends Item {
     public TicketDropNormal(Properties properties) {
         super(properties);
     }
+    List<Item> loot = new ArrayList<>();
 
 
     @Override
@@ -44,8 +47,14 @@ public class TicketDropNormal extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         playerIn.giveExperiencePoints(10);
         Random rand = new Random();
-        int randId = rand.nextInt(500);
-        playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(Item.getItemById(randId)));
+        int randId = rand.nextInt(5);
+        loot.add(ModItems.CANNON_DAMAGE_UPGRADE_T1.get());
+        loot.add(ModItems.CANNON_CHARGE_MODULE.get());
+        loot.add(ModItems.CANNON_BASE.get());
+        loot.add(ModItems.CANNON_SHAFT.get());
+        loot.add(ModItems.CANNON_SPEED_UPGRADE_T1.get());
+
+        playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.get(randId)));
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
         return super.onItemRightClick(worldIn, playerIn, handIn);
 

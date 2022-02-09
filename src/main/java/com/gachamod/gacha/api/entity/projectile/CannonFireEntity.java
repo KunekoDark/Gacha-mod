@@ -20,7 +20,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
-import org.openjdk.nashorn.internal.ir.Block;
 
 @OnlyIn(
         value = Dist.CLIENT,

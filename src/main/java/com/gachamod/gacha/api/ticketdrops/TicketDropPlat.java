@@ -19,7 +19,7 @@ import java.util.Random;
 
 
 public class TicketDropPlat extends Item {
-    public static ArrayList<Integer> Droppables = new ArrayList<Integer>();
+    List<Item> loot = new ArrayList<>();
 
 
     public TicketDropPlat(Properties properties) {
