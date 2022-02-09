@@ -30,6 +30,15 @@ public class ModContainers {
                 return new UpgradeTableContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<GearTableContainer>> GEAR_TABLE_CONTAINER
+            = CONTAINERS.register("gear_table_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new GearTableContainer(windowId, world, pos, inv, inv.player);
+            })));
+
+
 
 
 
