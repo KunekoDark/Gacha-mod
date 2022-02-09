@@ -9,6 +9,7 @@ import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.EngineerTableScreen;
 import com.gachamod.gacha.entitiys.tileentity.ModTileEntities;
 import com.gachamod.gacha.screen.UpgradeTableScreen;
+import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
@@ -55,6 +56,7 @@ public class Gacha
         ModContainers.register(eventBus);
         ModTileEntities.register(eventBus);
         ModEntityType.register(eventBus);
+        ModStructures.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
@@ -72,6 +74,9 @@ public class Gacha
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(() ->
+                        ModStructures.setupStructures()
+                );
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
