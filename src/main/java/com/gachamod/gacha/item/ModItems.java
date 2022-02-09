@@ -94,6 +94,20 @@ public class ModItems {
     public static final RegistryObject<Item> RELIC_CATFRUIT = ITEMS.register("relic_catfruit",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
 
+    //upgrades and augments
+    public static final RegistryObject<Item> CANNON_UPGRADE_BASE_T1 = ITEMS.register("cannon_upgrade_base_t1",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> CANNON_DAMAGE_UPGRADE_T1 = ITEMS.register("cannon_damage_upgrade_t1",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> CANNON_SPEED_UPGRADE_T1 = ITEMS.register("cannon_speed_upgrade_t1",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> CANNON_RADIUS_UPGRADE_T1 = ITEMS.register("cannon_radius_upgrade_t1",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+
 
 
     //spawn eggs
