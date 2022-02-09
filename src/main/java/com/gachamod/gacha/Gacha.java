@@ -8,6 +8,7 @@ import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.EngineerTableScreen;
 import com.gachamod.gacha.entitiys.tileentity.ModTileEntities;
+import com.gachamod.gacha.screen.GearTableScreen;
 import com.gachamod.gacha.screen.UpgradeTableScreen;
 import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
@@ -86,6 +87,8 @@ public class Gacha
                 EngineerTableScreen::new);
         ScreenManager.registerFactory(ModContainers.UPGRADE_TABLE_CONTAINER.get(),
                 UpgradeTableScreen::new);
+        ScreenManager.registerFactory(ModContainers.GEAR_TABLE_CONTAINER.get(),
+                GearTableScreen::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(), KasaJizoRenderer::new);
 
     }
