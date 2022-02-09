@@ -1,30 +1,21 @@
 package com.gachamod.gacha.api.ticketdrops;
 
-import com.gachamod.gacha.item.ModItems;
-import io.netty.util.concurrent.DefaultEventExecutor;
-import net.minecraft.client.particle.SweepAttackParticle;
+import com.gachamod.gacha.api.ticketloot.TicketLoot;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.*;
-import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import static net.minecraft.loot.LootParameterSets.SELECTOR;
 
 
 public class TicketDropNormal extends Item {
@@ -33,7 +24,7 @@ public class TicketDropNormal extends Item {
     public TicketDropNormal(Properties properties) {
         super(properties);
     }
-    List<Item> loot = new ArrayList<>();
+
 
 
     @Override
@@ -46,29 +37,16 @@ public class TicketDropNormal extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         playerIn.giveExperiencePoints(10);
+        TicketLoot loot = new TicketLoot();
         Random rand = new Random();
-        int randId = rand.nextInt(5);
-        loot.add(ModItems.CANNON_DAMAGE_UPGRADE_T1.get());
-        loot.add(ModItems.CANNON_CHARGE_MODULE.get());
-        loot.add(ModItems.CANNON_BASE.get());
-        loot.add(ModItems.CANNON_SHAFT.get());
-        loot.add(ModItems.CANNON_SPEED_UPGRADE_T1.get());
-
-        playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.get(randId)));
+        int randAmtDrop = rand.nextInt(4);
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
+        for(int i =0; i != randAmtDrop; i++){
+            int randId = rand.nextInt(loot.getNormalTicketLoot().size());
+            playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getNormalTicketLoot().get(randId)));
+        }
+
         return super.onItemRightClick(worldIn, playerIn, handIn);
 
     }
-
-
-   /* public ItemStack LootTStk(World world){
-        Random rand = new Random();
-        ResourceLocation location = new ResourceLocation("resources/data/gacha/loot_table/test_table.json");
-        LootPredicateManager pred = new LootPredicateManager();
-        LootTable table = new LootTableManager(pred).getLootTableFromLocation(location);
-        List<ItemStack> stacks = table.generate();
-
-        return stacks.get(0);
-    }*/
-
 }

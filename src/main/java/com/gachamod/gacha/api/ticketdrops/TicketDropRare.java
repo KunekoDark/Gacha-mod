@@ -1,5 +1,6 @@
 package com.gachamod.gacha.api.ticketdrops;
 
+import com.gachamod.gacha.api.ticketloot.TicketLoot;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -36,10 +37,15 @@ public class TicketDropRare extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         playerIn.giveExperiencePoints(10);
+        TicketLoot loot = new TicketLoot();
         Random rand = new Random();
-        int randId = rand.nextInt(500);
-        playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(Item.getItemById(randId)));
+        int randAmtDrop = rand.nextInt(4);
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
+        for(int i =0; i != randAmtDrop; i++){
+            int randId = rand.nextInt(loot.getRareTicketLoot().size());
+            playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getRareTicketLoot().get(randId)));
+        }
+
         return super.onItemRightClick(worldIn, playerIn, handIn);
 
     }
