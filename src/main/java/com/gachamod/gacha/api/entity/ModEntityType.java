@@ -16,9 +16,9 @@ public class ModEntityType {
             = DeferredRegister.create(ForgeRegistries.ENTITIES, Gacha.MOD_ID);
 
     public static final RegistryObject<EntityType<CannonFireEntity>> CANNON_PROJECTILE = ENTITIES.register("cannon_projectile",
-            () -> EntityType.Builder.<CannonFireEntity>create(CannonFireEntity::new, EntityClassification.MISC).size(0.25F, 0.25F)
-                    .updateInterval(20)
-                    .trackingRange(4)
+            () -> EntityType.Builder.<CannonFireEntity>create(CannonFireEntity::new, EntityClassification.MISC).size(0.10F, 0.10F)
+                    .updateInterval(40)
+                    .trackingRange(10)
                     .build(new ResourceLocation(Gacha.MOD_ID, "cannon_projectile").toString()));
 
     public static final RegistryObject<EntityType<KasaJizo>> KASAJIZO = ENTITIES.register("kasa_jizo",

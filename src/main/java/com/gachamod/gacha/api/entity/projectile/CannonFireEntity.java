@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
+import org.openjdk.nashorn.internal.ir.Block;
 
 @OnlyIn(
         value = Dist.CLIENT,
@@ -73,8 +74,8 @@ public class CannonFireEntity extends DamagingProjectileEntity implements IRende
         super.onEntityHit(result);
         if (!this.world.isRemote) {
             Entity entity = result.getEntity();
-            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 3.0F, false, Explosion.Mode.NONE);
-            entity.attackEntityFrom(DamageSource.GENERIC, 20.0F);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 0.8F, false, Explosion.Mode.NONE);
+            entity.attackEntityFrom(DamageSource.GENERIC, 25.0F);
         }
     }
 
@@ -95,7 +96,7 @@ public class CannonFireEntity extends DamagingProjectileEntity implements IRende
     protected void onImpact(RayTraceResult result) {
         super.onImpact(result);
         if (!this.world.isRemote) {
-            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 3.0F, false, Explosion.Mode.NONE);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 0.8F, false, Explosion.Mode.NONE);
             this.remove();
         }
     }

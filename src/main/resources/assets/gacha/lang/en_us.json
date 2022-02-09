@@ -38,5 +38,8 @@
   "screen.gacha.upgrade_table": "Upgrade Table",
   "screen.gacha.gear_table": "Gear Table",
 
+  "entity.gacha.kasa_jizo": "Kasa Jizo",
+  "entity.gacha.cannon_projectile": "Cat Cannon pew pew",
+
   "itemGroup.gachaModTab": "Gacha"
 }

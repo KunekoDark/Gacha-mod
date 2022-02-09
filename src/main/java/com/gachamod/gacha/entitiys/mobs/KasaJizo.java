@@ -31,22 +31,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 
 public class KasaJizo extends MonsterEntity implements IRangedAttackMob {
-    private final RangedBowAttackGoal<KasaJizo> aiArrowAttack = new RangedBowAttackGoal<>(this, 1.0F, 10, 25.0F);
-    private final MeleeAttackGoal aiAttackOnCollide = new MeleeAttackGoal(this, 1.2F, false) {
-
-        public void resetTask() {
-            super.resetTask();
-            KasaJizo.this.setAggroed(false);
-        }
-
-        /**
-         * Execute a one shot task or start executing a continuous task
-         */
-        public void startExecuting() {
-            super.startExecuting();
-            KasaJizo.this.setAggroed(true);
-        }
-    };
+    private final RangedBowAttackGoal<KasaJizo> aiArrowAttack = new RangedBowAttackGoal<>(this, 1.0F, 10, 30.0F);
 
     public KasaJizo(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
@@ -66,7 +51,7 @@ public class KasaJizo extends MonsterEntity implements IRangedAttackMob {
     public static AttributeModifierMap.MutableAttribute setCustomeAtrebutes(){
         return MobEntity.func_233666_p_()
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.7f)
-                .createMutableAttribute(Attributes.MAX_HEALTH, 500.0F)
+                .createMutableAttribute(Attributes.MAX_HEALTH, 200.0)
                 .createMutableAttribute(Attributes.ATTACK_DAMAGE, 0.1F);
     }
 
@@ -110,21 +95,14 @@ public class KasaJizo extends MonsterEntity implements IRangedAttackMob {
 
     public void setCombatTask() {
         if (this.world != null && !this.world.isRemote) {
-            this.goalSelector.removeGoal(this.aiAttackOnCollide);
             this.goalSelector.removeGoal(this.aiArrowAttack);
             ItemStack itemstack = this.getHeldItem(ProjectileHelper.getWeaponHoldingHand(this, item -> item instanceof net.minecraft.item.BowItem));
             if (itemstack.getItem() == Items.BOW) {
-                int i = 20;
-                if (this.world.getDifficulty() != Difficulty.HARD) {
-                    i = 40;
-                }
+                int i = 5;
 
                 this.aiArrowAttack.setAttackCooldown(i);
                 this.goalSelector.addGoal(4, this.aiArrowAttack);
-            }else {
-                this.goalSelector.addGoal(4, this.aiAttackOnCollide);
             }
-
         }
     }
 
@@ -135,10 +113,10 @@ public class KasaJizo extends MonsterEntity implements IRangedAttackMob {
         if (this.getHeldItemMainhand().getItem() instanceof net.minecraft.item.BowItem)
             abstractarrowentity = ((net.minecraft.item.BowItem)this.getHeldItemMainhand().getItem()).customArrow(abstractarrowentity);
         double d0 = target.getPosX() - this.getPosX();
-        double d1 = target.getPosYHeight(0.3333333333333333D) - abstractarrowentity.getPosY();
+        double d1 = target.getPosYHeight(0.2F) - abstractarrowentity.getPosY();
         double d2 = target.getPosZ() - this.getPosZ();
         double d3 = (double) MathHelper.sqrt(d0 * d0 + d2 * d2);
-        abstractarrowentity.shoot(d0, d1 + d3 * (double)0.2F, d2, 5.0F, 0.2F);
+        abstractarrowentity.shoot(d0, d1 + d3 * (double)0.2F, d2, 5.0F, 0.1F);
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.world.addEntity(abstractarrowentity);
     }
