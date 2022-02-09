@@ -29,6 +29,7 @@
   "block.gacha.engineer_table": "Engineer Table",
   "block.gacha.upgrade_table": "Upgrade Table",
   "block.gacha.gear_table": "Gear Table",
+  "block.gacha.jizo_summon_block": "Boss Block: Jizo",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "With the power of cats and anime",

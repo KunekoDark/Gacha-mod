@@ -4,6 +4,7 @@ import com.gachamod.gacha.Gacha;
 
 import com.gachamod.gacha.api.blocks.EngineerTableBlock;
 import com.gachamod.gacha.api.blocks.GearTableBlock;
+import com.gachamod.gacha.api.blocks.JizoSummonBlock;
 import com.gachamod.gacha.api.blocks.UpgradeTableBlock;
 import com.gachamod.gacha.item.ModItemGroup;
 import com.gachamod.gacha.item.ModItems;
@@ -48,7 +49,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> GEAR_TABLE = registerBlock("gear_table",
             () -> new GearTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
 
+    //Boss Spawn Block
 
+    public static final RegistryObject<Block> JIZO_SUMMON_BLOCK = registerBlock("jizo_summon_block",
+            () -> new JizoSummonBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.2f).sound(SoundType.STONE)));
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
