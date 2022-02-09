@@ -68,7 +68,7 @@ public class JizoCastle extends Structure<NoFeatureConfig> {
 
             JigsawManager.func_242837_a(dynamicRegistryManager,
                     new VillageConfig(() -> dynamicRegistryManager.getRegistry(Registry.JIGSAW_POOL_KEY)
-                            .getOrDefault(new ResourceLocation(Gacha.MOD_ID, "house/start_pool")),
+                            .getOrDefault(new ResourceLocation(Gacha.MOD_ID, "jizo_castle/start_pool")),
                             10), AbstractVillagePiece::new, chunkGenerator, templateManagerIn,
                     blockpos, this.components, this.rand,false,true);
 

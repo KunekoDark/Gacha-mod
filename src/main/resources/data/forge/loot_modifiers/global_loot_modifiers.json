@@ -1,6 +1,10 @@
 {
   "replace": false,
   "entries": [
-    "gacha:ticket_in_simple_dungeon"
+    "gacha:ticket_in_simple_dungeon",
+    "gacha:ticket_in_abandoned_mineshaft",
+    "gacha:ticket_in_desert_pyramid",
+    "gacha:ticket_in_jungle_temple",
+    "gacha:ticket_in_ruined_portal"
   ]
 }

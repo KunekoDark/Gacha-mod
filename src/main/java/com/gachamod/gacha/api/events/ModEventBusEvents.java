@@ -35,5 +35,21 @@ public class ModEventBusEvents {
                 new TicketStructureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Gacha.MOD_ID,"ticket_in_simple_dungeon"))
         );
+        event.getRegistry().registerAll(
+                new TicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"ticket_in_abandoned_mineshaft"))
+        );
+        event.getRegistry().registerAll(
+                new TicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"ticket_in_desert_pyramid"))
+        );
+        event.getRegistry().registerAll(
+                new TicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"ticket_in_jungle_temple"))
+        );
+        event.getRegistry().registerAll(
+                new TicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"ticket_in_ruined_portal"))
+        );
     }
 }
