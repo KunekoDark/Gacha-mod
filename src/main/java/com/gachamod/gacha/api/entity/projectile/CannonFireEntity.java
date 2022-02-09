@@ -74,7 +74,7 @@ public class CannonFireEntity extends DamagingProjectileEntity implements IRende
         if (!this.world.isRemote) {
             Entity entity = result.getEntity();
             this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 3.0F, false, Explosion.Mode.NONE);
-            entity.attackEntityFrom(DamageSource.MAGIC, 20.0F);
+            entity.attackEntityFrom(DamageSource.GENERIC, 20.0F);
         }
     }
 
