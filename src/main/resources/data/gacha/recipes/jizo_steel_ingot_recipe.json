@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "gacha:jizo_steel_block"
+    }
+  ],
+  "result": {
+    "item": "gacha:jizo_steel_ingot",
+    "count": 4
+  }
+}

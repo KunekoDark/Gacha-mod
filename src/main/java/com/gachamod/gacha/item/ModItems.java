@@ -66,6 +66,9 @@ public class ModItems {
     public static final RegistryObject<Item> RELIC_FOSSIL = ITEMS.register("relic_fossil",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> JIZO_STEEL_INGOT = ITEMS.register("jizo_steel_ingot",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
     //weapons
 
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",

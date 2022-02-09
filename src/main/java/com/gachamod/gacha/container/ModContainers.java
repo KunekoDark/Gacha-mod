@@ -38,6 +38,14 @@ public class ModContainers {
                 return new GearTableContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<JizoFurnaceContainer>> JIZO_FURNACE_CONTAINER
+            = CONTAINERS.register("jizo_furnace_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new JizoFurnaceContainer(windowId, world, pos, inv, inv.player);
+            })));
+
 
 
 

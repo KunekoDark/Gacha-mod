@@ -25,6 +25,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("gear_table_tile", () -> TileEntityType.Builder.create(
                     GearTableTile::new, ModBlocks.GEAR_TABLE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<JizoFurnaceTile>> JIZO_FURNACE_TILE =
+            TILE_ENTITIES.register("jizo_furnace_tile", () -> TileEntityType.Builder.create(
+                    JizoFurnaceTile::new, ModBlocks.JIZO_FURNACE.get()).build(null));
+
 
 
 
