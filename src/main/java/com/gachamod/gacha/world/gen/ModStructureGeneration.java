@@ -23,5 +23,10 @@ public class ModStructureGeneration {
 
             structures.add(() -> ModStructures.JIZO_CASTLE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         }
+        if(types.contains(BiomeDictionary.Type.OVERWORLD)) {
+            List<Supplier<StructureFeature<?, ?>>> structures = event.getGeneration().getStructures();
+
+            structures.add(() -> ModStructures.CAT_PALACE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+        }
     }
 }

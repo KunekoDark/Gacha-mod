@@ -61,11 +61,17 @@ public class ModWorldEvents {
             }*/
 
             // Adding our Structure to the Map
-            Map<Structure<?>, StructureSeparationSettings> tempMap =
+            Map<Structure<?>, StructureSeparationSettings> tempMap1 =
                     new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
-            tempMap.putIfAbsent(ModStructures.JIZO_CASTLE.get(),
+            tempMap1.putIfAbsent(ModStructures.JIZO_CASTLE.get(),
                     DimensionStructuresSettings.field_236191_b_.get(ModStructures.JIZO_CASTLE.get()));
-            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
+            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap1;
+            //cat palace
+            Map<Structure<?>, StructureSeparationSettings> tempMap2 =
+                    new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
+            tempMap2.putIfAbsent(ModStructures.CAT_PALACE.get(),
+                    DimensionStructuresSettings.field_236191_b_.get(ModStructures.CAT_PALACE.get()));
+            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap2;
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.gachamod.gacha.world.structure;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.world.structure.structures.CatPalace;
 import com.gachamod.gacha.world.structure.structures.JizoCastle;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -23,6 +24,9 @@ public class ModStructures {
 
     public static final RegistryObject<Structure<NoFeatureConfig>> JIZO_CASTLE =
             STRUCTURES.register("jizo_castle", JizoCastle::new);
+    public static final RegistryObject<Structure<NoFeatureConfig>> CAT_PALACE =
+            STRUCTURES.register("cat_palace", CatPalace::new);
+
 
 
     /* average distance apart in chunks between spawn attempts */
@@ -32,6 +36,9 @@ public class ModStructures {
     public static void setupStructures() {
         setupMapSpacingAndLand(JIZO_CASTLE.get(),
                 new StructureSeparationSettings(200,100, 1254527434), false);
+
+        setupMapSpacingAndLand(CAT_PALACE.get(),
+                new StructureSeparationSettings(75,30, 1254527435), true);
     }
 
     public static <F extends Structure<?>> void setupMapSpacingAndLand(F structure, StructureSeparationSettings structureSeparationSettings,
@@ -99,10 +106,6 @@ public class ModStructures {
                 structureMap.put(structure, structureSeparationSettings);
             }
         });
-
-
-
-
     }
 
 
