@@ -1,9 +1,10 @@
 {
+  "type": "minecraft:chest",
   "pools": [
     {
       "rolls": {
-        "min": 2,
-        "max": 8
+        "min": 4,
+        "max": 10
       },
       "bonus_rolls": {
         "min": 0,
@@ -12,32 +13,27 @@
       "entries": [
         {
           "type": "item",
-          "weight": 1,
+          "weight": 4,
           "name": "gacha:normal_ticket"
         },
         {
           "type": "item",
-          "weight": 1,
-          "name": "gacha:rare_ticket"
-        },
-        {
-          "type": "item",
-          "weight": 1,
+          "weight": 6,
           "name": "minecraft:iron_ingot"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 4,
           "name": "minecraft:gold_ingot"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 3,
           "name": "minecraft:diamond"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 4,
           "name": "gacha:rainbow_catfruit"
         }
       ]
@@ -47,7 +43,7 @@
       "entries": [
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_base"
         },
         {
@@ -69,6 +65,16 @@
           "type": "item",
           "weight": 1,
           "name": "gacha:cannon_component"
+        },
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "gacha:rare_ticket"
         }
       ]
     }
