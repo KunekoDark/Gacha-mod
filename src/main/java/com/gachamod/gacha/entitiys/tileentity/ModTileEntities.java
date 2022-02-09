@@ -21,6 +21,11 @@ public class ModTileEntities {
             TILE_ENTITIES.register("upgrade_table_tile", () -> TileEntityType.Builder.create(
                     UpgradeTableTile::new, ModBlocks.UPGRADE_TABLE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<GearTableTile>> GEAR_TABLE_TILE =
+            TILE_ENTITIES.register("gear_table_tile", () -> TileEntityType.Builder.create(
+                    GearTableTile::new, ModBlocks.GEAR_TABLE.get()).build(null));
+
+
 
 
 

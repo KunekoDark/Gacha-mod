@@ -28,12 +28,14 @@
   "block.gacha.jizo_steel_block": "Jizo Steel Block",
   "block.gacha.engineer_table": "Engineer Table",
   "block.gacha.upgrade_table": "Upgrade Table",
+  "block.gacha.gear_table": "Gear Table",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "With the power of cats and anime",
 
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",
+  "screen.gacha.gear_table": "Gear Table",
 
   "itemGroup.gachaModTab": "Gacha"
 }

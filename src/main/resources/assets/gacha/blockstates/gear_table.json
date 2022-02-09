@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "gacha:block/gear_table" },
+    "facing=south": { "model": "gacha:block/gear_table", "y":  180},
+    "facing=west": { "model": "gacha:block/gear_table", "y":  270},
+    "facing=east": { "model": "gacha:block/gear_table", "y":  90}
+  }
+}
