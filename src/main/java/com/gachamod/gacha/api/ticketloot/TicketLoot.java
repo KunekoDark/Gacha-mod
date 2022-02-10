@@ -85,7 +85,7 @@ public class TicketLoot {
             legendTicketLoot.add(Items.IRON_INGOT);
             legendTicketLoot.add(Items.DIAMOND);
             legendTicketLoot.add(Items.GOLD_INGOT);
-            legendTicketLoot.add(Items.GOLDEN_CARROT);
+            legendTicketLoot.add(Items.ENCHANTED_GOLDEN_APPLE);
         }
 
         legendTicketLoot.add(ModItems.RARE_TICKET.get());

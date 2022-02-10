@@ -13,7 +13,7 @@
       "entries": [
         {
           "type": "item",
-          "weight": 4,
+          "weight": 3,
           "name": "gacha:normal_ticket"
         },
         {
@@ -23,7 +23,7 @@
         },
         {
           "type": "item",
-          "weight": 4,
+          "weight": 5,
           "name": "minecraft:gold_ingot"
         },
         {
@@ -43,32 +43,32 @@
       "entries": [
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_base"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_shaft"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_charge_module"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_handheld_module"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "gacha:cannon_component"
         },
         {
           "type": "item",
-          "weight": 1,
+          "weight": 2,
           "name": "minecraft:diamond"
         },
         {

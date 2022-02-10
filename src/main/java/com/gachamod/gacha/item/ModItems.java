@@ -8,6 +8,7 @@ import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
 import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
 import com.gachamod.gacha.api.ticketdrops.TicketDropRare;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -24,13 +25,13 @@ public class ModItems {
         () -> new TicketDropNormal(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<TicketDropRare> RARE_TICKET = ITEMS.register("rare_ticket",
-            () -> new TicketDropRare(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
+            () -> new TicketDropRare(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<TicketDropPlat> PLATINUM_TICKET = ITEMS.register("platinum_ticket",
-            () -> new TicketDropPlat(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
+            () -> new TicketDropPlat(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
     public static final RegistryObject<TicketDropLegend> LEGEND_TICKET = ITEMS.register("legend_ticket",
-            () -> new TicketDropLegend(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
+            () -> new TicketDropLegend(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
 
 
 
@@ -69,10 +70,12 @@ public class ModItems {
     public static final RegistryObject<Item> JIZO_STEEL_INGOT = ITEMS.register("jizo_steel_ingot",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
+
     //weapons
 
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
-            () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(100)));
+            () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).maxStackSize(1).rarity(Rarity.RARE)));
+
 
     //cat fruit
 
@@ -97,6 +100,7 @@ public class ModItems {
     public static final RegistryObject<Item> RELIC_CATFRUIT = ITEMS.register("relic_catfruit",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
 
+
     //upgrades and augments
     public static final RegistryObject<Item> CANNON_UPGRADE_BASE_T1 = ITEMS.register("cannon_upgrade_base_t1",
             () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
@@ -117,7 +121,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> KASAJIZO_SPAWN = ITEMS.register("kasajizo_spawnegg",
             () -> new ModSpawnEggItem(ModEntityType.KASAJIZO, 0x000000, 0xFFFFFF,
-                    new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).defaultMaxDamage(1)));
+                    new Item.Properties().maxStackSize(1).group(ItemGroup.MISC).defaultMaxDamage(1)));
 
 
     //projectile items
