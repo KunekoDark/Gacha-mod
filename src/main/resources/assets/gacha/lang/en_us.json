@@ -22,6 +22,7 @@
   "item.gacha.red_catfruit": "Red Catfruit",
   "item.gacha.rainbow_catfruit": "Rainbow Catfruit",
   "item.gacha.relic_catfruit": "Relic Catfruit",
+  "item.gacha.jizo_steel_ingot": "Jizo Steel Ingot",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
@@ -30,6 +31,7 @@
   "block.gacha.upgrade_table": "Upgrade Table",
   "block.gacha.gear_table": "Gear Table",
   "block.gacha.jizo_summon_block": "Boss Block: Jizo",
+  "block.gacha.jizo_furnace": "Jizo Furnace",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "\u00A7bWith the power of cats and anime",
@@ -37,6 +39,7 @@
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",
   "screen.gacha.gear_table": "Gear Table",
+  "screen.gacha.jizo_furnace": "Jizo Furnace",
 
   "entity.gacha.kasa_jizo": "Kasa Jizo",
   "entity.gacha.cannon_projectile": "Cat Cannon pew pew",
