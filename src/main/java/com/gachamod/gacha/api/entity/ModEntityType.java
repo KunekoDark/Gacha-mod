@@ -2,6 +2,7 @@ package com.gachamod.gacha.api.entity;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.entity.projectile.CannonFireEntity;
+import com.gachamod.gacha.entitiys.mobs.GoonEntitiy;
 import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -24,6 +25,11 @@ public class ModEntityType {
     public static final RegistryObject<EntityType<KasaJizo>> KASAJIZO = ENTITIES.register("kasa_jizo",
             () -> EntityType.Builder.create(KasaJizo::new, EntityClassification.MONSTER).size(1.0F,1.5F)
                     .build(new ResourceLocation(Gacha.MOD_ID, "kasa_jizo").toString()));
+
+
+    public static final RegistryObject<EntityType<GoonEntitiy>> GOONENTITY = ENTITIES.register("goon",
+            () -> EntityType.Builder.create(GoonEntitiy::new, EntityClassification.MONSTER).size(1.0F,1.5F)
+                    .build(new ResourceLocation(Gacha.MOD_ID, "goon").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);

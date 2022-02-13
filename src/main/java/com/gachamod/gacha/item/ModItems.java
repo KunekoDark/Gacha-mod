@@ -124,6 +124,11 @@ public class ModItems {
                     new Item.Properties().maxStackSize(1).group(ItemGroup.MISC).defaultMaxDamage(1)));
 
 
+    public static final RegistryObject<Item> GOON_SPAWN = ITEMS.register("goon_spawnegg",
+            () -> new ModSpawnEggItem(ModEntityType.GOONENTITY, 0x0000FF, 0xFFFAFF,
+                    new Item.Properties().maxStackSize(1).group(ItemGroup.MISC).defaultMaxDamage(1)));
+
+
     //projectile items
     
     public static final RegistryObject<Item> CAT_CANNON_PROJECTILE = ITEMS.register("cat_cannon_projectile",

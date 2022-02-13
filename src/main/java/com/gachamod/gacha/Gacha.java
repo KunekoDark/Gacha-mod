@@ -1,6 +1,7 @@
 package com.gachamod.gacha;
 
 import com.gachamod.gacha.api.entity.ModEntityType;
+import com.gachamod.gacha.api.entity.renderer.GoonEntityRenderer;
 import com.gachamod.gacha.api.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
@@ -92,7 +93,10 @@ public class Gacha
                 GearTableScreen::new);
         ScreenManager.registerFactory(ModContainers.JIZO_FURNACE_CONTAINER.get(),
                 JizoFurnaceScreen::new);
-        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(), KasaJizoRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(),
+                KasaJizoRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityType.GOONENTITY.get(),
+                GoonEntityRenderer::new);
 
     }
     @OnlyIn(Dist.CLIENT)

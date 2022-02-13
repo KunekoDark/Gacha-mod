@@ -15,6 +15,7 @@
   "item.gacha.relic_fossil": "Relic Fossil",
   "item.gacha.cat_cannon": "CaT CaNNoN",
   "item.gacha.kasajizo_spawnegg": "Kasa Jizo Spawn Egg",
+  "item.gacha.goon_spawnegg": "Goon Spawn Egg",
   "item.gacha.blue_catfruit": "Blue Catfruit",
   "item.gacha.green_catfruit": "Green Catfruit",
   "item.gacha.purple_catfruit": "Purple Catfruit",
@@ -42,7 +43,9 @@
   "screen.gacha.jizo_furnace": "Jizo Furnace",
 
   "entity.gacha.kasa_jizo": "Kasa Jizo",
+  "entity.gacha.goon": "Cat Goon",
+
   "entity.gacha.cannon_projectile": "Cat Cannon pew pew",
 
-  "itemGroup.gachaModTab": "Gacha"
+  "itemGroup.gachaModTab": "GachaCraft"
 }

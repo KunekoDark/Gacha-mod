@@ -3,6 +3,7 @@ package com.gachamod.gacha.api.events;
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.api.events.lootinject.TicketStructureAdditionModifier;
+import com.gachamod.gacha.entitiys.mobs.GoonEntitiy;
 import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import com.gachamod.gacha.item.ModSpawnEggItem;
 import net.minecraft.entity.EntityType;
@@ -20,6 +21,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntityType.KASAJIZO.get(), KasaJizo.setCustomeAtrebutes().create());
+        event.put(ModEntityType.GOONENTITY.get(), GoonEntitiy.setCustomeAtrebutes().create());
 
     }
 
