@@ -5,16 +5,11 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
-import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.monster.ZombifiedPiglinEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShootableItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -22,6 +17,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IServerWorld;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.entity.PartEntity;
 
@@ -78,7 +74,15 @@ public class GoonEntitiy extends MonsterEntity {
 
     @Override
     public CreatureAttribute getCreatureAttribute() {
-        return CreatureAttribute.UNDEAD;
+        return CreatureAttribute.UNDEFINED;
+    }
+
+
+    @Override
+    public boolean canSpawn(IWorld iWorld, SpawnReason spawnReason) {
+        return spawnReason.equals(SpawnReason.SPAWNER) ||
+                spawnReason.equals(SpawnReason.SPAWN_EGG)||
+                spawnReason.equals(SpawnReason.COMMAND);
     }
 
     @Override

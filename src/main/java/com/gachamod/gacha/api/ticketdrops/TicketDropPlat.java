@@ -42,8 +42,23 @@ public class TicketDropPlat extends Item {
         int randAmtDrop = rand.nextInt(4)+2;
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
         for(int i =0; i != randAmtDrop; i++){
+            boolean itemRestricted = false;
             int randId = rand.nextInt(loot.getPlatTicketLoot().size());
-            playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getPlatTicketLoot().get(randId)));
+            int randStk = rand.nextInt(5);
+            for(int x =0 ; x !=loot.getRestrictedItems().size(); x++){
+                if(loot.getPlatTicketLoot().get(randId) == loot.getRestrictedItems().get(x)){
+                    itemRestricted = true;
+                }
+            }
+            if(!itemRestricted){
+                for(int i1 = 0; i1 != randStk; i1++){
+                    playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getPlatTicketLoot().get(randId)));
+                }
+
+            }
+            else playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getPlatTicketLoot().get(randId)));
+
+
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);
