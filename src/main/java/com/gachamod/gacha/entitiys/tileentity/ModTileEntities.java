@@ -29,6 +29,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("jizo_furnace_tile", () -> TileEntityType.Builder.create(
                     JizoFurnaceTile::new, ModBlocks.JIZO_FURNACE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<NormalTicketCapsuleTile>> NORMAL_TICKET_CAPSULE_TILE =
+            TILE_ENTITIES.register("normal_ticket_capsule_tile", () -> TileEntityType.Builder.create(
+                    NormalTicketCapsuleTile::new, ModBlocks.JIZO_FURNACE.get()).build(null));
+
 
 
 

@@ -52,6 +52,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> JIZO_FURNACE = registerBlock("jizo_furnace",
             () -> new JizoFurnaceBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> NORMAL_TICKET_CAPSULE = registerBlock("normal_ticket_capsule",
+            () -> new NormalTicketCapsuleBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
+
 
     //Boss Spawn Block
 

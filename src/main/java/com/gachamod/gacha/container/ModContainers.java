@@ -1,6 +1,7 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.screen.NormalTicketCapsuleScreen;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -44,6 +45,14 @@ public class ModContainers {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
                 return new JizoFurnaceContainer(windowId, world, pos, inv, inv.player);
+            })));
+
+    public static final RegistryObject<ContainerType<NormalTicketCapsuleContainer>> NORMAL_TICKET_CAPSULE_CONTAINER
+            = CONTAINERS.register("normal_ticket_capsule_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new NormalTicketCapsuleContainer(windowId, world, pos, inv, inv.player);
             })));
 
 
