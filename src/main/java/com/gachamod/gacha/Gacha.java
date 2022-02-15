@@ -7,11 +7,8 @@ import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
 import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import com.gachamod.gacha.item.ModItems;
-import com.gachamod.gacha.screen.EngineerTableScreen;
+import com.gachamod.gacha.screen.*;
 import com.gachamod.gacha.entitiys.tileentity.ModTileEntities;
-import com.gachamod.gacha.screen.GearTableScreen;
-import com.gachamod.gacha.screen.JizoFurnaceScreen;
-import com.gachamod.gacha.screen.UpgradeTableScreen;
 import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -93,6 +90,8 @@ public class Gacha
                 GearTableScreen::new);
         ScreenManager.registerFactory(ModContainers.JIZO_FURNACE_CONTAINER.get(),
                 JizoFurnaceScreen::new);
+        ScreenManager.registerFactory(ModContainers.NORMAL_TICKET_CAPSULE_CONTAINER.get(),
+                NormalTicketCapsuleScreen::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(),
                 KasaJizoRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.GOONENTITY.get(),

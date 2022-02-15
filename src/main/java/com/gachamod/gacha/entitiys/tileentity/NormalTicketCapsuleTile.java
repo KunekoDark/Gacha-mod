@@ -52,10 +52,8 @@ public class NormalTicketCapsuleTile extends TileEntity {
             @Override
             public boolean isItemValid(int slot, @Nonnull ItemStack stack){
                 switch (slot){
-                    //specific slots?
-                    case 0: ModItems.NORMAL_TICKET.get();
-
-
+                    //input slots
+                    case 0: return stack.getItem() == ModItems.NORMAL_TICKET.get();
 
                     default:
                         return false;
@@ -94,9 +92,7 @@ public class NormalTicketCapsuleTile extends TileEntity {
         boolean hasNothingInSlot = true; //this.itemHandler.getStackInSlot(0)== null;
 
         if(hasNothingInSlot){
-            if(!hasNothingInSlot){
 
-            }
             this.itemHandler.insertItem(0, new ItemStack(ModItems.NORMAL_TICKET.get()), false);
         }
 

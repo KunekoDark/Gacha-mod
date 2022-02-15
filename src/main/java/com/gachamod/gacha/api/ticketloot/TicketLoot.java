@@ -24,12 +24,12 @@ public class TicketLoot {
         normalTicketLoot.add(Items.GOLDEN_CARROT);
         }
 
-        normalTicketLoot.add(ModItems.RARE_TICKET.get());
-        normalTicketLoot.add(ModItems.CANNON_BASE.get());
-        normalTicketLoot.add(ModItems.CANNON_SHAFT.get());
-        normalTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
-        normalTicketLoot.add(ModItems.CANNON_COMPONENT.get());
-        normalTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
+        //normalTicketLoot.add(ModItems.RARE_TICKET.get());
+        //normalTicketLoot.add(ModItems.CANNON_BASE.get());
+        //normalTicketLoot.add(ModItems.CANNON_SHAFT.get());
+        //normalTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
+        //normalTicketLoot.add(ModItems.CANNON_COMPONENT.get());
+        //normalTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
 
 
 

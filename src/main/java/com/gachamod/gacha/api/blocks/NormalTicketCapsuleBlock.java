@@ -28,9 +28,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class NormalTicketCapsuleBlock extends Block {
@@ -75,26 +77,23 @@ public class NormalTicketCapsuleBlock extends Block {
 
 
 
-
-
     @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if(!worldIn.isRemote()){
             TileEntity tileEntity = worldIn.getTileEntity(pos);
 
+            if(!player.isCrouching()) {
+                if (tileEntity instanceof NormalTicketCapsuleTile) {
+                    INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
 
-            if(tileEntity instanceof NormalTicketCapsuleTile){
-                INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
-
-                NetworkHooks.openGui(((ServerPlayerEntity) player), containerProvider, tileEntity.getPos());
-            } else{
-                throw new IllegalStateException("Container provider is missing");
+                    NetworkHooks.openGui(((ServerPlayerEntity) player), containerProvider, tileEntity.getPos());
+                } else {
+                    throw new IllegalStateException("Container provider is missing");
+                }
+                if (tileEntity instanceof NormalTicketCapsuleTile) {
+                    ((NormalTicketCapsuleTile) tileEntity).canGetTicket();
+                }
             }
-            if(tileEntity instanceof NormalTicketCapsuleTile){
-                ((NormalTicketCapsuleTile) tileEntity).canGetTicket();
-                worldIn.playSound((PlayerEntity)null, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ENTITY_CAT_DEATH, SoundCategory.PLAYERS, 1.0F, 1.0F );
-            }
-
 
         }
         return ActionResultType.SUCCESS;
