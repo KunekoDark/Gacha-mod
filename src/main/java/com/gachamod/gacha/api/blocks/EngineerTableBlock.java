@@ -76,7 +76,7 @@ public class EngineerTableBlock extends Block {
         if(!worldIn.isRemote()){
             TileEntity tileEntity = worldIn.getTileEntity(pos);
 
-            if(!player.isCrouching()){
+
                 if(tileEntity instanceof EngineerTableTile){
                     INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
 
@@ -84,13 +84,8 @@ public class EngineerTableBlock extends Block {
                 } else{
                     throw new IllegalStateException("Container provider is missing");
                 }
-            } else {
-                if(tileEntity instanceof EngineerTableTile){
-                    ((EngineerTableTile) tileEntity).allComponentsInSlots();
-                    worldIn.playSound((PlayerEntity)null, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ENTITY_CAT_DEATH, SoundCategory.PLAYERS, 1.0F, 1.0F );
-                }
             }
-        }
+
         return ActionResultType.SUCCESS;
     }
 

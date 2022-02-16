@@ -1,0 +1,24 @@
+{
+  "type": "gacha:engineer",
+
+  "ingredients": [
+    {
+      "item": "gacha:cannon_base"
+    },
+    {
+      "item": "gacha:cannon_component"
+    },
+    {
+      "item": "gacha:cannon_handheld_module"
+    },
+    {
+      "item": "gacha:cannon_shaft"
+    },
+    {
+      "item": "gacha:cannon_charge_module"
+    }
+  ],
+  "output": {
+    "item": "gacha:cat_cannon"
+  }
+}
