@@ -27,6 +27,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
+
 import java.util.Optional;
 
 public class EngineerTableContainer extends RecipeBookContainer<CraftingInventory> implements IInventory{
@@ -36,6 +37,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     private final IWorldPosCallable worldPosCallable;
     private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 2);
     private final CraftResultInventory craftResult = new CraftResultInventory();
+
 
 
     public EngineerTableContainer(int windowId, World world, BlockPos pos,
@@ -56,7 +58,9 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
                 addSlot(new Slot(this.craftMatrix,3,53,50));
                 addSlot(new Slot(this.craftMatrix,4,71,50));
 
+
                 addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
+
             });
         }
     }

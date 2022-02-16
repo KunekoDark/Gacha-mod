@@ -7,9 +7,7 @@ import com.gachamod.gacha.api.ticketdrops.TicketDropLegend;
 import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
 import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
 import com.gachamod.gacha.api.ticketdrops.TicketDropRare;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Rarity;
+import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -113,6 +111,24 @@ public class ModItems {
 
     public static final RegistryObject<Item> CANNON_RADIUS_UPGRADE_T1 = ITEMS.register("cannon_radius_upgrade_t1",
             () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+    //tools
+    public static final RegistryObject<Item> JIZO_STEEL_PICKAXE = ITEMS.register("jizo_steel_pickaxe",
+            () -> new PickaxeItem(ModItemTier.JIZO_STEEL, -2, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> JIZO_STEEL_AXE = ITEMS.register("jizo_steel_axe",
+            () -> new AxeItem(ModItemTier.JIZO_STEEL, 3, -4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> JIZO_STEEL_SHOVEL = ITEMS.register("jizo_steel_shovel",
+            () -> new ShovelItem(ModItemTier.JIZO_STEEL, -3, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> JIZO_STEEL_HOE = ITEMS.register("jizo_steel_hoe",
+            () -> new HoeItem(ModItemTier.JIZO_STEEL, -4, 4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> JIZO_STEEL_SWORD = ITEMS.register("jizo_steel_sword",
+            () -> new SwordItem(ModItemTier.JIZO_STEEL, 2, 0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+
 
 
 
