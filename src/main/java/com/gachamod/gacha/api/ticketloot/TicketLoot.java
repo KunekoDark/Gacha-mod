@@ -11,28 +11,27 @@ public class TicketLoot {
 
     public List<Item> getNormalTicketLoot() {
         List<Item> normalTicketLoot= new ArrayList<>();
-        for(int i = 0; i <5; i++)
+        for(int i = 0; i <1; i++)
         {
-        normalTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
-        normalTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
-        normalTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
-        normalTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
-        normalTicketLoot.add(ModItems.RED_CATFRUIT.get());
-        normalTicketLoot.add(Items.IRON_INGOT);
-        normalTicketLoot.add(Items.DIAMOND);
-        normalTicketLoot.add(Items.GOLD_INGOT);
-        normalTicketLoot.add(Items.GOLDEN_CARROT);
+            normalTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
+            normalTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
+            normalTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
+            normalTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
+            normalTicketLoot.add(ModItems.RED_CATFRUIT.get());
+            normalTicketLoot.add(Items.IRON_INGOT);
+            normalTicketLoot.add(Items.DIAMOND);
+            normalTicketLoot.add(Items.GOLD_INGOT);
+            normalTicketLoot.add(Items.GOLDEN_CARROT);
         }
 
-        //normalTicketLoot.add(ModItems.RARE_TICKET.get());
-        //normalTicketLoot.add(ModItems.CANNON_BASE.get());
-        //normalTicketLoot.add(ModItems.CANNON_SHAFT.get());
-        //normalTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
-        //normalTicketLoot.add(ModItems.CANNON_COMPONENT.get());
-        //normalTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
-
-
-
+        /*
+        normalTicketLoot.add(ModItems.RARE_TICKET.get());
+        normalTicketLoot.add(ModItems.CANNON_BASE.get());
+        normalTicketLoot.add(ModItems.CANNON_SHAFT.get());
+        normalTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
+        normalTicketLoot.add(ModItems.CANNON_COMPONENT.get());
+        normalTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
+        */
 
         return normalTicketLoot;
     }
@@ -40,7 +39,7 @@ public class TicketLoot {
 
     public List<Item> getRareTicketLoot() {
         List<Item> rareTicketLoot= new ArrayList<>();
-        for(int i = 0; i <5; i++)
+        for(int i = 0; i <4; i++)
         {
             rareTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
             rareTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
@@ -52,14 +51,13 @@ public class TicketLoot {
             rareTicketLoot.add(Items.GOLD_INGOT);
             rareTicketLoot.add(Items.GOLDEN_APPLE);
         }
-        for(int i = 0; i <2; i++)
-        {
-            rareTicketLoot.add(ModItems.CANNON_BASE.get());
-            rareTicketLoot.add(ModItems.CANNON_SHAFT.get());
-            rareTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
-            rareTicketLoot.add(ModItems.CANNON_COMPONENT.get());
-            rareTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
-        }
+
+        rareTicketLoot.add(ModItems.CANNON_BASE.get());
+        rareTicketLoot.add(ModItems.CANNON_SHAFT.get());
+        rareTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
+        rareTicketLoot.add(ModItems.CANNON_COMPONENT.get());
+        rareTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
+
 
         rareTicketLoot.add(ModItems.PLATINUM_TICKET.get());
 
@@ -69,7 +67,7 @@ public class TicketLoot {
 
     public List<Item> getPlatTicketLoot() {
         List<Item> platTicketLoot= new ArrayList<>();
-        for(int i = 0; i <6; i++)
+        for(int i = 0; i <5; i++)
         {
             platTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
             platTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
@@ -80,7 +78,7 @@ public class TicketLoot {
             platTicketLoot.add(Items.DIAMOND);
             platTicketLoot.add(Items.GOLD_INGOT);
         }
-        for(int i = 0; i <3; i++)
+        for(int i = 0; i <2; i++)
         {
             platTicketLoot.add(ModItems.CANNON_BASE.get());
             platTicketLoot.add(ModItems.CANNON_SHAFT.get());
