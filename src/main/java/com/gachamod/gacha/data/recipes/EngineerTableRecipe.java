@@ -1,7 +1,6 @@
 package com.gachamod.gacha.data.recipes;
 
-import com.gachamod.gacha.block.ModBlocks;
-import com.gachamod.gacha.world.gen.OreType;
+import com.gachamod.gacha.item.ModItems;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.IInventory;
@@ -57,8 +56,9 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
         return output.copy();
     }
 
+    @Override
     public ItemStack getIcon(){
-        return new ItemStack(ModBlocks.ENGINEER_TABLE.get());
+        return new ItemStack(ModItems.CAT_CANNON.get());
     }
 
     @Override

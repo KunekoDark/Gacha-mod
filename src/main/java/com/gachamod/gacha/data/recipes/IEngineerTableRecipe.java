@@ -11,7 +11,6 @@ import static net.minecraft.item.crafting.IRecipeType.register;
 
 public interface IEngineerTableRecipe extends IRecipe<IInventory> {
     ResourceLocation TYPE_ID = new ResourceLocation(Gacha.MOD_ID, "engineer");
-    IRecipeType<EngineerTableRecipe> ENGINEERTABLE = register("engineer");
 
     @Override
     default IRecipeType<?> getType(){

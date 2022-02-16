@@ -3,6 +3,7 @@ package com.gachamod.gacha.container;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.IEngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -17,6 +18,8 @@ import net.minecraft.item.crafting.*;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -26,7 +29,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 
 import java.util.Optional;
 
-public class EngineerTableContainer extends RecipeBookContainer<EngineerTableContainer> implements IInventory{
+public class EngineerTableContainer extends RecipeBookContainer<CraftingInventory> implements IInventory{
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
@@ -34,12 +37,13 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
     private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 2);
     private final CraftResultInventory craftResult = new CraftResultInventory();
 
+
     public EngineerTableContainer(int windowId, World world, BlockPos pos,
                                   PlayerInventory playerInventory, PlayerEntity player, IWorldPosCallable worldPosCallable) {
         super(ModContainers.ENGINEER_TABLE_CONTAINER.get(), windowId);
         this.worldPosCallable = worldPosCallable;
         this.tileEntity = world.getTileEntity(pos);
-        playerEntity = player;
+        this.playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
         layoutPlayerInventorySlots(8,84);
@@ -52,7 +56,7 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
                 addSlot(new Slot(this.craftMatrix,3,53,50));
                 addSlot(new Slot(this.craftMatrix,4,71,50));
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
             });
         }
     }
@@ -111,24 +115,14 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
             if (index == 0) {
-                this.worldPosCallable.consume((p_217067_2_, p_217067_3_) -> {
-                    itemstack1.getItem().onCreated(itemstack1, p_217067_2_, playerIn);
+                this.worldPosCallable.consume((world, pos) -> {
+                    itemstack1.getItem().onCreated(itemstack1, world, playerIn);
                 });
                 if (!this.mergeItemStack(itemstack1, 10, 46, true)) {
                     return ItemStack.EMPTY;
                 }
 
                 slot.onSlotChange(itemstack1, itemstack);
-            } else if (index >= 10 && index < 46) {
-                if (!this.mergeItemStack(itemstack1, 1, 10, false)) {
-                    if (index < 37) {
-                        if (!this.mergeItemStack(itemstack1, 37, 46, false)) {
-                            return ItemStack.EMPTY;
-                        }
-                    } else if (!this.mergeItemStack(itemstack1, 10, 37, false)) {
-                        return ItemStack.EMPTY;
-                    }
-                }
             } else if (!this.mergeItemStack(itemstack1, 10, 46, false)) {
                 return ItemStack.EMPTY;
             }
@@ -169,8 +163,8 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
     }
 
     @Override
-    public boolean matches(IRecipe<? super EngineerTableContainer> recipeIn) {
-        return false;
+    public boolean matches(IRecipe<? super CraftingInventory> recipeIn) {
+        return recipeIn.matches(this.craftMatrix, this.playerEntity.world);
     }
 
 
@@ -178,11 +172,11 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
         if (!world.isRemote) {
             ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
             ItemStack itemstack = ItemStack.EMPTY;
-            Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(IEngineerTableRecipe.ENGINEERTABLE, inventory, world);
+            Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
             if (optional.isPresent()) {
-                IEngineerTableRecipe icraftingrecipe = optional.get();
-                if (inventoryResult.canUseRecipe(world, serverplayerentity, icraftingrecipe)) {
-                    itemstack = icraftingrecipe.getCraftingResult(inventory);
+                EngineerTableRecipe EngineerTableRecipe = optional.get();
+                if (true) {
+                    itemstack = EngineerTableRecipe.getCraftingResult(inventory);
                 }
             }
 
@@ -194,8 +188,11 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
     @Override
     public void onCraftMatrixChanged(IInventory inventoryIn) {
         this.detectAndSendChanges();
-    }
+        this.markDirty();
+        World world = this.playerEntity.world;
+        updateCraftingResult(this.windowId, world, this.playerEntity, this.craftMatrix, this.craftResult);
 
+    }
 
     @Override
     public int getOutputSlot() {
@@ -219,7 +216,7 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
 
     @Override
     public RecipeBookCategory func_241850_m() {
-        return null;
+        return RecipeBookCategory.CRAFTING;
     }
 
     @Override
@@ -254,12 +251,12 @@ public class EngineerTableContainer extends RecipeBookContainer<EngineerTableCon
 
     @Override
     public void markDirty() {
-
+        
     }
 
     @Override
     public boolean isUsableByPlayer(PlayerEntity player) {
-        return false;
+        return true;
     }
 }
 
