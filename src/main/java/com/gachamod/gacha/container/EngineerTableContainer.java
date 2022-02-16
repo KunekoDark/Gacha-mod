@@ -3,15 +3,9 @@ package com.gachamod.gacha.container;
 import com.gachamod.gacha.block.ModBlocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftResultInventory;
-import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.inventory.container.CraftingResultSlot;
-import net.minecraft.inventory.container.RecipeBookContainer;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.RecipeBookCategory;
-import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
@@ -21,12 +15,10 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class EngineerTableContainer extends RecipeBookContainer<CraftingInventory> {
+public class EngineerTableContainer extends Container {
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
-    private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 3);
-    private final CraftResultInventory craftResult = new CraftResultInventory();
 
     public EngineerTableContainer(int windowId, World world, BlockPos pos,
                                 PlayerInventory playerInventory, PlayerEntity player) {
@@ -45,7 +37,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
                 addSlot(new SlotItemHandler(h,3,53,50));
                 addSlot(new SlotItemHandler(h,4,71,50));
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+                addSlot(new SlotItemHandler(h,5,116,32));
             });
         }
     }
@@ -130,47 +122,6 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
         }
         sourceSlot.onTake(playerEntity, sourceStack);
         return copyOfSourceStack;
-    }
-
-    @Override
-    public void fillStackedContents(RecipeItemHelper itemHelperIn) {
-        this.craftMatrix.fillStackedContents(itemHelperIn);
-    }
-
-    @Override
-    public void clear() {
-        this.craftMatrix.clear();
-        this.craftResult.clear();
-    }
-
-    @Override
-    public boolean matches(IRecipe<? super CraftingInventory> recipeIn) {
-        return recipeIn.matches(this.craftMatrix, this.playerEntity.world);
-    }
-
-    @Override
-    public int getOutputSlot() {
-        return 5;
-    }
-
-    @Override
-    public int getWidth() {
-        return 3;
-    }
-
-    @Override
-    public int getHeight() {
-        return 2;
-    }
-
-    @Override
-    public int getSize() {
-        return 5;
-    }
-
-    @Override
-    public RecipeBookCategory func_241850_m() {
-        return null;
     }
 }
 
