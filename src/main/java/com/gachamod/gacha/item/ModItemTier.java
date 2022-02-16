@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 public enum ModItemTier implements IItemTier {
 
-    JIZO_STEEL(2,1000,5f,6f,10,() -> Ingredient.fromItems(ModItems.JIZO_STEEL_INGOT.get())),
+    JIZO_STEEL(2,1000,7f,6f,10,() -> Ingredient.fromItems(ModItems.JIZO_STEEL_INGOT.get())),
     //add new tier here
     ;
 
