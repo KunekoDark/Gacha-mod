@@ -17,6 +17,14 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Gacha.MOD_ID);
 
 
+    // curios items
+
+    public static final RegistryObject<Item> JIZOS_STRAW_HAT = ITEMS.register("jizos_straw_hat",
+            () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> JIZOS_SCARF = ITEMS.register("jizos_scarf",
+            () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
+
     // Tickets items
 
     public static final RegistryObject<TicketDropNormal> NORMAL_TICKET = ITEMS.register("normal_ticket",
