@@ -7,6 +7,7 @@ import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -20,6 +21,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -40,6 +42,7 @@ public class NormalTicketCapsuleBlock extends Block {
         super(properties);
     }
     private static final DirectionProperty FACEING = HorizontalBlock.HORIZONTAL_FACING;
+    int cooldown = 0;
 
     @Nullable
     @Override
@@ -74,7 +77,14 @@ public class NormalTicketCapsuleBlock extends Block {
         return SHAPE;
     }
 
-
+    @Override
+    public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+        TileEntity tileEntity = worldIn.getTileEntity(pos);
+        if (random.nextInt(10) != 0) {
+            ((NormalTicketCapsuleTile) tileEntity).canGetTicket();
+            super.tick(state, worldIn, pos, random);
+        }
+    }
 
 
     @Override
@@ -90,15 +100,11 @@ public class NormalTicketCapsuleBlock extends Block {
                 } else {
                     throw new IllegalStateException("Container provider is missing");
                 }
-                if (tileEntity instanceof NormalTicketCapsuleTile) {
-                    ((NormalTicketCapsuleTile) tileEntity).canGetTicket();
-                }
             }
 
         }
         return ActionResultType.SUCCESS;
     }
-
 
 
     private INamedContainerProvider createContainerProvider(World worldIn, BlockPos pos) {
