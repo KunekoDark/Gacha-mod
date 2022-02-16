@@ -1,13 +1,20 @@
 package com.gachamod.gacha.entitiys.tileentity;
 
+import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -16,8 +23,9 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Optional;
 
-public class EngineerTableTile extends TileEntity {
+public class EngineerTableTile extends TileEntity implements ITickableTileEntity {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
@@ -26,7 +34,7 @@ public class EngineerTableTile extends TileEntity {
         super(tileEntityTypeIn);
     }
 
-    public EngineerTableTile(){
+    public EngineerTableTile() {
         this(ModTileEntities.ENGINEER_TABLE_TILE.get());
     }
 
@@ -43,38 +51,27 @@ public class EngineerTableTile extends TileEntity {
         return super.write(compound);
     }
 
-    private ItemStackHandler createHandler(){
-        return new ItemStackHandler(6){
+    private ItemStackHandler createHandler() {
+        return new ItemStackHandler(6) {
             @Override
-            protected void onContentsChanged(int slot){
+            protected void onContentsChanged(int slot) {
                 markDirty();
             }
 
             @Override
-            public boolean isItemValid(int slot, @Nonnull ItemStack stack){
-                switch (slot){
-                    //input slots
-                    case 0: return stack.getItem() == ModItems.CANNON_BASE.get();
-                    case 1: return stack.getItem() == ModItems.CANNON_COMPONENT.get();
-                    case 2: return stack.getItem() == ModItems.CANNON_HANDHELD_MODULE.get();
-                    case 3: return stack.getItem() == ModItems.CANNON_SHAFT.get();
-                    case 4: return stack.getItem() == ModItems.CANNON_CHARGE_MODULE.get();
-                    //output slots
-                    case 5: return stack.getItem() == ModItems.CAT_CANNON.get();
-
-                    default:
-                        return false;
-                }
+            public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+                return true;
             }
 
             @Override
             public int getSlotLimit(int slot) {
                 return 1;
             }
+
             @Nonnull
             @Override
-            public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate){
-                if(!isItemValid(slot, stack)){
+            public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
+                if (!isItemValid(slot, stack)) {
                     return stack;
                 }
                 return super.insertItem(slot, stack, simulate);
@@ -85,35 +82,49 @@ public class EngineerTableTile extends TileEntity {
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return handler.cast();
         }
 
         return super.getCapability(cap, side);
     }
 
-    public void allComponentsInSlots(){
-        boolean hasCannonBaseInFirstSlot = this.itemHandler.getStackInSlot(0).getItem() == ModItems.CANNON_BASE.get();
-        boolean hasCannonComponentInSecondSlot = this.itemHandler.getStackInSlot(1).getItem() == ModItems.CANNON_COMPONENT.get();
-        boolean hasCannonHandheldModuleInThirdSlot = this.itemHandler.getStackInSlot(2).getItem() == ModItems.CANNON_HANDHELD_MODULE.get();
-        boolean hasCannonBaseInFourthSlot = this.itemHandler.getStackInSlot(3).getItem() == ModItems.CANNON_SHAFT.get();
-        boolean hasCannonBaseInFifthSlot = this.itemHandler.getStackInSlot(4).getItem() == ModItems.CANNON_CHARGE_MODULE.get();
 
-        boolean hasCannonBaseInSixthSlot = this.itemHandler.getStackInSlot(5).getItem() == ModItems.CAT_CANNON.get();
+    public void craft() {
+        Inventory inv = new Inventory(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setInventorySlotContents(i, itemHandler.getStackInSlot(i));
+        }
+        Optional<EngineerTableRecipe> recipe = world.getRecipeManager()
+                .getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inv, world);
 
-        if(hasCannonBaseInFirstSlot && hasCannonComponentInSecondSlot && hasCannonHandheldModuleInThirdSlot && hasCannonBaseInFourthSlot && hasCannonBaseInFifthSlot){
-            if(hasCannonBaseInSixthSlot){
+
+        recipe.ifPresent(iRecipe -> {
+
+            ItemStack output = iRecipe.getRecipeOutput();
+
+            craftItem(output);
+
+            markDirty();
+        });
+    }
+
+    private void craftItem(ItemStack output) {
+        itemHandler.extractItem(0,1, false);
+        itemHandler.extractItem(1,1, false);
+        itemHandler.extractItem(2,1, false);
+        itemHandler.extractItem(3,1, false);
+        itemHandler.extractItem(4,1, false);
+        itemHandler.insertItem(5,output, false);
+    }
+
+        @Override
+        public void tick () {
+            if (world.isRemote)
                 return;
-            } else {
-                this.itemHandler.getStackInSlot(0).shrink(1);
-                this.itemHandler.getStackInSlot(1).shrink(1);
-                this.itemHandler.getStackInSlot(2).shrink(1);
-                this.itemHandler.getStackInSlot(3).shrink(1);
-                this.itemHandler.getStackInSlot(4).shrink(1);
 
-                this.itemHandler.insertItem(5, new ItemStack(ModItems.CAT_CANNON.get()), false);
-
-            }
+            craft();
         }
     }
-}
+
+

@@ -5,6 +5,7 @@ import com.gachamod.gacha.api.entity.renderer.GoonEntityRenderer;
 import com.gachamod.gacha.api.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
+import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.*;
@@ -57,6 +58,7 @@ public class Gacha
         ModTileEntities.register(eventBus);
         ModEntityType.register(eventBus);
         ModStructures.register(eventBus);
+        ModRecipeTypes.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
