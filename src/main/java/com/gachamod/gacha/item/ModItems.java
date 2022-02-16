@@ -114,19 +114,19 @@ public class ModItems {
 
     //tools
     public static final RegistryObject<Item> JIZO_STEEL_PICKAXE = ITEMS.register("jizo_steel_pickaxe",
-            () -> new PickaxeItem(ModItemTier.JIZO_STEEL, -2, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new PickaxeItem(ModItemTier.JIZO_STEEL, -2, -2.8f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_AXE = ITEMS.register("jizo_steel_axe",
-            () -> new AxeItem(ModItemTier.JIZO_STEEL, 3, -4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new AxeItem(ModItemTier.JIZO_STEEL, 3, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_SHOVEL = ITEMS.register("jizo_steel_shovel",
             () -> new ShovelItem(ModItemTier.JIZO_STEEL, -3, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_HOE = ITEMS.register("jizo_steel_hoe",
-            () -> new HoeItem(ModItemTier.JIZO_STEEL, -4, 4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new HoeItem(ModItemTier.JIZO_STEEL, -4, 0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_SWORD = ITEMS.register("jizo_steel_sword",
-            () -> new SwordItem(ModItemTier.JIZO_STEEL, 2, 0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new SwordItem(ModItemTier.JIZO_STEEL, 2, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
 
 
