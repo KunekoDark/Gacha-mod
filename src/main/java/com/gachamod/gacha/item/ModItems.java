@@ -9,6 +9,7 @@ import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
 import com.gachamod.gacha.api.ticketdrops.TicketDropRare;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -113,6 +114,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> CANNON_RADIUS_UPGRADE_T1 = ITEMS.register("cannon_radius_upgrade_t1",
             () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
+
+    //tools
+    public static final RegistryObject<Item> JIZO_STEEL_PICKAXE = ITEMS.register("jizo_steel_pickaxe",
+            () -> new PickaxeItem(ModItemTier.JIZO_STEEL, 0, -1f,new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP)));
 
 
 
