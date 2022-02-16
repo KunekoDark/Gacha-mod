@@ -7,8 +7,11 @@ import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
+import static net.minecraft.item.crafting.IRecipeType.register;
+
 public interface IEngineerTableRecipe extends IRecipe<IInventory> {
-    ResourceLocation TYPE_ID = new ResourceLocation(Gacha.MOD_ID, "lightning");
+    ResourceLocation TYPE_ID = new ResourceLocation(Gacha.MOD_ID, "engineer");
+    IRecipeType<EngineerTableRecipe> ENGINEERTABLE = register("engineer");
 
     @Override
     default IRecipeType<?> getType(){
