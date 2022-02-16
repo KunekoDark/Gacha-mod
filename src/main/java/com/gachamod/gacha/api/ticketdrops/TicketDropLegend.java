@@ -20,7 +20,6 @@ import java.util.Random;
 
 
 public class TicketDropLegend extends Item {
-    List<Item> loot = new ArrayList<>();
 
 
     public TicketDropLegend(Properties properties) {

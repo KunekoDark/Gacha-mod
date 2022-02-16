@@ -2,7 +2,6 @@ package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
-import com.gachamod.gacha.data.recipes.IEngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -14,19 +13,20 @@ import net.minecraft.inventory.container.CraftingResultSlot;
 import net.minecraft.inventory.container.RecipeBookContainer;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.*;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.RecipeBookCategory;
+import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
-
 
 import java.util.Optional;
 
@@ -214,11 +214,13 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public int getSize() {
         return 5;
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public RecipeBookCategory func_241850_m() {
         return RecipeBookCategory.CRAFTING;
     }
@@ -230,7 +232,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return true;
     }
 
     @Override
@@ -239,6 +241,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public ItemStack decrStackSize(int index, int count) {
         return null;
     }
@@ -249,6 +252,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public void setInventorySlotContents(int index, ItemStack stack) {
 
     }

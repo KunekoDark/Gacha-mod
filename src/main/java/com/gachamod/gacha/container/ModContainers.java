@@ -11,9 +11,6 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Optional;
-import java.util.function.BiFunction;
-
 public class ModContainers {
     public static DeferredRegister<ContainerType<?>> CONTAINERS
             = DeferredRegister.create(ForgeRegistries.CONTAINERS, Gacha.MOD_ID);
@@ -23,7 +20,7 @@ public class ModContainers {
             () -> IForgeContainerType.create(((windowId, inv, data) -> {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
-                return new EngineerTableContainer(windowId, world, pos, inv, inv.player, null);
+                return new EngineerTableContainer(windowId, world, pos, inv, inv.player, IWorldPosCallable.DUMMY);
             })));
 
     public static final RegistryObject<ContainerType<UpgradeTableContainer>> UPGRADE_TABLE_CONTAINER

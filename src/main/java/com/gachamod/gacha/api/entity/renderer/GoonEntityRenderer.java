@@ -2,9 +2,7 @@ package com.gachamod.gacha.api.entity.renderer;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.entity.model.GoonEntitiyModel;
-import com.gachamod.gacha.api.entity.model.KasaJizoModel;
 import com.gachamod.gacha.entitiys.mobs.GoonEntitiy;
-import com.gachamod.gacha.entitiys.mobs.KasaJizo;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
