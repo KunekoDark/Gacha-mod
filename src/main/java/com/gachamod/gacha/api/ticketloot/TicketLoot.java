@@ -136,6 +136,7 @@ public class TicketLoot {
         getRestrictedItems.add(ModItems.PLATINUM_TICKET.get());
         getRestrictedItems.add(ModItems.RARE_TICKET.get());
         getRestrictedItems.add(Items.ENCHANTED_GOLDEN_APPLE);
+        getRestrictedItems.add(Items.GOLDEN_APPLE);
 
         return getRestrictedItems;
     }

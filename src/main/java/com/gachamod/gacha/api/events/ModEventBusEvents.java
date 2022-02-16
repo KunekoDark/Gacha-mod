@@ -2,6 +2,7 @@ package com.gachamod.gacha.api.events;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.entity.ModEntityType;
+import com.gachamod.gacha.api.events.lootinject.RareTicketStructureAdditionModifier;
 import com.gachamod.gacha.api.events.lootinject.TicketStructureAdditionModifier;
 import com.gachamod.gacha.entitiys.mobs.GoonEntitiy;
 import com.gachamod.gacha.entitiys.mobs.KasaJizo;
@@ -31,8 +32,8 @@ public class ModEventBusEvents {
     }
 
     @SubscribeEvent
-    public static void registerModifierSerializers(@Nonnull final
-                                                       RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
+        //normal loot inject
         event.getRegistry().registerAll(
                 new TicketStructureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Gacha.MOD_ID,"ticket_in_simple_dungeon"))
@@ -52,6 +53,28 @@ public class ModEventBusEvents {
         event.getRegistry().registerAll(
                 new TicketStructureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Gacha.MOD_ID,"ticket_in_ruined_portal"))
+        );
+
+        //rare ticket injects
+        event.getRegistry().registerAll(
+                new RareTicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_nether_bridge"))
+        );
+        event.getRegistry().registerAll(
+                new RareTicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_bridge"))
+        );
+        event.getRegistry().registerAll(
+                new RareTicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_hoglin_stable"))
+        );
+        event.getRegistry().registerAll(
+                new RareTicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_other"))
+        );
+        event.getRegistry().registerAll(
+                new RareTicketStructureAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_treasure"))
         );
     }
 }

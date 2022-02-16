@@ -5,6 +5,12 @@
     "gacha:ticket_in_abandoned_mineshaft",
     "gacha:ticket_in_desert_pyramid",
     "gacha:ticket_in_jungle_temple",
-    "gacha:ticket_in_ruined_portal"
+    "gacha:ticket_in_ruined_portal",
+
+    "gacha:rare_ticket_in_nether_bridge",
+    "gacha:rare_ticket_in_bastion_bridge",
+    "gacha:rare_ticket_in_bastion_hoglin_stable",
+    "gacha:rare_ticket_in_bastion_other",
+    "gacha:rare_ticket_in_bastion_treasure"
   ]
 }
