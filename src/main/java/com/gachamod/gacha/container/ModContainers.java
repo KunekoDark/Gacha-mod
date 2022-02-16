@@ -1,8 +1,8 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.Gacha;
-import com.gachamod.gacha.screen.NormalTicketCapsuleScreen;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeContainerType;
@@ -10,6 +10,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Optional;
+import java.util.function.BiFunction;
 
 public class ModContainers {
     public static DeferredRegister<ContainerType<?>> CONTAINERS
@@ -20,7 +23,7 @@ public class ModContainers {
             () -> IForgeContainerType.create(((windowId, inv, data) -> {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
-                return new EngineerTableContainer(windowId, world, pos, inv, inv.player);
+                return new EngineerTableContainer(windowId, world, pos, inv, inv.player, null);
             })));
 
     public static final RegistryObject<ContainerType<UpgradeTableContainer>> UPGRADE_TABLE_CONTAINER

@@ -41,7 +41,7 @@ public class ModBlocks {
     //Crafting Interfaces
 
     public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
-            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
+            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD), null));
 
     public static final RegistryObject<Block> UPGRADE_TABLE = registerBlock("upgrade_table",
             () -> new UpgradeTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));

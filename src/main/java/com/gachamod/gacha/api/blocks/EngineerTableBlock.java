@@ -32,10 +32,12 @@ import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
 public class EngineerTableBlock extends Block {
-    public EngineerTableBlock(Properties properties) {
+    public EngineerTableBlock(Properties properties, IWorldPosCallable worldPosCallable) {
         super(properties);
+        this.worldPosCallable = worldPosCallable;
     }
     private static final DirectionProperty FACEING = HorizontalBlock.HORIZONTAL_FACING;
+    private final IWorldPosCallable worldPosCallable;
 
     @Nullable
     @Override
@@ -99,7 +101,7 @@ public class EngineerTableBlock extends Block {
             @Nullable
             @Override
             public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                return new EngineerTableContainer(i , worldIn, pos, playerInventory, playerEntity);
+                return new EngineerTableContainer(i , worldIn, pos, playerInventory, playerEntity, worldPosCallable);
             }
         };
     }
