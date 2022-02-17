@@ -1,6 +1,6 @@
 package com.gachamod.gacha.data.recipes;
 
-import com.gachamod.gacha.item.ModItems;
+import com.gachamod.gacha.block.ModBlocks;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.IInventory;
@@ -8,17 +8,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.crafting.ShapedRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
-public class EngineerTableRecipe implements IEngineerTableRecipe{
+public class EngineerTableRecipe{
 
     private final ResourceLocation id;
     private final ItemStack output;
@@ -29,22 +29,24 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
         this.output = output;
         this.recipeItems = recipeItems;
     }
-
+/*
     @Override
     public boolean matches(IInventory inv, World worldIn) {
         if(recipeItems.get(0).test(inv.getStackInSlot(0)) &&
                 recipeItems.get(1).test(inv.getStackInSlot(1)) &&
                 recipeItems.get(2).test(inv.getStackInSlot(2)) &&
                 recipeItems.get(3).test(inv.getStackInSlot(3)) &&
-                recipeItems.get(4).test(inv.getStackInSlot(4)) ){
-
-            return true;//recipeItems.get(5).test(inv.getStackInSlot(5));
+                recipeItems.get(4).test(inv.getStackInSlot(4)) )
+        {
+            return true;
         }
         return false;
     }
 
     @Override
-    public NonNullList<Ingredient> getIngredients(){return recipeItems;}
+    public NonNullList<Ingredient> getIngredients(){
+        return recipeItems;
+    }
 
     @Override
     public ItemStack getCraftingResult(IInventory inv) {
@@ -56,9 +58,8 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
         return output.copy();
     }
 
-    @Override
     public ItemStack getIcon(){
-        return new ItemStack(ModItems.CAT_CANNON.get());
+        return new ItemStack(ModBlocks.ENGINEER_TABLE.get());
     }
 
     @Override
@@ -71,20 +72,18 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
         return ModRecipeTypes.ENGINEER_SERIALIZER.get();
     }
 
-    public static class  EngineerRecipeType implements IRecipeType<EngineerTableRecipe>{
+    public static class EngineerRecipeType implements IRecipeType<EngineerTableRecipe>{
         @Override
         public String toString(){
             return EngineerTableRecipe.TYPE_ID.toString();
         }
     }
 
-    public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>>
-        implements IRecipeSerializer<EngineerTableRecipe>{
+    public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<EngineerTableRecipe>{
 
         @Override
         public EngineerTableRecipe read(ResourceLocation recipeId, JsonObject json) {
-            ItemStack output = ShapedRecipe.deserializeItem(JSONUtils.getJsonObject(json, "output"));
-
+            ItemStack output = CraftingHelper.getItemStack(JSONUtils.getJsonObject(json, "output"),true);
 
             JsonArray ingredients = JSONUtils.getJsonArray(json, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
@@ -101,13 +100,13 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
         @Nullable
         @Override
         public EngineerTableRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-              NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
+            ItemStack output = buffer.readItemStack();
+            NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.read(buffer));
             }
 
-            ItemStack output = buffer.readItemStack();
             return new EngineerTableRecipe(recipeId, output,
                     inputs);
         }
@@ -120,6 +119,6 @@ public class EngineerTableRecipe implements IEngineerTableRecipe{
             }
             buffer.writeItemStack(recipe.getRecipeOutput(), false);
         }
-        }
+        }*/
     }
 
