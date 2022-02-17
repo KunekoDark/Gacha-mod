@@ -4,6 +4,7 @@ import com.gachamod.gacha.Gacha;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -17,11 +18,8 @@ public interface IEngineerTableRecipe extends IRecipe<IInventory> {
 
     @Override
     default boolean canFit(int width, int height) {
-        return true;
+        return false;
     }
-
-    @Override
-    default boolean isDynamic(){
-        return true;
-    }
+    //https://www.youtube.com/watch?v=Ri0Mqv_FXA4
+    Ingredient getInput();
 }

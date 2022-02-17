@@ -18,25 +18,26 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
-public class EngineerTableRecipe{
+public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     private final ResourceLocation id;
     private final ItemStack output;
-    private final NonNullList<Ingredient> recipeItems;
+    private final Ingredient input;
 
-    public EngineerTableRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems) {
+    public EngineerTableRecipe(ResourceLocation id, ItemStack output,Ingredient input) {
         this.id = id;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.input = input;
+
     }
-/*
+
     @Override
     public boolean matches(IInventory inv, World worldIn) {
-        if(recipeItems.get(0).test(inv.getStackInSlot(0)) &&
-                recipeItems.get(1).test(inv.getStackInSlot(1)) &&
-                recipeItems.get(2).test(inv.getStackInSlot(2)) &&
-                recipeItems.get(3).test(inv.getStackInSlot(3)) &&
-                recipeItems.get(4).test(inv.getStackInSlot(4)) )
+        if(this.input.test(inv.getStackInSlot(0)) &&
+                this.input.test(inv.getStackInSlot(1)) &&
+                this.input.test(inv.getStackInSlot(2)) &&
+                this.input.test(inv.getStackInSlot(3)) &&
+                this.input.test(inv.getStackInSlot(4)) )
         {
             return true;
         }
@@ -45,12 +46,17 @@ public class EngineerTableRecipe{
 
     @Override
     public NonNullList<Ingredient> getIngredients(){
-        return recipeItems;
+        return NonNullList.from(null, this.input);
     }
 
     @Override
     public ItemStack getCraftingResult(IInventory inv) {
         return output;
+    }
+
+    @Override
+    public boolean canFit(int width, int height) {
+        return false;
     }
 
     @Override
@@ -70,6 +76,16 @@ public class EngineerTableRecipe{
     @Override
     public IRecipeSerializer<?> getSerializer() {
         return ModRecipeTypes.ENGINEER_SERIALIZER.get();
+    }
+
+    @Override
+    public Ingredient getInput() {
+        return this.input;
+    }
+
+    @Override
+    public IRecipeType<?> getType() {
+        return null;
     }
 
     public static class EngineerRecipeType implements IRecipeType<EngineerTableRecipe>{
@@ -94,7 +110,7 @@ public class EngineerTableRecipe{
             }
 
             return new EngineerTableRecipe(recipeId, output,
-                    inputs);
+                    inputs.get(1));//FIX https://www.youtube.com/watch?v=Ri0Mqv_FXA4
         }
 
         @Nullable
@@ -108,7 +124,7 @@ public class EngineerTableRecipe{
             }
 
             return new EngineerTableRecipe(recipeId, output,
-                    inputs);
+                    inputs.get(1)); //FIX
         }
 
         @Override
@@ -119,6 +135,6 @@ public class EngineerTableRecipe{
             }
             buffer.writeItemStack(recipe.getRecipeOutput(), false);
         }
-        }*/
     }
+}
 

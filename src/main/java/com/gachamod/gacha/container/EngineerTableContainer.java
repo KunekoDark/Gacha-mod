@@ -1,6 +1,9 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.IEngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -12,6 +15,7 @@ import net.minecraft.inventory.container.RecipeBookContainer;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.network.play.server.SSetSlotPacket;
@@ -23,6 +27,8 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
+
+import java.util.Optional;
 
 public class EngineerTableContainer extends RecipeBookContainer<CraftingInventory> {
     private final TileEntity tileEntity;
@@ -155,20 +161,22 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     }
 
 
+
     protected static void updateCraftingResult(int id, World world, PlayerEntity player, CraftingInventory inventory, CraftResultInventory inventoryResult) {
-        if (!world.isRemote) {
+        /*if (!world.isRemote) {
             ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
             ItemStack itemstack = ItemStack.EMPTY;
-            /*Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
+            Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
             if (optional.isPresent()) {
                 EngineerTableRecipe EngineerTableRecipe = optional.get();
                 itemstack = EngineerTableRecipe.getRecipeOutput();
-            }*/
+            }
 
             inventoryResult.setInventorySlotContents(5, itemstack);
             serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));
-        }
+        }*/
     }
+
 
     @Override
     public void onCraftMatrixChanged(IInventory inventoryIn) {
