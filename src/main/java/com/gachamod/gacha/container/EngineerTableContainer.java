@@ -182,7 +182,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     public void onCraftMatrixChanged(IInventory inventoryIn) {
         this.detectAndSendChanges();
         World world = this.playerEntity.world;
-        //updateCraftingResult(this.windowId, world, this.playerEntity, this.craftMatrix, this.craftResult);
+        updateCraftingResult(this.windowId, world, this.playerEntity, this.craftMatrix, this.craftResult);
 
     }
 

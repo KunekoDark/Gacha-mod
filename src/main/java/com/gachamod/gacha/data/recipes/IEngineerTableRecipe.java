@@ -20,6 +20,9 @@ public interface IEngineerTableRecipe extends IRecipe<IInventory> {
     default boolean canFit(int width, int height) {
         return false;
     }
-    //https://www.youtube.com/watch?v=Ri0Mqv_FXA4
-    Ingredient getInput();
+
+    @Override
+    default boolean isDynamic() {
+        return true;
+    }
 }

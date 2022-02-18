@@ -14,8 +14,8 @@ public class ModRecipeTypes implements IRecipeType {
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZER =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Gacha.MOD_ID);
 
-    /*public static final RegistryObject<EngineerTableRecipe.Serializer> ENGINEER_SERIALIZER
-            = RECIPE_SERIALIZER.register("engineer", EngineerTableRecipe.Serializer::new);*/
+    public static final RegistryObject<EngineerTableSerializer> ENGINEER_SERIALIZER
+            = RECIPE_SERIALIZER.register("engineer", EngineerTableSerializer::new);
 
     public static IRecipeType<EngineerTableRecipe> ENGINEER_RECIPE
             = new EngineerTableRecipe.EngineerRecipeType();
@@ -23,6 +23,6 @@ public class ModRecipeTypes implements IRecipeType {
     public static void register(IEventBus eventBus){
         RECIPE_SERIALIZER.register(eventBus);
 
-        //Registry.register(Registry.RECIPE_TYPE, EngineerTableRecipe.TYPE_ID, ENGINEER_RECIPE);
+        Registry.register(Registry.RECIPE_TYPE, EngineerTableRecipe.TYPE_ID, ENGINEER_RECIPE);
     }
 }

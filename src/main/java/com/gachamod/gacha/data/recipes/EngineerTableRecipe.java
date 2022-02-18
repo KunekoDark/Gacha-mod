@@ -1,30 +1,22 @@
 package com.gachamod.gacha.data.recipes;
 
 import com.gachamod.gacha.block.ModBlocks;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.JSONUtils;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.registries.ForgeRegistryEntry;
-
-import javax.annotation.Nullable;
 
 public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     private final ResourceLocation id;
     private final ItemStack output;
-    private final Ingredient input;
+    private final NonNullList<Ingredient> input;
 
-    public EngineerTableRecipe(ResourceLocation id, ItemStack output,Ingredient input) {
+    public EngineerTableRecipe(ResourceLocation id, ItemStack output,NonNullList<Ingredient> input) {
         this.id = id;
         this.output = output;
         this.input = input;
@@ -33,11 +25,13 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public boolean matches(IInventory inv, World worldIn) {
-        if(this.input.test(inv.getStackInSlot(0)) &&
-                this.input.test(inv.getStackInSlot(1)) &&
-                this.input.test(inv.getStackInSlot(2)) &&
-                this.input.test(inv.getStackInSlot(3)) &&
-                this.input.test(inv.getStackInSlot(4)) )
+        if(
+                input.get(0).test(inv.getStackInSlot(0)) &&
+                input.get(1).test(inv.getStackInSlot(1)) &&
+                input.get(2).test(inv.getStackInSlot(2)) &&
+                input.get(3).test(inv.getStackInSlot(3)) &&
+                input.get(4).test(inv.getStackInSlot(4))
+        )
         {
             return true;
         }
@@ -46,7 +40,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public NonNullList<Ingredient> getIngredients(){
-        return NonNullList.from(null, this.input);
+        return input;
     }
 
     @Override
@@ -75,13 +69,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        //return ModRecipeTypes.ENGINEER_SERIALIZER.get();
-        return IRecipeSerializer.CRAFTING_SHAPELESS;
-    }
-
-    @Override
-    public Ingredient getInput() {
-        return this.input;
+        return ModRecipeTypes.ENGINEER_SERIALIZER.get();
     }
 
     @Override
