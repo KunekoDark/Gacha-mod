@@ -1,6 +1,7 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -160,7 +161,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
 
 
     protected static void updateCraftingResult(int id, World world, PlayerEntity player, CraftingInventory inventory, CraftResultInventory inventoryResult) {
-        if (!world.isRemote) {/*
+        if (!world.isRemote) {
             ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
             ItemStack itemstack = ItemStack.EMPTY;
             Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
@@ -170,7 +171,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
             }
 
             inventoryResult.setInventorySlotContents(5, itemstack);
-            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));*/
+            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));
 
         }
     }

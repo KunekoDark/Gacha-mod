@@ -76,7 +76,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
     @Override
     public IRecipeSerializer<?> getSerializer() {
         //return ModRecipeTypes.ENGINEER_SERIALIZER.get();
-        return null;
+        return IRecipeSerializer.CRAFTING_SHAPELESS;
     }
 
     @Override
@@ -96,46 +96,5 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
         }
     }
 
-    public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<EngineerTableRecipe>{
-
-        @Override
-        public EngineerTableRecipe read(ResourceLocation recipeId, JsonObject json) {
-            ItemStack output = CraftingHelper.getItemStack(JSONUtils.getJsonObject(json, "output"),true);
-
-            JsonArray ingredients = JSONUtils.getJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
-
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.deserialize(ingredients.get(i)));
-            }
-
-            return new EngineerTableRecipe(recipeId, output,
-                    inputs.get(1));//FIX https://www.youtube.com/watch?v=Ri0Mqv_FXA4
-        }
-
-        @Nullable
-        @Override
-        public EngineerTableRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
-            ItemStack output = buffer.readItemStack();
-            NonNullList<Ingredient> inputs = NonNullList.withSize(5, Ingredient.EMPTY);
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.read(buffer));
-            }
-
-            return new EngineerTableRecipe(recipeId, output,
-                    inputs.get(1)); //FIX
-        }
-
-        @Override
-        public void write(PacketBuffer buffer, EngineerTableRecipe recipe) {
-            buffer.writeInt(recipe.getIngredients().size());
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.write(buffer);
-            }
-            buffer.writeItemStack(recipe.getRecipeOutput(), false);
-        }
-    }
 }
 
