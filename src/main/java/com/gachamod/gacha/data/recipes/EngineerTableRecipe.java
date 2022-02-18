@@ -85,7 +85,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public IRecipeType<?> getType() {
-        return null;
+        return ModRecipeTypes.ENGINEER_RECIPE;
     }
 
     public static class EngineerRecipeType implements IRecipeType<EngineerTableRecipe>{

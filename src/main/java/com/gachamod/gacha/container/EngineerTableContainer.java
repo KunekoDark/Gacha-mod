@@ -57,9 +57,10 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
                 addSlot(new Slot(this.craftMatrix,2,80,32));
                 addSlot(new Slot(this.craftMatrix,3,53,50));
                 addSlot(new Slot(this.craftMatrix,4,71,50));
+                addSlot(new Slot(this.craftMatrix,5,1000,1000));
 
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
+                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 6, 116,32));
 
             });
         }
