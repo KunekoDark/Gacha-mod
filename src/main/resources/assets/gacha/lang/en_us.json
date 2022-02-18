@@ -52,7 +52,9 @@
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",
   "screen.gacha.gear_table": "Gear Table",
-  "screen.gacha.jizo_furnace": "Jizo Furnace",
+  "screen.gacha.jizo_furnace": "",
+  "screen.gacha.normal_ticket_capsule": "Tickets Here",
+
 
   "entity.gacha.kasa_jizo": "Kasa Jizo",
   "entity.gacha.goon": "Cat Goon",
