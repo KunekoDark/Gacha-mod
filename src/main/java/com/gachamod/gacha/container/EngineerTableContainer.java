@@ -1,8 +1,6 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.block.ModBlocks;
-import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
-import com.gachamod.gacha.data.recipes.IEngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,7 +13,6 @@ import net.minecraft.inventory.container.RecipeBookContainer;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.network.play.server.SSetSlotPacket;
@@ -57,10 +54,9 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
                 addSlot(new Slot(this.craftMatrix,2,80,32));
                 addSlot(new Slot(this.craftMatrix,3,53,50));
                 addSlot(new Slot(this.craftMatrix,4,71,50));
-                addSlot(new Slot(this.craftMatrix,5,1000,1000));
 
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 6, 116,32));
+                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
 
             });
         }
@@ -164,7 +160,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
 
 
     protected static void updateCraftingResult(int id, World world, PlayerEntity player, CraftingInventory inventory, CraftResultInventory inventoryResult) {
-        /*if (!world.isRemote) {
+        if (!world.isRemote) {/*
             ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
             ItemStack itemstack = ItemStack.EMPTY;
             Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
@@ -174,9 +170,11 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
             }
 
             inventoryResult.setInventorySlotContents(5, itemstack);
-            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));
-        }*/
+            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));*/
+
+        }
     }
+
 
 
     @Override

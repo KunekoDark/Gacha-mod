@@ -75,7 +75,8 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ModRecipeTypes.ENGINEER_SERIALIZER.get();
+        //return ModRecipeTypes.ENGINEER_SERIALIZER.get();
+        return null;
     }
 
     @Override
