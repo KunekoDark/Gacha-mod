@@ -3,6 +3,7 @@ package com.gachamod.gacha.item;
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.api.cannonitem.CannonItem;
 import com.gachamod.gacha.api.customitems.JizosHatItem;
+import com.gachamod.gacha.api.customitems.JizosScarfItem;
 import com.gachamod.gacha.api.entity.ModEntityType;
 import com.gachamod.gacha.api.ticketdrops.TicketDropLegend;
 import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
@@ -24,7 +25,7 @@ public class ModItems {
             () -> new JizosHatItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> JIZOS_SCARF = ITEMS.register("jizos_scarf",
-            () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
+            () -> new JizosScarfItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
     // Tickets items
 

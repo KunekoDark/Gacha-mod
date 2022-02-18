@@ -8,29 +8,13 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
-import java.util.Objects;
-
-public class JizosHatItem extends Item implements ICurioItem {
-    public JizosHatItem(Properties properties) {
+public class JizosScarfItem extends Item implements ICurioItem {
+    public JizosScarfItem(Properties properties) {
         super(properties);
     }
-
-
-
     @Override
     public void curioTick(String identifier, int index, LivingEntity livingEntity, ItemStack stack) {
         PlayerEntity player = (PlayerEntity) livingEntity;
-        player.addPotionEffect(new EffectInstance(Effects.HERO_OF_THE_VILLAGE, 201, 2, false, false));
-
-
-
-              /*  if(random.nextFloat() > 0.6f){
-                    stack.damageItem(1,player, p -> CuriosApi.getCuriosHelper().onBrokenCurio(SlotTypePreset.HEAD.getIdentifier(), index, p));
-                }  */ //used to damage the item in slot
-            }
-
-
-
-        }
-
-
+        player.addPotionEffect(new EffectInstance(Effects.SPEED, 201, 1, false, false));
+    }
+}
