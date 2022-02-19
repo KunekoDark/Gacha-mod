@@ -39,17 +39,13 @@ public class TicketLoot {
 
     public List<Item> getRareTicketLoot() {
         List<Item> rareTicketLoot= new ArrayList<>();
-        for(int i = 0; i <4; i++)
+        for(int i = 0; i <5; i++)
         {
-            rareTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
-            rareTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
-            rareTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
-            rareTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
-            rareTicketLoot.add(ModItems.RED_CATFRUIT.get());
+            1
             rareTicketLoot.add(Items.IRON_INGOT);
             rareTicketLoot.add(Items.DIAMOND);
             rareTicketLoot.add(Items.GOLD_INGOT);
-            rareTicketLoot.add(Items.GOLDEN_APPLE);
+
         }
 
         rareTicketLoot.add(ModItems.CANNON_BASE.get());
