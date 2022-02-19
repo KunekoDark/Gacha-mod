@@ -35,6 +35,8 @@ public class JizoFurnaceContainer extends Container {
                 addSlot(new SlotItemHandler(h,1,44,50));
                 addSlot(new SlotItemHandler(h,2,116,32));
 
+                //furnace fuel slot, furnace burn slot
+
             });
         }
     }
