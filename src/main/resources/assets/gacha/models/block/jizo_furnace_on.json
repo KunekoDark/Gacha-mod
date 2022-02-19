@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "gacha:block/jizo_furnace_side",
+    "front": "gacha:block/jizo_furnace_front_lit",
+    "side": "gacha:block/jizo_furnace_side"
+  }
+}

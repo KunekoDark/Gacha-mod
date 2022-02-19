@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "gacha:block/jizo_furnace" },
+    "facing=south": { "model": "gacha:block/jizo_furnace", "y":  180},
+    "facing=west": { "model": "gacha:block/jizo_furnace", "y":  270},
+    "facing=east": { "model": "gacha:block/jizo_furnace", "y":  90}
+  }
+}
