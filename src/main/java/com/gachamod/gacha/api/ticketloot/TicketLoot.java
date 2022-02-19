@@ -41,7 +41,7 @@ public class TicketLoot {
         List<Item> rareTicketLoot= new ArrayList<>();
         for(int i = 0; i <5; i++)
         {
-            1
+            
             rareTicketLoot.add(Items.IRON_INGOT);
             rareTicketLoot.add(Items.DIAMOND);
             rareTicketLoot.add(Items.GOLD_INGOT);
