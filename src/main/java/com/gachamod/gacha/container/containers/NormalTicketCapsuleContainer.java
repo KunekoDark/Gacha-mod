@@ -28,7 +28,7 @@ public class NormalTicketCapsuleContainer extends Container {
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(8,84);
+
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
@@ -36,6 +36,7 @@ public class NormalTicketCapsuleContainer extends Container {
 
 
             });
+            layoutPlayerInventorySlots(8,84);
         }
     }
 

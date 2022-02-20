@@ -28,7 +28,7 @@ public class UpgradeTableContainer extends Container {
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(8,84);
+
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
@@ -37,6 +37,7 @@ public class UpgradeTableContainer extends Container {
                 addSlot(new SlotItemHandler(h,2,116,32));
 
             });
+            layoutPlayerInventorySlots(8,84);
         }
     }
 

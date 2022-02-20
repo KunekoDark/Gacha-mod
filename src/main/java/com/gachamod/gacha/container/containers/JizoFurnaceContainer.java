@@ -28,7 +28,7 @@ public class JizoFurnaceContainer extends Container {
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(8,84);
+
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
@@ -39,6 +39,7 @@ public class JizoFurnaceContainer extends Container {
                 //furnace fuel slot, furnace burn slot
 
             });
+            layoutPlayerInventorySlots(8,84);
         }
     }
 

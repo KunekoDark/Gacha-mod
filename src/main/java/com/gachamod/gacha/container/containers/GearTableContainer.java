@@ -28,7 +28,7 @@ public class GearTableContainer extends Container {
         playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(8,86);
+
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
@@ -42,6 +42,7 @@ public class GearTableContainer extends Container {
                 addSlot(new SlotItemHandler(h,6,116,38));
 
             });
+            layoutPlayerInventorySlots(8,84);
         }
     }
 
