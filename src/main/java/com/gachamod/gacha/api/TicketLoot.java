@@ -3,6 +3,7 @@ package com.gachamod.gacha.api;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,9 @@ public class TicketLoot {
         rareTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
         rareTicketLoot.add(ModItems.CANNON_COMPONENT.get());
         rareTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
+        rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
+        rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
+        rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
 
 
         rareTicketLoot.add(ModItems.PLATINUM_TICKET.get());
@@ -63,24 +67,18 @@ public class TicketLoot {
 
     public List<Item> getPlatTicketLoot() {
         List<Item> platTicketLoot= new ArrayList<>();
-        for(int i = 0; i <5; i++)
+        for(int i = 0; i <4; i++)
         {
-            platTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
-            platTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
-            platTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
-            platTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
-            platTicketLoot.add(ModItems.RED_CATFRUIT.get());
-            platTicketLoot.add(Items.IRON_INGOT);
+
             platTicketLoot.add(Items.DIAMOND);
-            platTicketLoot.add(Items.GOLD_INGOT);
+            platTicketLoot.add(Items.ANCIENT_DEBRIS);
+
         }
-        for(int i = 0; i <2; i++)
+        for(int i = 0; i <3; i++)
         {
-            platTicketLoot.add(ModItems.CANNON_BASE.get());
-            platTicketLoot.add(ModItems.CANNON_SHAFT.get());
-            platTicketLoot.add(ModItems.CANNON_CHARGE_MODULE.get());
-            platTicketLoot.add(ModItems.CANNON_COMPONENT.get());
-            platTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
+            platTicketLoot.add(ModItems.CAT_CANNON.get());
+            platTicketLoot.add(ModItems.ICE_SWORD.get());
+
         }
         platTicketLoot.add(Items.ENCHANTED_GOLDEN_APPLE);
 
