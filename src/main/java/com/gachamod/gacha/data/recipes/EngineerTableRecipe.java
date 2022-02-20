@@ -25,17 +25,13 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public boolean matches(IInventory inv, World worldIn) {
-        if(
-                input.get(0).test(inv.getStackInSlot(0)) &&
-                input.get(1).test(inv.getStackInSlot(1)) &&
-                input.get(2).test(inv.getStackInSlot(2)) &&
-                input.get(3).test(inv.getStackInSlot(3)) &&
-                input.get(4).test(inv.getStackInSlot(4))
-        )
-        {
-            return true;
+        int correctItems = 0;
+        for(int i =0; i !=input.size(); i++){
+            if(input.get(i).test(inv.getStackInSlot(i))){
+                correctItems++;
+            }
         }
-        return false;
+        return correctItems == input.size();
     }
 
     @Override
