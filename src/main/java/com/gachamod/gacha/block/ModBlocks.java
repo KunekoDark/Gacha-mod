@@ -2,7 +2,7 @@ package com.gachamod.gacha.block;
 
 import com.gachamod.gacha.Gacha;
 
-import com.gachamod.gacha.api.blocks.*;
+import com.gachamod.gacha.block.blocks.*;
 import com.gachamod.gacha.item.ModItemGroup;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.AbstractBlock;

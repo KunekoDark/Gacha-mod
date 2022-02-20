@@ -1,7 +1,7 @@
 package com.gachamod.gacha.screen;
 
 import com.gachamod.gacha.Gacha;
-import com.gachamod.gacha.container.UpgradeTableContainer;
+import com.gachamod.gacha.container.containers.UpgradeTableContainer;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;

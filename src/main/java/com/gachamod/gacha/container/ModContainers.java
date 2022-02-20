@@ -1,6 +1,7 @@
 package com.gachamod.gacha.container;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.container.containers.*;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;

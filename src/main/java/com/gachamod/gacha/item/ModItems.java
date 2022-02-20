@@ -1,14 +1,14 @@
 package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
-import com.gachamod.gacha.api.cannonitem.CannonItem;
-import com.gachamod.gacha.api.customitems.JizosHatItem;
-import com.gachamod.gacha.api.customitems.JizosScarfItem;
-import com.gachamod.gacha.api.entity.ModEntityType;
-import com.gachamod.gacha.api.ticketdrops.TicketDropLegend;
-import com.gachamod.gacha.api.ticketdrops.TicketDropNormal;
-import com.gachamod.gacha.api.ticketdrops.TicketDropPlat;
-import com.gachamod.gacha.api.ticketdrops.TicketDropRare;
+import com.gachamod.gacha.item.items.CannonItem;
+import com.gachamod.gacha.item.items.JizosHatItem;
+import com.gachamod.gacha.item.items.JizosScarfItem;
+import com.gachamod.gacha.entity.ModEntityType;
+import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
+import com.gachamod.gacha.item.ticketitems.TicketDropNormal;
+import com.gachamod.gacha.item.ticketitems.TicketDropPlat;
+import com.gachamod.gacha.item.ticketitems.TicketDropRare;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
