@@ -131,6 +131,11 @@ public class TicketLoot {
         getRestrictedItems.add(ModItems.RARE_TICKET.get());
         getRestrictedItems.add(Items.ENCHANTED_GOLDEN_APPLE);
         getRestrictedItems.add(Items.GOLDEN_APPLE);
+        getRestrictedItems.add(ModItems.ICE_SWORD_BLADE.get());
+        getRestrictedItems.add(ModItems.ICE_SWORD_CORE.get());
+        getRestrictedItems.add(ModItems.ICE_SWORD_HANDLE.get());
+        getRestrictedItems.add(ModItems.ICE_SWORD.get());
+        getRestrictedItems.add(ModItems.CAT_CANNON.get());
 
         return getRestrictedItems;
     }

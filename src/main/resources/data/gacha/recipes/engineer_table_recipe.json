@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "SXS",
+    "PPP"
+  ],
+  "key": {
+    "#": {
+      "item": "gacha:jizo_steel_ingot"
+    },
+    "X": {
+      "item": "minecraft:crafting_table"
+    },
+    "S": {
+      "item": "gacha:jizo_gold"
+    },
+    "S": {
+      "item": "gacha:sprockets"
+    }
+  },
+  "result": {
+    "item": "gacha:engineer_table"
+  }
+}
