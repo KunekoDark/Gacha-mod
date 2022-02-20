@@ -95,7 +95,7 @@ public class ModItems {
             () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).maxStackSize(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> ICE_SWORD = ITEMS.register("ice_sword",
-            () -> new IceSwordItem(ModItemTier.SPECIAL, 2, 0F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
+            () -> new IceSwordItem(ModItemTier.SPECIAL, 2, -2.4F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
 
 
     //cat fruit
