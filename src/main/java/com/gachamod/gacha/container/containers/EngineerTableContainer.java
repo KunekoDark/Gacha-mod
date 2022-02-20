@@ -33,21 +33,17 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
-    private final IWorldPosCallable worldPosCallable;
     private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 2);
     private final CraftResultInventory craftResult = new CraftResultInventory();
 
 
 
     public EngineerTableContainer(int windowId, World world, BlockPos pos,
-                                  PlayerInventory playerInventory, PlayerEntity player, IWorldPosCallable worldPosCallable) {
+                                  PlayerInventory playerInventory, PlayerEntity player) {
         super(ModContainers.ENGINEER_TABLE_CONTAINER.get(), windowId);
-        this.worldPosCallable = worldPosCallable;
         this.tileEntity = world.getTileEntity(pos);
         this.playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
-
-        layoutPlayerInventorySlots(8,84);
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
@@ -61,8 +57,11 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
                 addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
 
             });
+
+            layoutPlayerInventorySlots(8,84);
         }
     }
+
 
     @Override
     public boolean canInteractWith(PlayerEntity playerIn) {
@@ -106,16 +105,11 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
         if (slot != null && slot.getHasStack()) {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
-            if (index == 0) {
-                this.worldPosCallable.consume((world, pos) -> {
-                    itemstack1.getItem().onCreated(itemstack1, world, playerIn);
-                });
-                if (!this.mergeItemStack(itemstack1, 10, 46, true)) {
+            if (index < this.craftMatrix.getSizeInventory()) {
+                if (!this.mergeItemStack(itemstack1, this.craftMatrix.getSizeInventory(), this.inventorySlots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-
-                slot.onSlotChange(itemstack1, itemstack);
-            } else if (!this.mergeItemStack(itemstack1, 10, 46, false)) {
+            } else if (!this.mergeItemStack(itemstack1, 0, this.craftMatrix.getSizeInventory(), false)) {
                 return ItemStack.EMPTY;
             }
 
@@ -124,19 +118,11 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
             } else {
                 slot.onSlotChanged();
             }
-
-            if (itemstack1.getCount() == itemstack.getCount()) {
-                return ItemStack.EMPTY;
-            }
-
-            ItemStack itemstack2 = slot.onTake(playerIn, itemstack1);
-            if (index == 0) {
-                playerIn.dropItem(itemstack2, false);
-            }
         }
 
         return itemstack;
     }
+
 
     @Override
     public void fillStackedContents(RecipeItemHelper itemHelperIn) {
@@ -172,7 +158,7 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
             }
 
             inventoryResult.setInventorySlotContents(5, itemstack);
-            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 41, itemstack));
+            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 5, itemstack));
 
         }
     }
@@ -210,6 +196,44 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
     @Override
     public RecipeBookCategory func_241850_m() {
         return null;
+    }
+
+    @Override
+    public void onContainerClosed(PlayerEntity playerIn) {
+        super.onContainerClosed(playerIn);
+        if (!playerIn.world.isRemote) {
+            if (!playerIn.isAlive() || playerIn instanceof ServerPlayerEntity && ((ServerPlayerEntity)playerIn).hasDisconnected()) {
+                ItemStack itemstack = this.craftMatrix.removeStackFromSlot(0);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+                itemstack = this.craftMatrix.removeStackFromSlot(1);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+                itemstack = this.craftMatrix.removeStackFromSlot(2);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+                itemstack = this.craftMatrix.removeStackFromSlot(3);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+                itemstack = this.craftMatrix.removeStackFromSlot(4);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+
+            } else {
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(0));
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(1));
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(2));
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(3));
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(4));
+
+            }
+
+        }
     }
 }
 
