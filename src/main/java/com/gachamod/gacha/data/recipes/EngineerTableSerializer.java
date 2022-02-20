@@ -19,7 +19,7 @@ public class EngineerTableSerializer extends ForgeRegistryEntry<IRecipeSerialize
     public EngineerTableRecipe read(ResourceLocation recipeId, JsonObject json) {
         ItemStack output = CraftingHelper.getItemStack(JSONUtils.getJsonObject(json,"output"), true);
         JsonArray jsonArray = JSONUtils.getJsonArray(json, "ingredients");
-        NonNullList<Ingredient> input = NonNullList.withSize(5, Ingredient.EMPTY);
+        NonNullList<Ingredient> input = NonNullList.withSize(jsonArray.size(), Ingredient.EMPTY);
         for(int i =0; i != input.size(); i++){
             input.set(i, Ingredient.deserialize(jsonArray.get(i)));
         }
