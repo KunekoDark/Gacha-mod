@@ -15,10 +15,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
+import net.minecraft.world.*;
 import net.minecraftforge.entity.PartEntity;
 
 import javax.annotation.Nullable;
@@ -80,9 +77,7 @@ public class GoonEntitiy extends MonsterEntity {
 
     @Override
     public boolean canSpawn(IWorld iWorld, SpawnReason spawnReason) {
-        return spawnReason.equals(SpawnReason.SPAWNER) ||
-                spawnReason.equals(SpawnReason.SPAWN_EGG)||
-                spawnReason.equals(SpawnReason.COMMAND);
+        return (!GameRules.DO_MOB_SPAWNING.equals(false) && !spawnReason.equals(SpawnReason.NATURAL));
     }
 
     @Override
