@@ -42,7 +42,7 @@ public class CannonItem extends Item implements IVanishable {
             worldIn.addEntity(cannonFire);
             worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_DRAGON_FIREBALL_EXPLODE, SoundCategory.PLAYERS, 0.1F, 1.0F);
             worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_CAT_DEATH, SoundCategory.PLAYERS, 0.5F, 1.0F);
-            playerIn.getCooldownTracker().setCooldown(this, 100);
+            playerIn.getCooldownTracker().setCooldown(this, 60);
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

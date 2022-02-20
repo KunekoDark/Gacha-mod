@@ -15,10 +15,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
@@ -81,6 +78,7 @@ public class NormalTicketCapsuleBlock extends Block {
         TileEntity tileEntity = worldIn.getTileEntity(pos);
         if (random.nextInt(10) != 0) {
             ((NormalTicketCapsuleTile) tileEntity).canGetTicket();
+            worldIn.playSound(null, pos, SoundEvents.ENTITY_CAT_AMBIENT, SoundCategory.BLOCKS, 0.1F, 1.0F);
             super.tick(state, worldIn, pos, random);
         }
     }
