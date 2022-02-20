@@ -1,0 +1,25 @@
+{
+  "type": "gacha:engineer",
+
+  "ingredients": [
+    {
+      "item": "gacha:ice_sword_blade"
+    },
+    {
+      "item": "gacha:ice_sword_core"
+    },
+    {
+      "item": "gacha:ice_sword_handle"
+    },
+    {
+      "item": ""
+    },
+    {
+      "item": ""
+    }
+
+  ],
+  "output": {
+    "item": "gacha:ice_sword"
+  }
+}

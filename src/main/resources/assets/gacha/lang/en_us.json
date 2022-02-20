@@ -35,6 +35,10 @@
   "item.gacha.cannon_radius_upgrade_t1": "Cannon Radius Upgrade: Normal",
   "item.gacha.jizos_straw_hat": "Kasa Jizo's Straw Hat",
   "item.gacha.jizos_scarf": "Kasa Jizo's Scarf",
+  "item.gacha.ice_sword": "Ice Sword",
+  "item.gacha.ice_sword_core": "Ice Sword Core",
+  "item.gacha.ice_sword_handle": "Ice Sword Handle",
+  "item.gacha.ice_sword_blade": "Ice Sword Blade",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
@@ -52,8 +56,8 @@
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",
   "screen.gacha.gear_table": "Gear Table",
-  "screen.gacha.jizo_furnace": "",
-  "screen.gacha.normal_ticket_capsule": "Tickets Here",
+  "screen.gacha.jizo_furnace": "Jizo Furnace",
+  "screen.gacha.normal_ticket_capsule": "Normal Ticket Capsule",
 
 
   "entity.gacha.kasa_jizo": "Kasa Jizo",

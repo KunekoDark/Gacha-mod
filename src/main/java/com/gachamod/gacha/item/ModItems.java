@@ -2,6 +2,7 @@ package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.item.items.CannonItem;
+import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.items.JizosHatItem;
 import com.gachamod.gacha.item.items.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
@@ -78,11 +79,23 @@ public class ModItems {
     public static final RegistryObject<Item> JIZO_STEEL_INGOT = ITEMS.register("jizo_steel_ingot",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> ICE_SWORD_BLADE = ITEMS.register("ice_sword_blade",
+            () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ICE_SWORD_HANDLE = ITEMS.register("ice_sword_handle",
+            () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ICE_SWORD_CORE = ITEMS.register("ice_sword_core",
+            () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
+
 
     //weapons
 
     public static final RegistryObject<CannonItem> CAT_CANNON = ITEMS.register("cat_cannon",
             () -> new CannonItem(new Item.Properties().group(ModItemGroup.GACHA_GROUP).maxStackSize(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> ICE_SWORD = ITEMS.register("ice_sword",
+            () -> new IceSwordItem(ModItemTier.SPECIAL, 2, 0F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
 
 
     //cat fruit
