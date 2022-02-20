@@ -1,7 +1,8 @@
-package com.gachamod.gacha.entity.tileentity;
+package com.gachamod.gacha.entity;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.entity.tileentity.*;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;

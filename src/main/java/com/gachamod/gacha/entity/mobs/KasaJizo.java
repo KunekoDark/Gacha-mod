@@ -173,7 +173,7 @@ public class KasaJizo extends MonsterEntity implements IRangedAttackMob {
 
     @Override
     protected int getExperiencePoints(PlayerEntity player) {
-        return 100000000;
+        return 2000;
     }
 
 

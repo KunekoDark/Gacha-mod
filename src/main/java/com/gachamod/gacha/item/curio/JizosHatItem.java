@@ -1,4 +1,4 @@
-package com.gachamod.gacha.item.items;
+package com.gachamod.gacha.item.curio;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

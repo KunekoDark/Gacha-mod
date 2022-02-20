@@ -1,5 +1,6 @@
 package com.gachamod.gacha.entity.tileentity;
 
+import com.gachamod.gacha.entity.ModTileEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
