@@ -2,7 +2,7 @@ package com.gachamod.gacha.block.blocks;
 
 
 import com.gachamod.gacha.container.containers.UpgradeTableContainer;
-import com.gachamod.gacha.entity.tileentity.ModTileEntities;
+import com.gachamod.gacha.entity.ModTileEntities;
 import com.gachamod.gacha.entity.tileentity.UpgradeTableTile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
