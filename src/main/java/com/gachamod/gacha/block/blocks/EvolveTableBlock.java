@@ -61,11 +61,11 @@ public class EvolveTableBlock extends Block {
     }
 
     private static final VoxelShape SHAPE = Stream.of(
-            Block.makeCuboidShape(5, 1, 5, 11, 9, 11),
-            Block.makeCuboidShape(4, 0, 4, 12, 1, 12),
+            Block.makeCuboidShape(2, 10, 2, 14, 12, 14),
             Block.makeCuboidShape(4, 9, 4, 12, 10, 12),
-            Block.makeCuboidShape(2, 10, 2, 14, 12, 14)
-    ).reduce((v1, v2) ->  {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
+            Block.makeCuboidShape(5, 1, 5, 11, 9, 11),
+            Block.makeCuboidShape(4, 0, 4, 12, 1, 12)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR)).get();
 
 
     @Override

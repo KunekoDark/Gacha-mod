@@ -102,6 +102,8 @@ public class Gacha
                 JizoFurnaceScreen::new);
         ScreenManager.registerFactory(ModContainers.NORMAL_TICKET_CAPSULE_CONTAINER.get(),
                 NormalTicketCapsuleScreen::new);
+        ScreenManager.registerFactory(ModContainers.EVOLVE_TABLE_CONTAINER.get(),
+                EvolveTableScreen::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.KASAJIZO.get(),
                 KasaJizoRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.GOONENTITY.get(),

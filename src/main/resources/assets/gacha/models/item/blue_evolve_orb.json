@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gacha:item/green_evolve_orb"
+    "layer0": "gacha:item/blue_evolve_orb"
   }
 }

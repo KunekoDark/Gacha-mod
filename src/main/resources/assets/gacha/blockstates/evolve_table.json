@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "gacha:block/evolve_table" },
+    "facing=south": { "model": "gacha:block/evolve_table", "y":  180},
+    "facing=west": { "model": "gacha:block/evolve_table", "y":  270},
+    "facing=east": { "model": "gacha:block/evolve_table", "y":  90}
+  }
+}

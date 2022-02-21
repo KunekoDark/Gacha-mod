@@ -45,10 +45,10 @@ public class ModBlocks {
             () -> new JizoFurnaceBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> NORMAL_TICKET_CAPSULE = registerBlock("normal_ticket_capsule",
-            () -> new NormalTicketCapsuleBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD).tickRandomly()));
+            () -> new NormalTicketCapsuleBlock(AbstractBlock.Properties.create(Material.GLASS).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.2f).sound(SoundType.GLASS).tickRandomly()));
 
     public static final RegistryObject<Block> EVOLVE_TABLE = registerBlock("evolve_table",
-            () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD), null));
+            () -> new EvolveTableBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE), null));
 
     //Boss Spawn Block
 
