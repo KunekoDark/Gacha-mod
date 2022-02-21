@@ -36,9 +36,9 @@ public class CannonItem extends Item implements IVanishable {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         if(!worldIn.isRemote){
-            CannonFireEntity cannonFire = new CannonFireEntity(ModEntityType.CANNON_PROJECTILE.get(), playerIn.getPosX(),playerIn.getPosY()+1.5 ,playerIn.getPosZ() ,0.0F, -0.01F, 0.0F, worldIn);
+            CannonFireEntity cannonFire = new CannonFireEntity(ModEntityType.CANNON_PROJECTILE.get(), playerIn.getPosX(),playerIn.getPosY()+1.5 ,playerIn.getPosZ() ,0.0F, 0.0F, 0.0F, worldIn);
             ItemStack newStack = new ItemStack(stack.getItem());
-            cannonFire.setDirectionAndMovement(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 10.0F, 0.2F);
+            cannonFire.setDirectionAndMovement(playerIn.getEntity(), playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 5.0F, 0.2F);
             worldIn.addEntity(cannonFire);
             worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_DRAGON_FIREBALL_EXPLODE, SoundCategory.PLAYERS, 0.1F, 1.0F);
             worldIn.playSound((PlayerEntity)null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_CAT_DEATH, SoundCategory.PLAYERS, 0.5F, 1.0F);
