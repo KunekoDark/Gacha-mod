@@ -16,6 +16,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.ItemRenderer;
+import net.minecraft.client.renderer.RenderState;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -103,6 +106,8 @@ public class Gacha
                 KasaJizoRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.GOONENTITY.get(),
                 GoonEntityRenderer::new);
+
+        RenderTypeLookup.setRenderLayer(ModBlocks.NORMAL_TICKET_CAPSULE.get(), RenderType.getTranslucent());
 
     }
     @OnlyIn(Dist.CLIENT)
