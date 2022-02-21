@@ -43,13 +43,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
             () -> new EngineerTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD), null));
 
-    public static final RegistryObject<Block> UPGRADE_TABLE = registerBlock("upgrade_table",
+    public static final RegistryObject<Block> UPGRADE_TABLE = wipblocks("upgrade_table",
             () -> new UpgradeTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<Block> GEAR_TABLE = registerBlock("gear_table",
+    public static final RegistryObject<Block> GEAR_TABLE = wipblocks("gear_table",
             () -> new GearTableBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<Block> JIZO_FURNACE = registerBlock("jizo_furnace",
+    public static final RegistryObject<Block> JIZO_FURNACE = wipblocks("jizo_furnace",
             () -> new JizoFurnaceBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(0).harvestTool(ToolType.AXE).hardnessAndResistance(0.2f).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> NORMAL_TICKET_CAPSULE = registerBlock("normal_ticket_capsule",
@@ -85,6 +85,19 @@ public class ModBlocks {
     private static <T extends Block> void registerSpawnBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().rarity(Rarity.EPIC)));
+    }
+
+    //WIP
+    private static <T extends Block>RegistryObject<T> wipblocks(String name, Supplier<T> block){
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        registerSpawnBlockItem(name, toReturn);
+
+        return toReturn;
+    }
+    private static <T extends Block> void wipblocksItme(String name, RegistryObject<T> block){
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties()));
     }
 
 

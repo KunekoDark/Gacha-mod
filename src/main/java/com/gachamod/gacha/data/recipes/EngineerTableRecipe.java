@@ -3,9 +3,7 @@ package com.gachamod.gacha.data.recipes;
 import com.gachamod.gacha.block.ModBlocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.IRecipeType;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.item.crafting.*;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -65,7 +63,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ModRecipeTypes.ENGINEER_SERIALIZER.get();
+        return ShapedRecipe.Serializer.CRAFTING_SHAPELESS;
     }
 
     @Override

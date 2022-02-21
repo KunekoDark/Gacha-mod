@@ -1,0 +1,18 @@
+{
+  "type": "gacha:engineer",
+
+  "ingredients": [
+    {
+      "tag": "forge:ingots/steel"
+    },
+    {
+      "item": "gacha:jizo_gold"
+    },
+    {
+      "item": "minecraft:charcoal"
+    }
+  ],
+  "output": {
+    "item": "gacha:jizo_steel_ingot"
+  }
+}

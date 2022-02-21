@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": "gacha:jizo_steel_ingot",
+  "experience": 0.4,
+  "cookingtime": 400
+}
