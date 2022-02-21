@@ -7,7 +7,7 @@ import net.minecraftforge.common.util.Lazy;
 public enum OreType {;
     /* Add more ores here */
 
-    
+
 
     private final Lazy<Block> block;
     private final int maxVeinSize;
