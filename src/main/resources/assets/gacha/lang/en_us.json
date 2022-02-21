@@ -13,7 +13,7 @@
   "item.gacha.sprockets": "Sprockets",
   "item.gacha.beast_bones": "Beast Bones",
   "item.gacha.relic_fossil": "Relic Fossil",
-  "item.gacha.cat_cannon": "CaT CaNNoN",
+  "item.gacha.cat_cannon": "Cat Cannon",
   "item.gacha.kasajizo_spawnegg": "Kasa Jizo Spawn Egg",
   "item.gacha.goon_spawnegg": "Goon Spawn Egg",
   "item.gacha.blue_evolve_orb": "Blue Evolve Orb",
@@ -53,6 +53,7 @@
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "\u00A7bWith the power of cats and anime",
+  "tooltip.gacha.banana_sword_tooltip": "Total dev joke item turned into a feature",
 
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",
