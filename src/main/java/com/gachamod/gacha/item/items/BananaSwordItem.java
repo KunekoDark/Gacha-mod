@@ -10,7 +10,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 
 public class BananaSwordItem extends SwordItem {
@@ -18,10 +17,7 @@ public class BananaSwordItem extends SwordItem {
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }
 
-    @Override
-    public boolean isDamageable() {
-        return true;
-    }
+
 
 
     @Override

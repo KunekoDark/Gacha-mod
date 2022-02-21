@@ -15,10 +15,7 @@ public class IceSwordItem extends SwordItem {
         super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }
 
-    @Override
-    public boolean isDamageable() {
-        return false;
-    }
+
 
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
