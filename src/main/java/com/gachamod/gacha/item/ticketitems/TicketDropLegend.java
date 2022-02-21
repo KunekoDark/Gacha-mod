@@ -39,24 +39,28 @@ public class TicketDropLegend extends Item {
         Random rand = new Random();
         int randAmtDrop = rand.nextInt(4)+2;
         playerIn.inventory.removeStackFromSlot(playerIn.inventory.currentItem);
+        boolean hasGotRestricted = false;
         for(int i =0; i != randAmtDrop; i++){
             boolean itemRestricted = false;
             int randId = rand.nextInt(loot.getLegendTicketLoot().size());
-            int randStk = rand.nextInt(6);
+            int randStk = rand.nextInt(4);
             for(int x =0 ; x !=loot.getRestrictedItems().size(); x++){
                 if(loot.getLegendTicketLoot().get(randId) == loot.getRestrictedItems().get(x)){
-                    itemRestricted = true;
+                    if(hasGotRestricted){
+                        randId = rand.nextInt(loot.getLegendTicketLoot().size());
+                    }
+                    else itemRestricted = true;
                 }
             }
-            if(!itemRestricted){
+            if(itemRestricted && !hasGotRestricted){
+                playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getLegendTicketLoot().get(randId)));
+                hasGotRestricted = true;
+            }
+            if(!itemRestricted) {
                 for(int i1 = 0; i1 != randStk; i1++){
                     playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getLegendTicketLoot().get(randId)));
                 }
-
             }
-            else playerIn.inventory.placeItemBackInInventory(worldIn, new ItemStack(loot.getLegendTicketLoot().get(randId)));
-
-
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

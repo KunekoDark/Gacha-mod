@@ -11,29 +11,21 @@
       ]
     },
     {
-      "rolls": 1,
+      "rolls": {
+        "min": 3,
+        "max": 5
+      },
+      "bonus_rolls": 2,
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "gacha:normal_ticket",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 10
-            }
-          ]
+          "weight": 3,
+          "name": "gacha:normal_ticket"
         },
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "gacha:rare_ticket",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 5
-            }
-          ]
+          "name": "gacha:rare_ticket"
         },
         {
           "type": "minecraft:item",
@@ -44,6 +36,117 @@
           "type": "minecraft:item",
           "weight": 1,
           "name": "gacha:jizos_straw_hat"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "gacha:normal_ticket_capsule"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "minecraft:iron_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "minecraft:ancient_debris"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:enchanted_book",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "The book left from a king of a floating castle",
+                  "bold": false,
+                  "italic": true,
+                  "underlined": false,
+                  "strikethrough": true,
+                  "obfuscated": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "minecraft:sharpness",
+                "minecraft:power",
+                "minecraft:fire_aspect",
+                "minecraft:flame",
+                "minecraft:fortune",
+                "minecraft:efficiency",
+                "minecraft:mending",
+                "minecraft:piercing"
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "minecraft:sharpness",
+                "minecraft:power",
+                "minecraft:fire_aspect",
+                "minecraft:flame",
+                "minecraft:fortune",
+                "minecraft:efficiency",
+                "minecraft:mending",
+                "minecraft:piercing"
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "minecraft:sharpness",
+                "minecraft:power",
+                "minecraft:fire_aspect",
+                "minecraft:flame",
+                "minecraft:fortune",
+                "minecraft:efficiency",
+                "minecraft:mending",
+                "minecraft:piercing"
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "minecraft:sharpness",
+                "minecraft:power",
+                "minecraft:fire_aspect",
+                "minecraft:flame",
+                "minecraft:fortune",
+                "minecraft:efficiency",
+                "minecraft:mending",
+                "minecraft:piercing"
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "enchantments": [
+                "minecraft:sharpness",
+                "minecraft:power",
+                "minecraft:fire_aspect",
+                "minecraft:flame",
+                "minecraft:fortune",
+                "minecraft:efficiency",
+                "minecraft:mending",
+                "minecraft:piercing"
+              ]
+            }
+          ]
         }
       ]
     }
