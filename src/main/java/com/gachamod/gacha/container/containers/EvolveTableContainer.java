@@ -2,8 +2,8 @@ package com.gachamod.gacha.container.containers;
 
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
-import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
+import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -33,7 +33,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
-    private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 2);
+    private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 3);
     private final CraftResultInventory craftResult = new CraftResultInventory();
 
 
@@ -51,6 +51,8 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 addSlot(new Slot(this.craftMatrix,1,62,32));
                 addSlot(new Slot(this.craftMatrix,2,80,32));
                 addSlot(new Slot(this.craftMatrix,3,53,50));
+                addSlot(new Slot(this.craftMatrix,4,71,50));
+                addSlot(new Slot(this.craftMatrix,4,71,50));
                 addSlot(new Slot(this.craftMatrix,4,71,50));
 
 
@@ -151,14 +153,14 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
         if (!world.isRemote) {
             ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
             ItemStack itemstack = ItemStack.EMPTY;
-            Optional<EngineerTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.ENGINEER_RECIPE, inventory, world);
+            Optional<EvolveTableRecipe> optional = world.getServer().getRecipeManager().getRecipe(ModRecipeTypes.EVOLVE_RECIPE, inventory, world);
             if (optional.isPresent()) {
-                EngineerTableRecipe EngineerTableRecipe = optional.get();
-                itemstack = EngineerTableRecipe.getRecipeOutput();
+                EvolveTableRecipe evolveTableRecipe = optional.get();
+                itemstack = evolveTableRecipe.getRecipeOutput();
             }
 
-            inventoryResult.setInventorySlotContents(5, itemstack);
-            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 5, itemstack));
+            inventoryResult.setInventorySlotContents(7, itemstack);
+            serverplayerentity.connection.sendPacket(new SSetSlotPacket(id, 7, itemstack));
 
         }
     }
@@ -175,7 +177,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
     @Override
     public int getOutputSlot() {
-        return 5;
+        return 7;
     }
 
     @Override
@@ -185,12 +187,12 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
     @Override
     public int getHeight() {
-        return 2;
+        return 3;
     }
 
     @Override
     public int getSize() {
-        return 5;
+        return 7;
     }
 
     @Override
@@ -223,6 +225,14 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 if (!itemstack.isEmpty()) {
                     playerIn.dropItem(itemstack, false);
                 }
+                itemstack = this.craftMatrix.removeStackFromSlot(5);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
+                itemstack = this.craftMatrix.removeStackFromSlot(6);
+                if (!itemstack.isEmpty()) {
+                    playerIn.dropItem(itemstack, false);
+                }
 
             } else {
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(0));
@@ -230,7 +240,8 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(2));
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(3));
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(4));
-
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(5));
+                playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(6));
             }
 
         }

@@ -25,12 +25,20 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
     @Override
     public boolean matches(IInventory inv, World worldIn) {
         int correctItems = 0;
-        for(int i =0; i !=input.size(); i++){
+        int total = input.size();
+        for(int i =0; i != input.size(); i++){
             if(input.get(i).test(inv.getStackInSlot(i))){
                 correctItems++;
             }
         }
-        return correctItems == input.size();
+        if(input.size() != inv.getSizeInventory()-1){
+            for(int i =input.size(); i != inv.getSizeInventory()-1; i++){
+                if(!inv.getStackInSlot(i).isEmpty()){
+                    total++;
+                }
+            }
+        }
+        return correctItems == total;
     }
 
     @Override
@@ -64,7 +72,7 @@ public class EngineerTableRecipe implements IEngineerTableRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ShapedRecipe.Serializer.CRAFTING_SHAPELESS;
+        return ModRecipeTypes.ENGINEER_SERIALIZER.get();
     }
 
     @Override
