@@ -14,11 +14,11 @@ public class TicketLoot {
         List<Item> normalTicketLoot= new ArrayList<>();
         for(int i = 0; i <1; i++)
         {
-            normalTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
-            normalTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
-            normalTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
-            normalTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
-            normalTicketLoot.add(ModItems.RED_CATFRUIT.get());
+            normalTicketLoot.add(ModItems.BLUE_EVOLVE_ORB.get());
+            normalTicketLoot.add(ModItems.PURPLE_EVOLVE_ORB.get());
+            normalTicketLoot.add(ModItems.YELLOW_EVOLVE_ORB.get());
+            normalTicketLoot.add(ModItems.GREEN_EVOLVE_ORB.get());
+            normalTicketLoot.add(ModItems.RED_EVOLVE_ORB.get());
             normalTicketLoot.add(Items.IRON_INGOT);
             normalTicketLoot.add(Items.DIAMOND);
             normalTicketLoot.add(Items.GOLD_INGOT);
@@ -89,11 +89,11 @@ public class TicketLoot {
         List<Item> legendTicketLoot= new ArrayList<>();
         for(int i = 0; i <8; i++)
         {
-            legendTicketLoot.add(ModItems.BLUE_CATFRUIT.get());
-            legendTicketLoot.add(ModItems.PURPLE_CATFRUIT.get());
-            legendTicketLoot.add(ModItems.YELLOW_CATFRUIT.get());
-            legendTicketLoot.add(ModItems.GREEN_CATFRUIT.get());
-            legendTicketLoot.add(ModItems.RED_CATFRUIT.get());
+            legendTicketLoot.add(ModItems.BLUE_EVOLVE_ORB.get());
+            legendTicketLoot.add(ModItems.PURPLE_EVOLVE_ORB.get());
+            legendTicketLoot.add(ModItems.YELLOW_EVOLVE_ORB.get());
+            legendTicketLoot.add(ModItems.GREEN_EVOLVE_ORB.get());
+            legendTicketLoot.add(ModItems.RED_EVOLVE_ORB.get());
             legendTicketLoot.add(Items.IRON_INGOT);
             legendTicketLoot.add(Items.DIAMOND);
             legendTicketLoot.add(Items.GOLD_INGOT);

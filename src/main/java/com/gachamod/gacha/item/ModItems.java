@@ -101,25 +101,25 @@ public class ModItems {
 
     //cat fruit
 
-    public static final RegistryObject<Item> BLUE_CATFRUIT = ITEMS.register("blue_catfruit", //change to evolve orbs
+    public static final RegistryObject<Item> BLUE_EVOLVE_ORB = ITEMS.register("blue_evolve_orb", //change to evolve orbs
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> PURPLE_CATFRUIT = ITEMS.register("purple_catfruit",
+    public static final RegistryObject<Item> PURPLE_EVOLVE_ORB = ITEMS.register("purple_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> RED_CATFRUIT = ITEMS.register("red_catfruit",
+    public static final RegistryObject<Item> RED_EVOLVE_ORB = ITEMS.register("red_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> YELLOW_CATFRUIT = ITEMS.register("yellow_catfruit",
+    public static final RegistryObject<Item> YELLOW_EVOLVE_ORB = ITEMS.register("yellow_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> GREEN_CATFRUIT = ITEMS.register("green_catfruit",
+    public static final RegistryObject<Item> GREEN_EVOLVE_ORB = ITEMS.register("green_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
-    public static final RegistryObject<Item> RAINBOW_CATFRUIT = ITEMS.register("rainbow_catfruit",
+    public static final RegistryObject<Item> RAINBOW_EVOLVE_ORB = ITEMS.register("rainbow_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
-    public static final RegistryObject<Item> RELIC_CATFRUIT = ITEMS.register("relic_catfruit",
+    public static final RegistryObject<Item> RELIC_EVOLVE_ORB = ITEMS.register("relic_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
 
 
