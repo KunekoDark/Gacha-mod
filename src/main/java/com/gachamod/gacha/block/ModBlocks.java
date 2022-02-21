@@ -27,16 +27,8 @@ public class ModBlocks {
 
 
     //Normal Blocks
-
-    public static final RegistryObject<Block> JIZO_GOLD_BLOCK = registerBlock("jizo_gold_block",
-            () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
-
     public static final RegistryObject<Block> JIZO_STEEL_BLOCK = registerBlock("jizo_steel_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
-
-    public static final RegistryObject<Block> JIZO_GOLD_ORE = registerBlock("jizo_gold_ore",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.STONE)));
-
 
     //Crafting Interfaces
 

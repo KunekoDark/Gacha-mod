@@ -4,12 +4,10 @@ import com.gachamod.gacha.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.util.Lazy;
 
-public enum OreType {
+public enum OreType {;
+    /* Add more ores here */
 
-    JIZO_GOLD(Lazy.of(ModBlocks.JIZO_GOLD_ORE), 4, 10, 45),
-    /* Add more ores here */;
-
-    ;
+    
 
     private final Lazy<Block> block;
     private final int maxVeinSize;
