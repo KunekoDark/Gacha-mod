@@ -56,6 +56,14 @@ public class ModContainers {
                 return new NormalTicketCapsuleContainer(windowId, world, pos, inv, inv.player);
             })));
 
+    public static final RegistryObject<ContainerType<EvolveTableContainer>> EVOLVE_TABLE_CONTAINER
+            = CONTAINERS.register("evolve_table_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new EvolveTableContainer(windowId, world, pos, inv, inv.player);
+            })));
+
 
 
 

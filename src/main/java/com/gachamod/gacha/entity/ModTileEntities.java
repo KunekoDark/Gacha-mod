@@ -34,6 +34,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("normal_ticket_capsule_tile", () -> TileEntityType.Builder.create(
                     NormalTicketCapsuleTile::new, ModBlocks.JIZO_FURNACE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<EvolveTableTile>> EVOLVE_TABLE_TILE =
+            TILE_ENTITIES.register("evolve_table_tile", () -> TileEntityType.Builder.create(
+                    EvolveTableTile::new, ModBlocks.EVOLVE_TABLE.get()).build(null));
+
 
 
 
