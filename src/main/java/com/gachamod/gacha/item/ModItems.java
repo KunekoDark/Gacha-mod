@@ -101,7 +101,7 @@ public class ModItems {
 
     //cat fruit
 
-    public static final RegistryObject<Item> BLUE_CATFRUIT = ITEMS.register("blue_catfruit",
+    public static final RegistryObject<Item> BLUE_CATFRUIT = ITEMS.register("blue_catfruit", //change to evolve orbs
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> PURPLE_CATFRUIT = ITEMS.register("purple_catfruit",

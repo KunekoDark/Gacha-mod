@@ -22,8 +22,8 @@ public class BananaSwordItem extends SwordItem {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, 40, 2, false, false));
-        playerIn.addPotionEffect(new EffectInstance(Effects.SPEED, 40, 2, false, false));
+        playerIn.addPotionEffect(new EffectInstance(Effects.REGENERATION, 40, 1, false, false));
+        playerIn.addPotionEffect(new EffectInstance(Effects.SPEED, 100, 0, false, false));
         playerIn.playSound(SoundEvents.ENTITY_GENERIC_EAT, SoundCategory.PLAYERS, 1.0F, 1.0F);
         if(!playerIn.isCreative()){
             playerIn.getCooldownTracker().setCooldown(this.getItem(), 500);
