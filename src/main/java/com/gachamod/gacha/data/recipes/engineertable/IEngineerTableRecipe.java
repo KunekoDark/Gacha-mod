@@ -1,4 +1,4 @@
-package com.gachamod.gacha.data.recipes;
+package com.gachamod.gacha.data.recipes.engineertable;
 
 import com.gachamod.gacha.Gacha;
 import net.minecraft.inventory.IInventory;

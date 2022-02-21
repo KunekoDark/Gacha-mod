@@ -9,7 +9,7 @@ import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.entity.ModTileEntities;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.*;
-import com.gachamod.gacha.util.ModSoundEvents;
+import com.gachamod.gacha.data.ModSoundEvents;
 import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

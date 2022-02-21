@@ -2,7 +2,7 @@ package com.gachamod.gacha.block.blocks;
 
 import com.gachamod.gacha.entity.ModEntityType;
 import com.gachamod.gacha.entity.mobs.KasaJizo;
-import com.gachamod.gacha.util.ModSoundEvents;
+import com.gachamod.gacha.data.ModSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;

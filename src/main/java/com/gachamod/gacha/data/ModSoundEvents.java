@@ -1,4 +1,4 @@
-package com.gachamod.gacha.util;
+package com.gachamod.gacha.data;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.item.ModItemGroup;

@@ -2,7 +2,7 @@ package com.gachamod.gacha.container.containers;
 
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
-import com.gachamod.gacha.data.recipes.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

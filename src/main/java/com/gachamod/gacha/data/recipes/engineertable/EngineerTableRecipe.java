@@ -1,6 +1,7 @@
-package com.gachamod.gacha.data.recipes;
+package com.gachamod.gacha.data.recipes.engineertable;
 
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;

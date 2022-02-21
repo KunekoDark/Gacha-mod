@@ -1,6 +1,8 @@
 package com.gachamod.gacha.data.recipes;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.engineertable.EngineerTableSerializer;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.registry.Registry;
