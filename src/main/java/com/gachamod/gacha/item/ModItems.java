@@ -1,6 +1,7 @@
 package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.item.items.BananaSwordItem;
 import com.gachamod.gacha.item.items.CannonItem;
 import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
@@ -95,7 +96,7 @@ public class ModItems {
             () -> new IceSwordItem(ModItemTier.SPECIAL, 0, -2.4F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> BANANA_SWORD = ITEMS.register("banana_sword",
-            () -> new IceSwordItem(ModItemTier.SPECIAL, -1, -2.4F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
+            () -> new BananaSwordItem(ModItemTier.SPECIAL, -1, -2.4F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
 
     //cat fruit
