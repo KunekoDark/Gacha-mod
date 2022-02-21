@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+
+    "X": {
+      "item": "gacha:jizo_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "gacha:jizo_steel_block"
+  }
+}
