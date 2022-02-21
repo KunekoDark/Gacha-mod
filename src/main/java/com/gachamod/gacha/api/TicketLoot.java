@@ -74,14 +74,11 @@ public class TicketLoot {
             platTicketLoot.add(Items.ANCIENT_DEBRIS);
 
         }
-        for(int i = 0; i <3; i++)
-        {
-            platTicketLoot.add(ModItems.CAT_CANNON.get());
-            platTicketLoot.add(ModItems.ICE_SWORD.get());
 
-        }
+        platTicketLoot.add(ModItems.CAT_CANNON.get());
+        platTicketLoot.add(ModItems.ICE_SWORD.get());
+        platTicketLoot.add(ModItems.BANANA_SWORD.get());
         platTicketLoot.add(Items.ENCHANTED_GOLDEN_APPLE);
-
         platTicketLoot.add(ModItems.LEGEND_TICKET.get());
 
         return platTicketLoot;
@@ -136,6 +133,7 @@ public class TicketLoot {
         getRestrictedItems.add(ModItems.ICE_SWORD_HANDLE.get());
         getRestrictedItems.add(ModItems.ICE_SWORD.get());
         getRestrictedItems.add(ModItems.CAT_CANNON.get());
+        getRestrictedItems.add(ModItems.BANANA_SWORD.get());
 
         return getRestrictedItems;
     }
