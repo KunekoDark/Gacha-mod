@@ -3,9 +3,13 @@ package com.gachamod.gacha.block.blocks;
 import com.gachamod.gacha.container.containers.NormalTicketCapsuleContainer;
 import com.gachamod.gacha.entity.ModTileEntities;
 import com.gachamod.gacha.entity.tileentity.NormalTicketCapsuleTile;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.DoorBlock;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -62,16 +66,20 @@ public class NormalTicketCapsuleBlock extends Block {
     }
 
     private static final VoxelShape SHAPE = Stream.of(
-            Block.makeCuboidShape(2, 0, 2, 14, 12, 14)
-
-
-    ).reduce((v1, v2) ->  {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
+            Block.makeCuboidShape(4, 8, 4, 12, 15, 12),
+            Block.makeCuboidShape(3, 15, 3, 13, 16, 13),
+            Block.makeCuboidShape(3, 8, 12, 13, 15, 13),
+            Block.makeCuboidShape(12, 8, 3, 13, 15, 4),
+            Block.makeCuboidShape(3, 8, 3, 4, 15, 4),
+            Block.makeCuboidShape(3, 0, 3, 13, 8, 13)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR)).get();
 
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return SHAPE;
     }
+
 
     @Override
     public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
