@@ -8,10 +8,10 @@
   "key": {
 
     "X": {
-      "item": "gacha:jizo_steel_ingot"
+      "item": "gacha:jizo_gold"
     }
   },
   "result": {
-    "item": "gacha:jizo_steel_block"
+    "item": "gacha:jizo_gold_block"
   }
 }

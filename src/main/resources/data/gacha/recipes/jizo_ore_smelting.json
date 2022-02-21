@@ -1,9 +1,9 @@
 {
     "type": "minecraft:smelting",
     "ingredient": {
-        "item": "minecraft:stone"
+        "item": "gacha:jizo_gold_ore"
     },
-    "result": "minecraft:gold_ore",
-    "experience": 0.1,
-    "cookingtime": 200
+    "result": "gacha:jizo_gold",
+    "experience": 1.0,
+    "cookingtime": 100
 }
