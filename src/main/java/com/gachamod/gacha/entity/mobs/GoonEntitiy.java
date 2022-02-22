@@ -148,7 +148,7 @@ public class GoonEntitiy extends MonsterEntity {
 
     @Override
     protected int getExperiencePoints(PlayerEntity player) {
-        return 200;
+        return 5;
     }
 
 
