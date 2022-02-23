@@ -12,29 +12,29 @@
       },
       "entries": [
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 3,
           "name": "gacha:normal_ticket"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 6,
           "name": "minecraft:iron_ingot"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 5,
           "name": "minecraft:gold_ingot"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 3,
           "name": "minecraft:diamond"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 4,
-          "name": "gacha:rainbow_catfruit"
+          "name": "gacha:rainbow_evolve_orb"
         }
       ]
     },
@@ -42,37 +42,32 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 2,
           "name": "gacha:cannon_base"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 2,
           "name": "gacha:cannon_shaft"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 2,
           "name": "gacha:cannon_charge_module"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 2,
           "name": "gacha:cannon_handheld_module"
         },
         {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 2,
           "name": "gacha:cannon_component"
         },
         {
-          "type": "item",
-          "weight": 2,
-          "name": "minecraft:diamond"
-        },
-        {
-          "type": "item",
+          "type": "minecraft:item",
           "weight": 1,
           "name": "gacha:rare_ticket"
         }
