@@ -47,13 +47,13 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
-                addSlot(new Slot(this.craftMatrix,0,44,32));
-                addSlot(new Slot(this.craftMatrix,1,62,32));
-                addSlot(new Slot(this.craftMatrix,2,80,32));
-                addSlot(new Slot(this.craftMatrix,3,53,50));
-                addSlot(new Slot(this.craftMatrix,4,71,50));
-                addSlot(new Slot(this.craftMatrix,4,71,50));
-                addSlot(new Slot(this.craftMatrix,4,71,50));
+                addSlot(new Slot(this.craftMatrix,0,34,22));
+                addSlot(new Slot(this.craftMatrix,1,60,22));
+                addSlot(new Slot(this.craftMatrix,2,21,48));
+                addSlot(new Slot(this.craftMatrix,3,73,48));
+                addSlot(new Slot(this.craftMatrix,5,34,74));
+                addSlot(new Slot(this.craftMatrix,6,60,74));
+                addSlot(new Slot(this.craftMatrix,7,133,48));
 
 
                 addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));

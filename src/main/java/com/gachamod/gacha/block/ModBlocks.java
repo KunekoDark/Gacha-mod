@@ -56,6 +56,10 @@ public class ModBlocks {
             () -> new JizoSummonBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.2f).sound(SoundType.SHROOMLIGHT)));
 
 
+    //Misc Blocks
+
+
+
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
 

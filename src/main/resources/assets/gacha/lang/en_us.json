@@ -40,6 +40,8 @@
   "item.gacha.ice_sword_handle": "Ice Sword Handle",
   "item.gacha.ice_sword_blade": "Ice Sword Blade",
   "item.gacha.banana_sword": "Banana Sword",
+  "item.gacha.terrestrial_ingot": "Terrestrial Ingot",
+  "item.gacha.terrestrial_pickaxe": "Terrestrial Pickaxe",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
@@ -50,6 +52,7 @@
   "block.gacha.jizo_summon_block": "Boss Block: Jizo",
   "block.gacha.jizo_furnace": "Jizo Furnace",
   "block.gacha.normal_ticket_capsule": "Normal Ticket Capsule",
+  "block.gacha.evolve_table": "Evolve Table",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "\u00A7bWith the power of cats and anime",

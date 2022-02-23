@@ -7,6 +7,7 @@ import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
 import com.gachamod.gacha.item.curio.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
+import com.gachamod.gacha.item.items.terrestrial.TerrestrialPickaxeItem;
 import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
 import com.gachamod.gacha.item.ticketitems.TicketDropNormal;
 import com.gachamod.gacha.item.ticketitems.TicketDropPlat;
@@ -151,6 +152,14 @@ public class ModItems {
 
     public static final RegistryObject<Item> JIZO_STEEL_SWORD = ITEMS.register("jizo_steel_sword",
             () -> new SwordItem(ModItemTier.JIZO_STEEL, 2, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> TERRESTRIAL_PICKAXE = ITEMS.register("terrestrial_pickaxe",
+            () -> new TerrestrialPickaxeItem(ModItemTier.NORMAL, -2, -2.8f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    //tiered stuff
+
+    public static final RegistryObject<Item> TERRESTRIAL_INGOT = ITEMS.register("terrestrial_ingot",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
 
 
