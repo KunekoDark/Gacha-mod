@@ -33,4 +33,5 @@ public class NormalTicketCapsuleScreen extends ContainerScreen<NormalTicketCapsu
         this.blit(matrixStack, i, j,0, 0, this.xSize, this.ySize);
 
     }
+
 }

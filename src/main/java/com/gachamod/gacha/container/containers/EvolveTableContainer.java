@@ -2,8 +2,11 @@ package com.gachamod.gacha.container.containers;
 
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
+import com.gachamod.gacha.data.ModSoundEvents;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.fonts.Font;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -20,6 +23,9 @@ import net.minecraft.item.crafting.RecipeItemHelper;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -38,6 +44,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
 
 
+
     public EvolveTableContainer(int windowId, World world, BlockPos pos,
                                   PlayerInventory playerInventory, PlayerEntity player) {
         super(ModContainers.EVOLVE_TABLE_CONTAINER.get(), windowId);
@@ -50,17 +57,17 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 addSlot(new Slot(this.craftMatrix,0,34,22));
                 addSlot(new Slot(this.craftMatrix,1,60,22));
                 addSlot(new Slot(this.craftMatrix,2,21,48));
-                addSlot(new Slot(this.craftMatrix,3,73,48));
+                addSlot(new Slot(this.craftMatrix,3,47,48));
+                addSlot(new Slot(this.craftMatrix,4,73,48));
                 addSlot(new Slot(this.craftMatrix,5,34,74));
                 addSlot(new Slot(this.craftMatrix,6,60,74));
-                addSlot(new Slot(this.craftMatrix,7,133,48));
 
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
+                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 133,48));
 
             });
 
-            layoutPlayerInventorySlots(8,84);
+            layoutPlayerInventorySlots(8,111);
         }
     }
 
@@ -157,6 +164,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
             if (optional.isPresent()) {
                 EvolveTableRecipe evolveTableRecipe = optional.get();
                 itemstack = evolveTableRecipe.getRecipeOutput();
+
             }
 
             inventoryResult.setInventorySlotContents(7, itemstack);
@@ -242,9 +250,12 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(4));
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(5));
                 playerIn.inventory.placeItemBackInInventory(playerIn.world, this.craftMatrix.removeStackFromSlot(6));
+
             }
 
         }
     }
+
+
 }
 

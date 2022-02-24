@@ -1,0 +1,30 @@
+{
+  "type": "gacha:evolve",
+
+  "ingredients": [
+    {
+      "item": "gacha:purple_evolve_orb"
+    },
+    {
+      "item": "gacha:blue_evolve_orb"
+    },
+    {
+      "item": "gacha:green_evolve_orb"
+    },
+    {
+      "item": "gacha:jizo_steel_ingot"
+    },
+    {
+      "item": "gacha:red_evolve_orb"
+    },
+    {
+      "item": "gacha:yellow_evolve_orb"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "gacha:terrestrial_ingot"
+  }
+}

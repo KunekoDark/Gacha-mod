@@ -3,6 +3,7 @@ package com.gachamod.gacha.data.jei;
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
@@ -26,6 +27,9 @@ public class GachaPlugin implements IModPlugin {
         registration.addRecipeCategories(
                 new EngineerTableRecipeCategory(registration.getJeiHelpers().getGuiHelper())
         );
+        registration.addRecipeCategories(
+                new EvolveTableRecipeCategory(registration.getJeiHelpers().getGuiHelper())
+        );
     }
 
     @Override
@@ -34,5 +38,15 @@ public class GachaPlugin implements IModPlugin {
         registration.addRecipes(rm.getRecipesForType(ModRecipeTypes.ENGINEER_RECIPE).stream()
                         .filter(r -> r instanceof EngineerTableRecipe).collect(Collectors.toList()),
                 EngineerTableRecipeCategory.UID);
+
+        registration.addRecipes(rm.getRecipesForType(ModRecipeTypes.EVOLVE_RECIPE).stream()
+                        .filter(r -> r instanceof EvolveTableRecipe).collect(Collectors.toList()),
+                EvolveTableRecipeCategory.UID);
+
+
+
+
     }
+
+
 }
