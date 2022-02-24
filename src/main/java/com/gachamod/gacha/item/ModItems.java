@@ -7,7 +7,7 @@ import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
 import com.gachamod.gacha.item.curio.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
-import com.gachamod.gacha.item.items.terrestrial.TerrestrialPickaxeItem;
+import com.gachamod.gacha.item.items.terrestrial.*;
 import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
 import com.gachamod.gacha.item.ticketitems.TicketDropNormal;
 import com.gachamod.gacha.item.ticketitems.TicketDropPlat;
@@ -142,7 +142,7 @@ public class ModItems {
             () -> new PickaxeItem(ModItemTier.JIZO_STEEL, -2, -2.8f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_AXE = ITEMS.register("jizo_steel_axe",
-            () -> new AxeItem(ModItemTier.JIZO_STEEL, 3, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new AxeItem(ModItemTier.JIZO_STEEL, 2, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_SHOVEL = ITEMS.register("jizo_steel_shovel",
             () -> new ShovelItem(ModItemTier.JIZO_STEEL, -3, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
@@ -151,10 +151,22 @@ public class ModItems {
             () -> new HoeItem(ModItemTier.JIZO_STEEL, -4, 0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> JIZO_STEEL_SWORD = ITEMS.register("jizo_steel_sword",
-            () -> new SwordItem(ModItemTier.JIZO_STEEL, 2, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new SwordItem(ModItemTier.JIZO_STEEL, 0, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> TERRESTRIAL_PICKAXE = ITEMS.register("terrestrial_pickaxe",
             () -> new TerrestrialPickaxeItem(ModItemTier.NORMAL, -2, -2.8f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> TERRESTRIAL_AXE = ITEMS.register("terrestrial_axe",
+            () -> new TerrestrialAxeItem(ModItemTier.NORMAL, 2, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> TERRESTRIAL_SWORD = ITEMS.register("terrestrial_sword",
+            () -> new TerrestrialSwordItem(ModItemTier.NORMAL, 0, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> TERRESTRIAL_SHOVEL = ITEMS.register("terrestrial_shovel",
+            () -> new TerrestrialShovelItem(ModItemTier.NORMAL, -3, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> TERRESTRIAL_HOE = ITEMS.register("terrestrial_hoe",
+            () -> new TerrestrialHoeItem(ModItemTier.NORMAL, -4, -0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     //tiered stuff
 

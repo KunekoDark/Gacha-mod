@@ -42,6 +42,10 @@
   "item.gacha.banana_sword": "Banana Sword",
   "item.gacha.terrestrial_ingot": "Terrestrial Ingot",
   "item.gacha.terrestrial_pickaxe": "Terrestrial Pickaxe",
+  "item.gacha.terrestrial_sword": "Terrestrial Sword",
+  "item.gacha.terrestrial_axe": "Terrestrial Axe",
+  "item.gacha.terrestrial_hoe": "Terrestrial Hoe",
+  "item.gacha.terrestrial_shovel": "Terrestrial Shovel",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
