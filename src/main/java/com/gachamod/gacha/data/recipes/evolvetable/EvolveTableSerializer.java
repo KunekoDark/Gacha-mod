@@ -1,7 +1,5 @@
-package com.gachamod.gacha.data.recipes.engineertable;
+package com.gachamod.gacha.data.recipes.evolvetable;
 
-import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
-import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
