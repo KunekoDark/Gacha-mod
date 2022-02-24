@@ -3,6 +3,7 @@ package com.gachamod.gacha.event;
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.entity.ModEntityType;
 import com.gachamod.gacha.event.events.lootinject.RareTicketStructureAdditionModifier;
+import com.gachamod.gacha.event.events.lootinject.EvolveOrbAdditionModifier;
 import com.gachamod.gacha.event.events.lootinject.TicketStructureAdditionModifier;
 import com.gachamod.gacha.entity.mobs.GoonEntitiy;
 import com.gachamod.gacha.entity.mobs.KasaJizo;
@@ -75,6 +76,11 @@ public class ModEventBusEvents {
         event.getRegistry().registerAll(
                 new RareTicketStructureAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_treasure"))
+        );
+
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"red_evolve_orb_zombie"))
         );
     }
 }
