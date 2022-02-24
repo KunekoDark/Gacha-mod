@@ -1,5 +1,7 @@
-package com.gachamod.gacha.data.recipes.evolvetable;
+package com.gachamod.gacha.data.recipes.engineertable;
 
+import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
+import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
@@ -31,12 +33,21 @@ public class EvolveTableSerializer extends ForgeRegistryEntry<IRecipeSerializer<
     @Override
     public EvolveTableRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
         ItemStack output = buffer.readItemStack();
-        NonNullList<Ingredient> input = NonNullList.withSize(7, Ingredient.EMPTY);
+        int size = buffer.readVarInt();
+        NonNullList<Ingredient> input = NonNullList.withSize(size, Ingredient.EMPTY);
+        for(int i = 0; i < input.size(); ++i) {
+            input.set(i,Ingredient.read(buffer));
+        }
         return new EvolveTableRecipe(recipeId, output, input);
     }
 
     @Override
     public void write(PacketBuffer buffer, EvolveTableRecipe recipe) {
         buffer.writeItemStack(recipe.getRecipeOutput(), false);
+        buffer.writeVarInt(recipe.getIngredients().size());
+        for(Ingredient ingredient : recipe.getIngredients()) {
+            ingredient.write(buffer);
+        }
+
     }
 }

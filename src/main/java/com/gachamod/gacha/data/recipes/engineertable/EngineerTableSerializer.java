@@ -32,12 +32,21 @@ public class EngineerTableSerializer extends ForgeRegistryEntry<IRecipeSerialize
     @Override
     public EngineerTableRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
         ItemStack output = buffer.readItemStack();
-        NonNullList<Ingredient> input = NonNullList.withSize(5, Ingredient.EMPTY);
+        int size = buffer.readVarInt();
+        NonNullList<Ingredient> input = NonNullList.withSize(size, Ingredient.EMPTY);
+        for(int i = 0; i < input.size(); ++i) {
+            input.set(i,Ingredient.read(buffer));
+        }
         return new EngineerTableRecipe(recipeId, output, input);
     }
 
     @Override
     public void write(PacketBuffer buffer, EngineerTableRecipe recipe) {
         buffer.writeItemStack(recipe.getRecipeOutput(), false);
+        buffer.writeVarInt(recipe.getIngredients().size());
+        for(Ingredient ingredient : recipe.getIngredients()) {
+            ingredient.write(buffer);
+        }
+
     }
 }
