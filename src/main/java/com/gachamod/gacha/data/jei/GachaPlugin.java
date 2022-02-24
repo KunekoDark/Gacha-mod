@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @JeiPlugin
-public class GachaJEI implements IModPlugin {
+public class GachaPlugin implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(Gacha.MOD_ID, "jei_plugin");
