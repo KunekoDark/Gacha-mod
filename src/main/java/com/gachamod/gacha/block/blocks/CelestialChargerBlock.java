@@ -33,10 +33,13 @@ public class CelestialChargerBlock extends Block {
         worldIn.playSound(null,pos,SoundEvents.BLOCK_BEACON_AMBIENT, SoundCategory.BLOCKS,0.2F,1);
         float particlePosCalcX;
         particlePosCalcX = (float) Math.random();
+
         float particlePosCalcZ;
         particlePosCalcZ = (float) Math.random();
-        worldIn.addParticle(ParticleTypes.END_ROD,pos.getX()+particlePosCalcX,pos.getY()+2F,pos.getZ()+particlePosCalcZ,0,0.2F,0);
-        worldIn.addParticle(ParticleTypes.END_ROD,pos.getX()+particlePosCalcX,pos.getY()+1F,pos.getZ()+particlePosCalcZ,0,0.2F,0);
+
+        worldIn.addParticle(ParticleTypes.REVERSE_PORTAL,pos.getX()+particlePosCalcX,pos.getY()+1F,pos.getZ()+particlePosCalcZ,0,0.2F,0);
+        worldIn.addParticle(ParticleTypes.REVERSE_PORTAL,pos.getX()+particlePosCalcX,pos.getY(),pos.getZ()+particlePosCalcZ,0,0.2F,0);
+
         super.onEntityWalk(worldIn, pos, entityIn);
     }
 
