@@ -1,0 +1,9 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/slime"
+    }
+  ],
+  "addition": "gacha:purple_evolve_orb"
+}

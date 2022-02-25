@@ -27,7 +27,7 @@ public class EvolveOrbAdditionModifier extends LootModifier {
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         // generatedLoot is the loot that would be dropped, if we wouldn't add or replace
         // anything!
-        if(context.getRandom().nextFloat() > 0.95) {
+        if(context.getRandom().nextFloat() > 0.80) {
             generatedLoot.add(new ItemStack(addition, 1));
         }
         return generatedLoot;

@@ -78,9 +78,83 @@ public class ModEventBusEvents {
                         (new ResourceLocation(Gacha.MOD_ID,"rare_ticket_in_bastion_treasure"))
         );
 
+
+        //evolve orbs
         event.getRegistry().registerAll(
                 new EvolveOrbAdditionModifier.Serializer().setRegistryName
                         (new ResourceLocation(Gacha.MOD_ID,"red_evolve_orb_zombie"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"red_evolve_orb_skeleton"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"blue_evolve_orb_cod"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"blue_evolve_orb_salmon"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"blue_evolve_orb_squid"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"blue_evolve_orb_tropical_fish"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_cow"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_horse"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_rabbit"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_sheep"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_chicken"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"green_evolve_orb_pig"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"yellow_evolve_orb_blaze"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"yellow_evolve_orb_magma_cube"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"yellow_evolve_orb_zombie_pigman"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"purple_evolve_orb_creeper"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"purple_evolve_orb_enderman"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"purple_evolve_orb_phantom"))
+        );
+        event.getRegistry().registerAll(
+                new EvolveOrbAdditionModifier.Serializer().setRegistryName
+                        (new ResourceLocation(Gacha.MOD_ID,"purple_evolve_orb_slime"))
         );
     }
 }

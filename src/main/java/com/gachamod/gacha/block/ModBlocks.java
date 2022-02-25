@@ -58,7 +58,8 @@ public class ModBlocks {
 
     //Misc Blocks
 
-
+    public static final RegistryObject<Block> CELESTIAL_CHARGER = registerBlock("celestial_charger",
+            () -> new CelestialChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
