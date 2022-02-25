@@ -1,0 +1,8 @@
+{
+	"parent": "block/orientable",
+	"textures": {
+		"top": "gacha:block/alien_charger_top",
+		"front": "gacha:block/alien_charger_side",
+		"side": "gacha:block/alien_charger_side"
+	}
+}

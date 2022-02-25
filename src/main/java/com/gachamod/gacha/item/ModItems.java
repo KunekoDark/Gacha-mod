@@ -176,6 +176,9 @@ public class ModItems {
     public static final RegistryObject<Item> TERRESTRIAL_INGOT = ITEMS.register("terrestrial_ingot",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> ALIEN_INGOT = ITEMS.register("alien_ingot",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));
+
 
 
 

@@ -30,7 +30,7 @@ public class TerrestrialAxeItem extends AxeItem {
 
     @Override
     public float getDestroySpeed(ItemStack stack, BlockState state) {
-        if(this.getDamage(stack) > 998){
+        if(this.getDamage(stack) > 1998){
             return -5;
         }
         return super.getDestroySpeed(stack, state);
