@@ -1,0 +1,30 @@
+{
+  "type": "gacha:evolve",
+
+  "ingredients": [
+    {
+      "item": "gacha:terrestrial_ingot"
+    },
+    {
+      "item": "gacha:terrestrial_ingot"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    {
+      "item": "gacha:terrestrial_core"
+    },
+    {
+      "item": "gacha:green_evolve_orb"
+    },
+    {
+      "item": "gacha:red_evolve_orb"
+    }
+  ],
+  "output": {
+    "item": "gacha:terrestrial_pickaxe"
+  }
+}

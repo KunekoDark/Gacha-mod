@@ -87,6 +87,9 @@ public class ModItems {
     public static final RegistryObject<Item> ICE_SWORD_CORE = ITEMS.register("ice_sword_core",
             () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> TERRESTRIAL_CORE = ITEMS.register("terrestrial_core",
+            () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
+
 
     //weapons
 
@@ -100,7 +103,7 @@ public class ModItems {
             () -> new BananaSwordItem(ModItemTier.SPECIAL, -1, -2.4F,new Item.Properties().group(ModItemGroup.GACHA_GROUP).rarity(Rarity.RARE)));
 
 
-    //cat fruit
+    //evolve orbs
 
     public static final RegistryObject<Item> BLUE_EVOLVE_ORB = ITEMS.register("blue_evolve_orb", //change to evolve orbs
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP)));

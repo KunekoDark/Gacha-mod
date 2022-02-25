@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OCO",
+    "ODO",
+    "OXO"
+  ],
+  "key": {
+    "C": {
+      "item": "gacha:terrestrial_core"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "minecraft:daylight_detector"
+    },
+    "X": {
+      "item": "gacha:terrestrial_ingot"
+    }
+  },
+  "result": {
+    "item": "gacha:celestial_charger"
+  }
+}

@@ -37,11 +37,16 @@ public class TerrestrialSwordItem extends SwordItem {
 
     @Override
     public float getDestroySpeed(ItemStack stack, BlockState state) {
+
         if(this.getDamage(stack) > 998){
+
+
             return -5;
         }
         return super.getDestroySpeed(stack, state);
     }
+
+  //please help sword methods suck
 
     public boolean isOnTopOfCharger(PlayerEntity player){
         BlockPos posBelow = player.getPosition().down();
@@ -49,6 +54,7 @@ public class TerrestrialSwordItem extends SwordItem {
         if(blockStateBelow.getBlock() == ModBlocks.CELESTIAL_CHARGER.get()){
             return true;
         }
+
         return false;
     }
 
