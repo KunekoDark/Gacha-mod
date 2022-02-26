@@ -55,8 +55,8 @@ public class TicketLoot {
         rareTicketLoot.add(ModItems.CANNON_COMPONENT.get());
         rareTicketLoot.add(ModItems.CANNON_HANDHELD_MODULE.get());
         rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
-        rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
-        rareTicketLoot.add(ModItems.ICE_SWORD_BLADE.get());
+        rareTicketLoot.add(ModItems.ICE_SWORD_CORE.get());
+        rareTicketLoot.add(ModItems.ICE_SWORD_HANDLE.get());
 
 
         rareTicketLoot.add(ModItems.PLATINUM_TICKET.get());
