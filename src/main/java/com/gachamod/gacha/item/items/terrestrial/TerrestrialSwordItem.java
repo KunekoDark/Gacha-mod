@@ -42,7 +42,7 @@ public class TerrestrialSwordItem extends SwordItem {
         PlayerInventory inventory = player.inventory;
         boolean charging = new isOnCharger().isOnTopOfCharger(player);
 
-        if(isSelected && worldIn.isNightTime() && charging){
+        if(isSelected  && charging){
             setDamage(stack, getDamage(stack)- 1);
         }
         if(stack.getDamage() >= 1998 && isSelected){

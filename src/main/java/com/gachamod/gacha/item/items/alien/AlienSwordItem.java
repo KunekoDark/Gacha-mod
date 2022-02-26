@@ -2,16 +2,13 @@ package com.gachamod.gacha.item.items.alien;
 
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.data.isOnCharger;
-import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.SwordItem;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -23,11 +20,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
-public class AlienPickaxeItem extends PickaxeItem {
-    public AlienPickaxeItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) {
-        super(tier, attackDamageIn, attackSpeedIn, builder);
+public class AlienSwordItem extends SwordItem {
+    public AlienSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn) {
+        super(tier, attackDamageIn, attackSpeedIn, builderIn);
     }
-
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         PlayerEntity player = (PlayerEntity) entityIn;
@@ -40,7 +36,7 @@ public class AlienPickaxeItem extends PickaxeItem {
 
 
 
-
+//MAKE ALIEN CHARGER BACKWARDS COMPATIBLE WITH TERRESTRIAL STUFF
     }
 
     @Override
@@ -73,7 +69,7 @@ public class AlienPickaxeItem extends PickaxeItem {
 
 
 
-            playerIn.addPotionEffect(new EffectInstance(Effects.HASTE, 100, 3, false, false));
+            playerIn.addPotionEffect(new EffectInstance(Effects.STRENGTH, 100, 1, false, false));
         } else{
             playerIn.sendStatusMessage(new StringTextComponent("Tool is broken! Repair at anvil or charger!"),true);
         }

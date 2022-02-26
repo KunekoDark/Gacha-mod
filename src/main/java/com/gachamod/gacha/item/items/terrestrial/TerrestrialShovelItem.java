@@ -1,6 +1,7 @@
 package com.gachamod.gacha.item.items.terrestrial;
 
 import com.gachamod.gacha.block.ModBlocks;
+import com.gachamod.gacha.data.isOnCharger;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,7 +21,9 @@ public class TerrestrialShovelItem extends ShovelItem {
         PlayerEntity player = (PlayerEntity) entityIn;
         PlayerInventory inventory = player.inventory;
 
-        if(isSelected && worldIn.isNightTime() && isOnTopOfCharger(player)){
+        boolean charging = new isOnCharger().isOnTopOfCharger(player);
+
+        if(isSelected  && charging){
             setDamage(stack, getDamage(stack)- 1);
         }
 
@@ -36,13 +39,6 @@ public class TerrestrialShovelItem extends ShovelItem {
         return super.getDestroySpeed(stack, state);
     }
 
-    public boolean isOnTopOfCharger(PlayerEntity player){
-        BlockPos posBelow = player.getPosition().down();
-        BlockState blockStateBelow = player.world.getBlockState(posBelow);
-        if(blockStateBelow.getBlock() == ModBlocks.CELESTIAL_CHARGER.get()){
-            return true;
-        }
-        return false;
-    }
+
 
 }

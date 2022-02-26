@@ -7,6 +7,7 @@ import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
 import com.gachamod.gacha.item.curio.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
+import com.gachamod.gacha.item.items.alien.*;
 import com.gachamod.gacha.item.items.terrestrial.*;
 import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
 import com.gachamod.gacha.item.ticketitems.TicketDropNormal;
@@ -170,6 +171,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> TERRESTRIAL_HOE = ITEMS.register("terrestrial_hoe",
             () -> new TerrestrialHoeItem(ModItemTier.NORMAL, -4, -0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ALIEN_HOE = ITEMS.register("alien_hoe",
+            () -> new AlienHoeItem(ModItemTier.ALIEN, -4, -0f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ALIEN_AXE = ITEMS.register("alien_axe",
+            () -> new AlienAxeItem(ModItemTier.ALIEN, 2, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ALIEN_PICKAXE = ITEMS.register("alien_pickaxe",
+            () -> new AlienPickaxeItem(ModItemTier.ALIEN, -2, -2.8f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ALIEN_SHOVEL = ITEMS.register("alien_shovel",
+            () -> new AlienShovelItem(ModItemTier.ALIEN, -3, -1f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> ALIEN_SWORD = ITEMS.register("alien_sword",
+            () -> new AlienSwordItem(ModItemTier.ALIEN, 0, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     //tiered stuff
 
