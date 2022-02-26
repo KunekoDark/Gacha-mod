@@ -1,4 +1,5 @@
 package com.gachamod.gacha.world.gen;
+
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.GenerationStage;
@@ -9,7 +10,6 @@ import net.minecraft.world.gen.placement.ConfiguredPlacement;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import org.lwjgl.system.CallbackI;
 
 public class ModOreGeneration {
     public static void generateOres(final BiomeLoadingEvent event){

@@ -1,6 +1,5 @@
 package com.gachamod.gacha.api.Utils;
 
-import com.gachamod.gacha.item.ModItems;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;

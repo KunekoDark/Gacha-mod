@@ -1,6 +1,5 @@
 package com.gachamod.gacha.world.gen;
 
-import com.gachamod.gacha.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.util.Lazy;
 

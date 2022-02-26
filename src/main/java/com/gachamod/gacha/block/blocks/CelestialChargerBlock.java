@@ -1,15 +1,13 @@
 package com.gachamod.gacha.block.blocks;
 
-import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.HorizontalBlock;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.util.*;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;

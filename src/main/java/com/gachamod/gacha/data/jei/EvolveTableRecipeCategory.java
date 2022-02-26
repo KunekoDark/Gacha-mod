@@ -2,7 +2,6 @@ package com.gachamod.gacha.data.jei;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.block.ModBlocks;
-import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;

@@ -14,7 +14,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModRecipeTypes implements IRecipeType {
-    //https://www.youtube.com/watch?v=Ri0Mqv_FXA4
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZER =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Gacha.MOD_ID);
 

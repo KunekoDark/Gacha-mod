@@ -1,22 +1,21 @@
 package com.gachamod.gacha;
 
-import com.gachamod.gacha.entity.ModEntityType;
-import com.gachamod.gacha.entity.renderer.GoonEntityRenderer;
-import com.gachamod.gacha.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
+import com.gachamod.gacha.data.ModSoundEvents;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
+import com.gachamod.gacha.entity.ModEntityType;
 import com.gachamod.gacha.entity.ModTileEntities;
+import com.gachamod.gacha.entity.renderer.GoonEntityRenderer;
+import com.gachamod.gacha.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.*;
-import com.gachamod.gacha.data.ModSoundEvents;
 import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.ItemRenderer;
-import net.minecraft.client.renderer.RenderState;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.SpriteRenderer;

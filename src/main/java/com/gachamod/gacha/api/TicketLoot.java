@@ -3,7 +3,6 @@ package com.gachamod.gacha.api;
 import com.gachamod.gacha.item.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,6 @@
 package com.gachamod.gacha.data;
 
 import com.gachamod.gacha.Gacha;
-import com.gachamod.gacha.item.ModItemGroup;
-import com.gachamod.gacha.item.curio.JizosHatItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.Rarity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;

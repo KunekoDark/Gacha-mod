@@ -1,12 +1,8 @@
 package com.gachamod.gacha.item.items.alien;
 
-import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.data.isOnCharger;
-import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.IItemTier;
@@ -19,7 +15,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
