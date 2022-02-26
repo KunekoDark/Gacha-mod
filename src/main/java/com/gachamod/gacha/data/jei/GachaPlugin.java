@@ -5,8 +5,10 @@ import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
 import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.evolvetable.EvolveTableRecipe;
+import com.gachamod.gacha.screen.EvolveTableScreen;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
@@ -53,5 +55,10 @@ public class GachaPlugin implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.ENGINEER_TABLE.get()) ,  ENGINEER_CATAGORY);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.EVOLVE_TABLE.get()) ,  EVOLVE_CATAGORY);
+    }
+
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+        registration.addRecipeClickArea(EvolveTableScreen.class, 96, 47+EvolveTableScreen.evolveoffset, 30, 15, EvolveTableRecipeCategory.UID);
     }
 }
