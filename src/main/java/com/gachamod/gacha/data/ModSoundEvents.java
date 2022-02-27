@@ -20,6 +20,9 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> CHIME =
             registerSoundEvent("chime");
 
+    public static final RegistryObject<SoundEvent> FUTURE_MUSIC =
+            registerSoundEvent("future_music");
+
 
     private static RegistryObject<SoundEvent> registerSoundEvent(String name){
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Gacha.MOD_ID, name)));

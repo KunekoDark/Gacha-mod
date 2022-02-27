@@ -54,6 +54,7 @@
   "item.gacha.alien_pickaxe": "Alien Pickaxe",
   "item.gacha.alien_shovel": "Alien Shovel",
   "item.gacha.alien_sword": "Alien Sword",
+  "item.gacha.handheld_time_machine": "Handheld Time Machine",
 
   "block.gacha.jizo_gold_block": "Jizo Gold Block",
   "block.gacha.jizo_gold_ore": "Jizo Gold Ore",
@@ -66,13 +67,17 @@
   "block.gacha.normal_ticket_capsule": "Normal Ticket Capsule",
   "block.gacha.evolve_table": "Evolve Table",
   "block.gacha.celestial_charger": "Celestial Charger",
-  "block.gacha.Alien_charger": "Alien Charger",
+  "block.gacha.alien_charger": "Alien Charger",
+  "block.gacha.future_stone": "Future Stone",
+  "block.gacha.future_grass": "Future Grass",
+  "block.gacha.future_stone_bricks": "Future Stone Bricks",
 
   "tooltip.gacha.ticket_tooltip": "Right-Click to use",
   "tooltip.gacha.cannonitemtooltip": "\u00A7bWith the power of cats and anime",
   "tooltip.gacha.banana_sword_tooltip": "\u00A7eTotal dev joke item turned into a feature",
- "tooltip.gacha.celestial_charger_tooltip": " \u00A78Stand on top of with terrestrial tier tools in hand and they will repair",
-  "tooltip.gacha.alien_charger_tooltip": " \u00A78Stand on top of with alien tier tools in hand and they will repair",
+ "tooltip.gacha.celestial_charger_tooltip": "\u00A78Stand on top of with terrestrial tier tools in hand and they will repair",
+  "tooltip.gacha.alien_charger_tooltip": "\u00A78Stand on top of with alien tier tools in hand and they will repair",
+  "tooltip.gacha.right_click_use": "\u00A78Right click to travel to the future\n\u00A74!!WARNING!!\nThis item has a 30 second cooldown, so be prepared.",
 
   "screen.gacha.engineer_table": "Engineer Table",
   "screen.gacha.upgrade_table": "Upgrade Table",

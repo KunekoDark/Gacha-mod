@@ -10,6 +10,7 @@ import com.gachamod.gacha.entity.renderer.GoonEntityRenderer;
 import com.gachamod.gacha.entity.renderer.KasaJizoRenderer;
 import com.gachamod.gacha.item.ModItems;
 import com.gachamod.gacha.screen.*;
+import com.gachamod.gacha.world.biome.ModBiomes;
 import com.gachamod.gacha.world.structure.ModStructures;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -65,6 +66,7 @@ public class Gacha
         ModStructures.register(eventBus);
         ModRecipeTypes.register(eventBus);
         ModSoundEvents.register(eventBus);
+        ModBiomes.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);

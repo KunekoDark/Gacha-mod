@@ -8,6 +8,7 @@ import com.gachamod.gacha.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -30,6 +31,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> JIZO_STEEL_BLOCK = registerBlock("jizo_steel_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
 
+    public static final RegistryObject<Block> FUTURE_STONE = registerBlock("future_stone",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> FUTURE_GRASS = registerBlock("future_grass",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> DENSE_FUTURE_STONE = registerBlock("dense_future_stone",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> FUTURE_STONE_BRICKS = registerBlock("future_stone_bricks",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> FUTURE_STONE_BRICK_STAIRS = registerBlock("future_stone_brick_stairs",
+            () -> new StairsBlock(() -> FUTURE_STONE_BRICKS.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE)));
+
     //Crafting Interfaces
 
     public static final RegistryObject<Block> ENGINEER_TABLE = registerBlock("engineer_table",
@@ -50,6 +67,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> EVOLVE_TABLE = registerBlock("evolve_table",
             () -> new EvolveTableBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE), null));
 
+
+
     //Boss Spawn Block
 
     public static final RegistryObject<Block> JIZO_SUMMON_BLOCK = registerSpawnBlock("jizo_summon_block",
@@ -60,8 +79,13 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CELESTIAL_CHARGER = registerBlock("celestial_charger",
             () -> new CelestialChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
+
     public static final RegistryObject<Block> ALIEN_CHARGER = registerBlock("alien_charger",
             () -> new AlienChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
+
+    public static final RegistryObject<Block> WORMHOLE = registerBlock("wormhole",
+            () -> new TimeMachineBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
+
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -7,6 +7,7 @@ import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
 import com.gachamod.gacha.item.curio.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
+import com.gachamod.gacha.item.items.Misc.HandHeldTimeMachineItem;
 import com.gachamod.gacha.item.items.alien.*;
 import com.gachamod.gacha.item.items.terrestrial.*;
 import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
@@ -48,6 +49,9 @@ public class ModItems {
 
 
     //Normal Items
+
+    public static final RegistryObject<Item> HANDHELD_TIME_MACHINE = ITEMS.register("handheld_time_machine",
+            () -> new HandHeldTimeMachineItem(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> CANNON_BASE = ITEMS.register("cannon_base",
             () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
@@ -189,6 +193,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> ALIEN_HAMMER = ITEMS.register("alien_hammer",
             () -> new AlienHammerItem(ModItemTier.ALIENHAMMER, 3, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+
+
 
     //tiered stuff
 
