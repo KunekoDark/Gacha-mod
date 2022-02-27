@@ -17,6 +17,10 @@ public class ModSoundEvents {
     public static final RegistryObject<SoundEvent> BATTLE_CATS_THEME_3 =
             registerSoundEvent("jizo_batle");
 
+    public static final RegistryObject<SoundEvent> CHIME =
+            registerSoundEvent("chime");
+
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name){
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Gacha.MOD_ID, name)));
     }

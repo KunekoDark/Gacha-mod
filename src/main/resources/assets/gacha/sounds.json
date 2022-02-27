@@ -4,5 +4,11 @@
       "name": "gacha:theme/battle_cats_theme_3",
       "stream": true
     }]
+  },
+  "chime": {
+    "sounds":[{
+      "name": "gacha:block/chime",
+      "stream": true
+    }]
   }
 }

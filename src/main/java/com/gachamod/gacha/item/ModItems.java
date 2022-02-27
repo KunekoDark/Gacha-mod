@@ -187,6 +187,9 @@ public class ModItems {
     public static final RegistryObject<Item> ALIEN_SWORD = ITEMS.register("alien_sword",
             () -> new AlienSwordItem(ModItemTier.ALIEN, 0, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
+    public static final RegistryObject<Item> ALIEN_HAMMER = ITEMS.register("alien_hammer",
+            () -> new AlienHammerItem(ModItemTier.ALIENHAMMER, 3, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
     //tiered stuff
 
     public static final RegistryObject<Item> TERRESTRIAL_INGOT = ITEMS.register("terrestrial_ingot",
