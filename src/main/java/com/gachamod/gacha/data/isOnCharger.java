@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class isOnCharger {
     public boolean isOnTopOfCharger(PlayerEntity player){
-        BlockPos posBelow = player.getPosition().down();
+        BlockPos posBelow = player.getPosition();
         BlockState blockStateBelow = player.world.getBlockState(posBelow);
         if(blockStateBelow.getBlock() == ModBlocks.CELESTIAL_CHARGER.get() || blockStateBelow.getBlock() == ModBlocks.ALIEN_CHARGER.get()){
             return true;
@@ -15,7 +15,7 @@ public class isOnCharger {
         return false;
     }
     public boolean isOnTopOfAlienCharger(PlayerEntity player){
-        BlockPos posBelow = player.getPosition().down();
+        BlockPos posBelow = player.getPosition();
         BlockState blockStateBelow = player.world.getBlockState(posBelow);
         if(blockStateBelow.getBlock() == ModBlocks.ALIEN_CHARGER.get()){
             return true;

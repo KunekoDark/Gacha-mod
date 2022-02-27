@@ -44,13 +44,6 @@ public class ModBiomes {
 
 
 
-
-
-
-
-
-
-
         return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale)
                 .temperature(0.0F).downfall(0.9F).setEffects((new BiomeAmbience.Builder()).setWaterColor(43690).setWaterFogColor(43690)
                         .setFogColor(5592575)
@@ -58,8 +51,8 @@ public class ModBiomes {
                         .withFoliageColor(-43690)
                         .withGrassColor(43690)
                         .withSkyColor(5636095)
-                        .setMoodSound(new MoodSoundAmbience(ModSoundEvents.CHIME.get(), 6000, 8, 2.0D))
-                        .setMusic(BackgroundMusicTracks.getDefaultBackgroundMusicSelector(SoundEvents.AMBIENT_WARPED_FOREST_LOOP))
+                        .setMoodSound(new MoodSoundAmbience(ModSoundEvents.CHIME.get(), 2000, 8, 2.0D))
+                        .setMusic(BackgroundMusicTracks.getDefaultBackgroundMusicSelector(ModSoundEvents.FUTURE_MUSIC.get()))
                         .build())
                 .withMobSpawnSettings(mobspawninfo$builder.build()).withGenerationSettings(biomegenerationsettings$builder.build()).build();
     }

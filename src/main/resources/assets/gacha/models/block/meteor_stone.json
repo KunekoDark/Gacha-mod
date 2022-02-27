@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "gacha:block/dense_future_stone"
+    "all": "gacha:block/meteor_stone"
   }
 }

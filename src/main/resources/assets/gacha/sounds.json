@@ -10,5 +10,13 @@
       "name": "gacha:block/chime",
       "stream": true
     }]
+
+  },
+  "future_music": {
+    "sounds":[{
+      "name": "gacha:music/future_music",
+      "stream": true
+    }]
+
   }
 }

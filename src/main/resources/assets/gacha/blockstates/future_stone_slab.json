@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "gacha:block/future_stone_brick_slab"
+      "model": "gacha:block/future_stone_slab"
     },
     "type=double": {
-      "model": "gacha:block/future_stone_bricks"
+      "model": "gacha:block/future_stone"
     },
     "type=top": {
-      "model": "gacha:block/future_stone_brick_slab_top"
+      "model": "gacha:block/future_stone_slab_top"
     }
   }
 }

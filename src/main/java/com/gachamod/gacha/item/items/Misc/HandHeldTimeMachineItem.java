@@ -57,7 +57,10 @@ public class HandHeldTimeMachineItem extends Item {
                 }
             }
         }
-        playerIn.getCooldownTracker().setCooldown(this.getItem(), 600);
+        if(!playerIn.isCreative()){
+            playerIn.getCooldownTracker().setCooldown(this.getItem(), 2400);
+        }
+
         return ActionResult.resultSuccess(new ItemStack(this.getItem()));
     }
 }

@@ -28,7 +28,7 @@ public class AlienHammerItem extends PickaxeItem {
         PlayerInventory inventory = player.inventory;
 
         boolean charging = new isOnCharger().isOnTopOfAlienCharger(player);
-        if(isSelected && worldIn.isNightTime() && charging){
+        if(isSelected  && charging){
             setDamage(stack, getDamage(stack)- 4);
         }
 

@@ -6,11 +6,11 @@
   ],
   "key": {
     "#": {
-      "item": "gacha:future_stone"
+      "item": "gacha:future_stone_bricks"
     }
   },
   "result": {
-    "item": "gacha:future_stone_slab",
-    "count": 3
+    "item": "gacha:future_stone_brick_slab",
+    "count": 6
   }
 }
