@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+
+  ],
+  "key": {
+    "#": {
+      "item": "gacha:future_stone"
+    }
+  },
+  "result": {
+    "item": "gacha:future_stone_slab",
+    "count": 3
+  }
+}
