@@ -14,6 +14,7 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
@@ -121,22 +122,25 @@ public class AlienHammerItem extends PickaxeItem {
         BlockPos posDownFaceWestUp = pos.east();
 
 
+        boolean horizontalPatern = false;
 
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.UP ){
-                worldIn.destroyBlock(posLeftFaceWestUp, true);
-                worldIn.destroyBlock(posRightFaceWestUp,true);
-                worldIn.destroyBlock(posDownLeftFaceWestUp, true);
-                worldIn.destroyBlock(posDownRightFaceWestUp, true);
-                worldIn.destroyBlock(posUpLeftFaceWestUp, true);
-                worldIn.destroyBlock(posUpRightFaceWestUp, true);
-                worldIn.destroyBlock(posUpFaceWestUp, true);
-                worldIn.destroyBlock(posDownFaceWestUp, true);
-
+            if(worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR || worldIn.getBlockState(pos.down()).getMaterial() == Material.AIR)
+            {
+                worldIn.destroyBlock(pos.east(), true);
+                worldIn.destroyBlock(pos.west(),true);
+                worldIn.destroyBlock(pos.north(), true);
+                worldIn.destroyBlock(pos.south(), true);
+                worldIn.destroyBlock(pos.south().west(), true);
+                worldIn.destroyBlock(pos.south().east(), true);
+                worldIn.destroyBlock(pos.north().west(), true);
+                worldIn.destroyBlock(pos.north().east(), true);
+                horizontalPatern = true;
             }
         }
+
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.NORTH){
+            if(player.getHorizontalFacing() == Direction.NORTH && !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceNorth, true);
@@ -147,8 +151,9 @@ public class AlienHammerItem extends PickaxeItem {
                 worldIn.destroyBlock(posUpRightFaceNorth, true);
             }
         }
+
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.SOUTH){
+            if(player.getHorizontalFacing() == Direction.SOUTH&& !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceSouth, true);
@@ -160,7 +165,7 @@ public class AlienHammerItem extends PickaxeItem {
             }
         }
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.EAST){
+            if(player.getHorizontalFacing() == Direction.EAST&& !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceEast, true);
@@ -172,7 +177,7 @@ public class AlienHammerItem extends PickaxeItem {
             }
         }
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.WEST){
+            if(player.getHorizontalFacing() == Direction.WEST&& !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceWest, true);
