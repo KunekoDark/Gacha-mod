@@ -3,6 +3,7 @@ package com.gachamod.gacha.item.items.alien;
 import com.gachamod.gacha.data.isOnCharger;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.FaceDirection;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,6 +16,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
@@ -75,6 +77,7 @@ public class AlienHammerItem extends PickaxeItem {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
+
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
         PlayerEntity player = (PlayerEntity) entityLiving;
@@ -111,20 +114,10 @@ public class AlienHammerItem extends PickaxeItem {
         BlockPos posUpLeftFaceWest = pos.up().south();
         BlockPos posUpRightFaceWest = pos.up().north();
 
-        BlockPos posLeftFaceWestUp = pos.south();
-        BlockPos posRightFaceWestUp = pos.north();
-        BlockPos posDownLeftFaceWestUp = pos.down().south();
-        BlockPos posDownRightFaceWestUp = pos.down().north();
-        BlockPos posUpLeftFaceWestUp = pos.up().south();
-        BlockPos posUpRightFaceWestUp = pos.up().north();
-        BlockPos posUpFaceWestUp = pos.west();
-        BlockPos posDownFaceWestUp = pos.east();
-
-
         boolean horizontalPatern = false;
 
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR || worldIn.getBlockState(pos.down()).getMaterial() == Material.AIR)
+            if(rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.DOWN || rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.UP)
             {
                 worldIn.destroyBlock(pos.east(), true);
                 worldIn.destroyBlock(pos.west(),true);
@@ -139,7 +132,7 @@ public class AlienHammerItem extends PickaxeItem {
         }
 
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.NORTH && !horizontalPatern){
+            if(rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.NORTH && !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceNorth, true);
@@ -152,7 +145,7 @@ public class AlienHammerItem extends PickaxeItem {
         }
 
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.SOUTH&& !horizontalPatern){
+            if(rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.SOUTH && !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceSouth, true);
@@ -164,7 +157,7 @@ public class AlienHammerItem extends PickaxeItem {
             }
         }
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.EAST&& !horizontalPatern){
+            if(rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.EAST && !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceEast, true);
@@ -176,7 +169,7 @@ public class AlienHammerItem extends PickaxeItem {
             }
         }
         if(Material.ROCK.isSolid() || Material.IRON.isSolid()){
-            if(player.getHorizontalFacing() == Direction.WEST&& !horizontalPatern){
+            if(rayTrace(worldIn,player,RayTraceContext.FluidMode.NONE).getFace() == Direction.WEST && !horizontalPatern){
                 worldIn.destroyBlock(posBelow,true);
                 worldIn.destroyBlock(posUp,true);
                 worldIn.destroyBlock(posLeftFaceWest, true);
@@ -187,10 +180,6 @@ public class AlienHammerItem extends PickaxeItem {
                 worldIn.destroyBlock(posUpRightFaceWest, true);
             }
         }
-
-
-
-
         return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
     }
 }
