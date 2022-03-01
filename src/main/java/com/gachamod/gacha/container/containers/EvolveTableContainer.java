@@ -113,11 +113,26 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
         if (slot != null && slot.getHasStack()) {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
-            if (index < this.craftMatrix.getSizeInventory()) {
-                if (!this.mergeItemStack(itemstack1, this.craftMatrix.getSizeInventory(), this.inventorySlots.size(), true)) {
+            if (index == 7) {
+                this.worldPosCallable.consume((world, pos) -> {
+                    itemstack1.getItem().onCreated(itemstack1, world, playerIn);
+                });
+                if (!this.mergeItemStack(itemstack1, 8, 44, true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.mergeItemStack(itemstack1, 0, this.craftMatrix.getSizeInventory(), false)) {
+
+                slot.onSlotChange(itemstack1, itemstack);
+            } else if (index >= 8 && index < 44) {
+                if (!this.mergeItemStack(itemstack1, 0, 8, false)) {
+                    if (index < 35) {
+                        if (!this.mergeItemStack(itemstack1, 35, 44, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else if (!this.mergeItemStack(itemstack1, 8, 35, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+            } else if (!this.mergeItemStack(itemstack1, 8, 44, false)) {
                 return ItemStack.EMPTY;
             }
 
@@ -125,6 +140,15 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 slot.putStack(ItemStack.EMPTY);
             } else {
                 slot.onSlotChanged();
+            }
+
+            if (itemstack1.getCount() == itemstack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+
+            ItemStack itemstack2 = slot.onTake(playerIn, itemstack1);
+            if (index == 7) {
+                playerIn.dropItem(itemstack2, false);
             }
         }
 

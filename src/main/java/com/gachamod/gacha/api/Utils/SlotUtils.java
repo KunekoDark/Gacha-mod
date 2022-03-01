@@ -132,6 +132,7 @@ public class SlotUtils {
         /**
          * Check if the stack is allowed to be placed in this slot, used for armor slots as well as furnace fuel.
          */
+        @Override
         public boolean isItemValid(ItemStack stack) {
             return false;
         }
@@ -139,6 +140,7 @@ public class SlotUtils {
         /**
          * Decrease the size of the stack in slot (first int arg) by the amount of the second int arg. Returns the new stack.
          */
+        @Override
         public ItemStack decrStackSize(int amount) {
             if (this.getHasStack()) {
                 this.amountCrafted += Math.min(amount, this.getStack().getCount());
@@ -151,6 +153,7 @@ public class SlotUtils {
          * the itemStack passed in is the output - ie, iron ingots, and pickaxes, not ore and wood. Typically increases an
          * internal count then calls onCrafting(item).
          */
+        @Override
         protected void onCrafting(ItemStack stack, int amount) {
             this.amountCrafted += amount;
             this.onCrafting(stack);
@@ -163,6 +166,7 @@ public class SlotUtils {
         /**
          * the itemStack passed in is the output - ie, iron ingots, and pickaxes, not ore and wood.
          */
+        @Override
         protected void onCrafting(ItemStack stack) {
             if (this.amountCrafted > 0) {
                 stack.onCrafting(this.player.world, this.player, this.amountCrafted);
@@ -176,6 +180,7 @@ public class SlotUtils {
             this.amountCrafted = 0;
         }
 
+        @Override
         public ItemStack onTake(PlayerEntity thePlayer, ItemStack stack) {
             this.onCrafting(stack);
             net.minecraftforge.common.ForgeHooks.setCraftingPlayer(thePlayer);
