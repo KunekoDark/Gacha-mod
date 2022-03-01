@@ -1,5 +1,6 @@
 package com.gachamod.gacha.container.containers;
 
+import com.gachamod.gacha.api.Utils.SlotUtils;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
@@ -34,6 +35,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
+    private final IWorldPosCallable worldPosCallable;
     private final CraftingInventory craftMatrix = new CraftingInventory(this, 3, 3);
     private final CraftResultInventory craftResult = new CraftResultInventory();
     public static final int offset = EvolveTableScreen.evolveoffset;
@@ -42,8 +44,9 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
 
     public EvolveTableContainer(int windowId, World world, BlockPos pos,
-                                  PlayerInventory playerInventory, PlayerEntity player) {
+                                PlayerInventory playerInventory, PlayerEntity player, IWorldPosCallable worldPosCallable) {
         super(ModContainers.EVOLVE_TABLE_CONTAINER.get(), windowId);
+        this.worldPosCallable = worldPosCallable;
         this.tileEntity = world.getTileEntity(pos);
         this.playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
@@ -59,7 +62,7 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
                 addSlot(new Slot(this.craftMatrix,6,60,74+offset));
 
 
-                addSlot(new CraftingResultSlot(playerInventory.player, this.craftMatrix, this.craftResult, 0, 133,48+offset));
+                addSlot(new SlotUtils.EvolveOuput(playerInventory.player, this.craftMatrix, this.craftResult, 0, 133,48+offset));
 
             });
 
@@ -173,9 +176,9 @@ public class EvolveTableContainer extends RecipeBookContainer<CraftingInventory>
 
     @Override
     public void onCraftMatrixChanged(IInventory inventoryIn) {
-        this.detectAndSendChanges();
-        World world = this.playerEntity.world;
-        updateCraftingResult(this.windowId, world, this.playerEntity, this.craftMatrix, this.craftResult);
+        this.worldPosCallable.consume((p_217069_1_, p_217069_2_) -> {
+            updateCraftingResult(this.windowId, p_217069_1_, this.playerEntity, this.craftMatrix, this.craftResult);
+        });
 
     }
 

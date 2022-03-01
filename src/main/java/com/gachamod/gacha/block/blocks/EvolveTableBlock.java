@@ -101,7 +101,7 @@ public class EvolveTableBlock extends Block {
             @Nullable
             @Override
             public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                return new EvolveTableContainer(i , worldIn, pos, playerInventory, playerEntity);
+                return new EvolveTableContainer(i , worldIn, pos, playerInventory, playerEntity, IWorldPosCallable.of(worldIn, pos));
             }
         };
     }

@@ -3,6 +3,7 @@ package com.gachamod.gacha.container;
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.container.containers.*;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.util.IWorldPosCallable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.extensions.IForgeContainerType;
@@ -20,7 +21,7 @@ public class ModContainers {
             () -> IForgeContainerType.create(((windowId, inv, data) -> {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
-                return new EngineerTableContainer(windowId, world, pos, inv, inv.player);
+                return new EngineerTableContainer(windowId, world, pos, inv, inv.player, IWorldPosCallable.of(world,pos));
             })));
 
     public static final RegistryObject<ContainerType<UpgradeTableContainer>> UPGRADE_TABLE_CONTAINER
@@ -60,7 +61,7 @@ public class ModContainers {
             () -> IForgeContainerType.create(((windowId, inv, data) -> {
                 BlockPos pos = data.readBlockPos();
                 World world = inv.player.getEntityWorld();
-                return new EvolveTableContainer(windowId, world, pos, inv, inv.player);
+                return new EvolveTableContainer(windowId, world, pos, inv, inv.player, IWorldPosCallable.of(world, pos));
             })));
 
 

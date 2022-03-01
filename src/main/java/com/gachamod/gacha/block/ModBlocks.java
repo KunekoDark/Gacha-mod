@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,36 +29,36 @@ public class ModBlocks {
     public static final RegistryObject<Block> JIZO_STEEL_BLOCK = registerBlock("jizo_steel_block",
             () -> new Block(AbstractBlock.Properties.create(Material.IRON).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f).sound(SoundType.METAL)));
 
-    public static final RegistryObject<Block> FUTURE_STONE = registerBlock("future_stone",
+    public static final RegistryObject<Block> FUTURE_STONE = registerBuildingBlock("future_stone",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE).setRequiresTool()));
 
-    public static final RegistryObject<Block> FUTURE_GRASS = registerBlock("future_grass",
+    public static final RegistryObject<Block> FUTURE_GRASS = registerBuildingBlock("future_grass",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE).setRequiresTool()));
 
-    public static final RegistryObject<Block> DENSE_FUTURE_STONE = registerBlock("dense_future_stone",
+    public static final RegistryObject<Block> DENSE_FUTURE_STONE = registerBuildingBlock("dense_future_stone",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE).setRequiresTool()));
 
-    public static final RegistryObject<Block> FUTURE_STONE_BRICKS = registerBlock("future_stone_bricks",
+    public static final RegistryObject<Block> FUTURE_STONE_BRICKS = registerBuildingBlock("future_stone_bricks",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE).setRequiresTool()));
 
-    public static final RegistryObject<Block> METEOR_STONE = registerBlock("meteor_stone",
+    public static final RegistryObject<Block> METEOR_STONE = registerBuildingBlock("meteor_stone",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(3).harvestTool(ToolType.PICKAXE).hardnessAndResistance(7f).sound(SoundType.STONE).setRequiresTool()));
 
 
     //slab and stairs
-    public static final RegistryObject<Block> FUTURE_STONE_BRICK_STAIRS = registerBlock("future_stone_brick_stairs",
+    public static final RegistryObject<Block> FUTURE_STONE_BRICK_STAIRS = registerBuildingBlock("future_stone_brick_stairs",
             () -> new StairsBlock(() -> FUTURE_STONE_BRICKS.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2F).setRequiresTool()));
 
-    public static final RegistryObject<Block> FUTURE_STONE_BRICK_SLAB = registerBlock("future_stone_brick_slab",
+    public static final RegistryObject<Block> FUTURE_STONE_BRICK_SLAB = registerBuildingBlock("future_stone_brick_slab",
             () -> new SlabBlock(
                     AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2F).setRequiresTool()));
 
-    public static final RegistryObject<Block> FUTURE_STONE_STAIRS = registerBlock("future_stone_stairs",
+    public static final RegistryObject<Block> FUTURE_STONE_STAIRS = registerBuildingBlock("future_stone_stairs",
             () -> new StairsBlock(() -> FUTURE_STONE.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2F).setRequiresTool()));
 
-    public static final RegistryObject<Block> FUTURE_STONE_SLAB = registerBlock("future_stone_slab",
+    public static final RegistryObject<Block> FUTURE_STONE_SLAB = registerBuildingBlock("future_stone_slab",
             () -> new SlabBlock(
                     AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2F).setRequiresTool()));
 
@@ -93,13 +94,13 @@ public class ModBlocks {
 
     //Misc Blocks
 
-    public static final RegistryObject<Block> CELESTIAL_CHARGER = registerBlock("celestial_charger",
+    public static final RegistryObject<Block> CELESTIAL_CHARGER = registerBuildingBlock("celestial_charger",
             () -> new CelestialChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
 
-    public static final RegistryObject<Block> ALIEN_CHARGER = registerBlock("alien_charger",
+    public static final RegistryObject<Block> ALIEN_CHARGER = registerBuildingBlock("alien_charger",
             () -> new AlienChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
 
-    public static final RegistryObject<Block> WORMHOLE = registerBlock("wormhole",
+    public static final RegistryObject<Block> WORMHOLE = registerBuildingBlock("wormhole",
             () -> new TimeMachineBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(100f).sound(SoundType.STONE),null));
 
 
@@ -113,6 +114,19 @@ public class ModBlocks {
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+    }
+
+    //Building Blocks
+    private static <T extends Block>RegistryObject<T> registerBuildingBlock(String name, Supplier<T> block){
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        registerBuildingBlockItem(name, toReturn);
+
+        return toReturn;
+    }
+    private static <T extends Block> void registerBuildingBlockItem(String name, RegistryObject<T> block){
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
     }
 
     //spawn block and item register
