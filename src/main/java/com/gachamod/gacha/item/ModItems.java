@@ -192,7 +192,7 @@ public class ModItems {
             () -> new AlienSwordItem(ModItemTier.ALIEN, 0, -2.4f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> ALIEN_HAMMER = ITEMS.register("alien_hammer",
-            () -> new AlienHammerItem(ModItemTier.ALIENHAMMER, 3, -3f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+            () -> new AlienHammerItem(ModItemTier.ALIENHAMMER, 3, -3.6f,new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
 
 

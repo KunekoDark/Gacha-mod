@@ -35,6 +35,8 @@ public class GoonEntitiy extends MonsterEntity {
         this.targetSelector.addGoal(1, new MeleeAttackGoal(this,1.0F, false));
     }
 
+
+
     public static AttributeModifierMap.MutableAttribute setCustomeAtrebutes(){
         return MobEntity.func_233666_p_()
                 .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3F)

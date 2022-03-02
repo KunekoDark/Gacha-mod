@@ -1,7 +1,5 @@
 package com.gachamod.gacha.world.dimension;
 
-import com.gachamod.gacha.block.ModBlocks;
-import com.gachamod.gacha.block.blocks.TimeMachineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.Fluids;
