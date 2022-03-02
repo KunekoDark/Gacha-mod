@@ -10,7 +10,7 @@ public enum ModItemTier implements IItemTier {
 
     JIZO_STEEL(2,650,7f,6f,10,() -> Ingredient.fromItems(ModItems.JIZO_STEEL_INGOT.get())),
     SPECIAL(3,2500,10f,8f,10, () -> Ingredient.fromItems(ModItems.RARE_TICKET.get())),
-    NORMAL(3,2000,8f,7f,10, () -> Ingredient.fromItems(ModItems.TERRESTRIAL_INGOT.get())),
+    NORMAL(3,2000,9f,8f,10, () -> Ingredient.fromItems(ModItems.TERRESTRIAL_INGOT.get())),
     ALIEN(4,3000,9f,8f,10, () -> Ingredient.fromItems(ModItems.ALIEN_INGOT.get())),
     ALIENHAMMER(4,3000,5f,8f,10, () -> Ingredient.fromItems(ModItems.ALIEN_INGOT.get())),
     //add new tier here

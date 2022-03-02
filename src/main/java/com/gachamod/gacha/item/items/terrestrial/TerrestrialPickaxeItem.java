@@ -2,6 +2,7 @@ package com.gachamod.gacha.item.items.terrestrial;
 
 import com.gachamod.gacha.data.isOnCharger;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -29,6 +30,8 @@ public class TerrestrialPickaxeItem extends PickaxeItem {
 
 
     }
+
+    
 
     @Override
     public float getDestroySpeed(ItemStack stack, BlockState state) {
