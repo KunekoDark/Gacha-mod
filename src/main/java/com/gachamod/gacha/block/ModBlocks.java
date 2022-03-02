@@ -101,7 +101,7 @@ public class ModBlocks {
             () -> new AlienChargerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1f).sound(SoundType.STONE),null));
 
     public static final RegistryObject<Block> WORMHOLE = registerBuildingBlock("wormhole",
-            () -> new TimeMachineBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(100f).sound(SoundType.STONE),null));
+            () -> new WormHoleBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(100f).sound(SoundType.STONE),null));
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

@@ -57,11 +57,6 @@ public class ModBiomes {
                 .withMobSpawnSettings(mobspawninfo$builder.build()).withGenerationSettings(biomegenerationsettings$builder.build()).build();
     }
 
-    private static int getSkyColorWithTemperatureModifier(float temperature) {
-        float lvt_1_1_ = temperature / 3.0F;
-        lvt_1_1_ = MathHelper.clamp(lvt_1_1_, -1.0F, 1.0F);
-        return MathHelper.hsvToRGB(0.2460909F - lvt_1_1_ * 0.05F, 0.5F + lvt_1_1_ * 0.1F, 1.0F);
-    }
 
     public static void  register(IEventBus eventBus){
         BIOMES.register(eventBus);
