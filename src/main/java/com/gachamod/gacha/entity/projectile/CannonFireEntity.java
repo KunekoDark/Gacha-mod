@@ -78,13 +78,10 @@ public class CannonFireEntity extends DamagingProjectileEntity implements IRende
         }
     }
 
-
-
     @Override
     protected void registerData() {
         this.getDataManager().register(STACK, ItemStack.EMPTY);
     }
-
 
     @Override
     public IPacket<?> createSpawnPacket() {
@@ -98,5 +95,17 @@ public class CannonFireEntity extends DamagingProjectileEntity implements IRende
             this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), 0.8F, false, Explosion.Mode.NONE);
             this.remove();
         }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(this.ticksExisted == 300){
+            this.remove();
+        }
+        if(this.removed){
+            LOGGER.info(this.getName().getString() +" was removed at X:" + ((int) this.getPosX()) +" Y:" + ((int) this.getPosY())+ " Z:"+ ((int) this.getPosZ()));
+        }
+
     }
 }
