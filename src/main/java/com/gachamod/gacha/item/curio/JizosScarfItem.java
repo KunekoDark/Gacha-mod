@@ -16,5 +16,6 @@ public class JizosScarfItem extends Item implements ICurioItem {
     public void curioTick(String identifier, int index, LivingEntity livingEntity, ItemStack stack) {
         PlayerEntity player = (PlayerEntity) livingEntity;
         player.addPotionEffect(new EffectInstance(Effects.SPEED, 201, 1, false, false));
+        
     }
 }

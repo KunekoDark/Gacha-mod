@@ -7,7 +7,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.IRecipeHolder;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.ForgeHooks;
 
@@ -118,12 +117,12 @@ public class SlotUtils {
             return stack;
         }
     }
-    public static class EngineerOuput extends Slot {
+    public static class MTFOutput extends Slot {
         private final CraftingInventory craftMatrix;
         private final PlayerEntity player;
         private int amountCrafted;
 
-        public EngineerOuput(PlayerEntity player, CraftingInventory craftingInventory, IInventory inventoryIn, int slotIndex, int xPosition, int yPosition) {
+        public MTFOutput(PlayerEntity player, CraftingInventory craftingInventory, IInventory inventoryIn, int slotIndex, int xPosition, int yPosition) {
             super(inventoryIn, slotIndex, xPosition, yPosition);
             this.player = player;
             this.craftMatrix = craftingInventory;

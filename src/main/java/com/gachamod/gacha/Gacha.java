@@ -153,7 +153,7 @@ public class Gacha
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
+            LOGGER.info("HELLO from Gacha Register Block! jzells here!");
         }
     }
 }

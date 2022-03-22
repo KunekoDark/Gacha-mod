@@ -64,6 +64,14 @@ public class ModContainers {
                 return new EvolveTableContainer(windowId, world, pos, inv, inv.player, IWorldPosCallable.of(world, pos));
             })));
 
+    public static final RegistryObject<ContainerType<MTFContainer>> MTF_CONTAINER
+            = CONTAINERS.register("mtf_container",
+            () -> IForgeContainerType.create(((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                World world = inv.player.getEntityWorld();
+                return new MTFContainer(windowId, world, pos, inv, inv.player, IWorldPosCallable.of(world, pos));
+            })));
+
 
 
 

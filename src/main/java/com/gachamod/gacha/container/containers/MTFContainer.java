@@ -3,8 +3,8 @@ package com.gachamod.gacha.container.containers;
 import com.gachamod.gacha.api.Utils.SlotUtils;
 import com.gachamod.gacha.block.ModBlocks;
 import com.gachamod.gacha.container.ModContainers;
-import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import com.gachamod.gacha.data.recipes.ModRecipeTypes;
+import com.gachamod.gacha.data.recipes.engineertable.EngineerTableRecipe;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -29,7 +29,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 
 import java.util.Optional;
 
-public class EngineerTableContainer extends RecipeBookContainer<CraftingInventory> {
+public class MTFContainer extends RecipeBookContainer<CraftingInventory> {
     private final TileEntity tileEntity;
     private final PlayerEntity playerEntity;
     private final IItemHandler playerInventory;
@@ -39,9 +39,9 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
 
 
 
-    public EngineerTableContainer(int windowId, World world, BlockPos pos,
-                                  PlayerInventory playerInventory, PlayerEntity player, IWorldPosCallable worldPosCallable) {
-        super(ModContainers.ENGINEER_TABLE_CONTAINER.get(), windowId);
+    public MTFContainer(int windowId, World world, BlockPos pos,
+                        PlayerInventory playerInventory, PlayerEntity player, IWorldPosCallable worldPosCallable) {
+        super(ModContainers.MTF_CONTAINER.get(), windowId);
         this.worldPosCallable = worldPosCallable;
         this.tileEntity = world.getTileEntity(pos);
         this.playerEntity = player;
@@ -262,4 +262,3 @@ public class EngineerTableContainer extends RecipeBookContainer<CraftingInventor
         }
     }
 }
-

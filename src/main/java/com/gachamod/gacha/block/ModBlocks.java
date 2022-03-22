@@ -42,7 +42,7 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE).setRequiresTool()));
 
     public static final RegistryObject<Block> METEOR_STONE = registerBuildingBlock("meteor_stone",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(3).harvestTool(ToolType.PICKAXE).hardnessAndResistance(7f).sound(SoundType.STONE).setRequiresTool()));
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(6).harvestTool(ToolType.PICKAXE).hardnessAndResistance(7f).sound(SoundType.STONE).setRequiresTool()));
 
 
     //slab and stairs
@@ -83,6 +83,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EVOLVE_TABLE = registerBlock("evolve_table",
             () -> new EvolveTableBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(0).harvestTool(ToolType.PICKAXE).hardnessAndResistance(0.6f).sound(SoundType.STONE), null));
+
+    public static final RegistryObject<Block> METEORTECH_FABRICATOR = registerBlock("meteortech_fabricator",
+            () -> new MeteorTechFabricatorBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(6).harvestTool(ToolType.PICKAXE).hardnessAndResistance(4.0f).sound(SoundType.METAL), null));
 
 
 
