@@ -70,6 +70,12 @@ public class ModWorldEvents {
             tempMap2.putIfAbsent(ModStructures.CAT_PALACE.get(),
                     DimensionStructuresSettings.field_236191_b_.get(ModStructures.CAT_PALACE.get()));
             serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap2;
+            //broken lab
+            Map<Structure<?>, StructureSeparationSettings> tempMap3 =
+                    new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
+            tempMap2.putIfAbsent(ModStructures.BROKEN_LAB.get(),
+                    DimensionStructuresSettings.field_236191_b_.get(ModStructures.BROKEN_LAB.get()));
+            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap3;
         }
     }
 }

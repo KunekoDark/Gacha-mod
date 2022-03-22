@@ -44,7 +44,13 @@
         }
       },
       "structures": {
-        "structures": {}
+        "structures": {
+          "gacha:broken_lab": {
+          "spacing": 80,
+          "separation": 40,
+          "salt": 2
+        }
+        }
       }
     },
     "biome_source": {

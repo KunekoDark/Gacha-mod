@@ -34,20 +34,13 @@ public class ModBiomes {
         MobSpawnInfo.Builder mobspawninfo$builder = new MobSpawnInfo.Builder();
         DefaultBiomeFeatures.withPassiveMobs(mobspawninfo$builder);
         DefaultBiomeFeatures.withBatsAndHostiles(mobspawninfo$builder);
-        mobspawninfo$builder.withSpawner(EntityClassification.MONSTER,
-                new MobSpawnInfo.Spawners(ModEntityType.KASAJIZO.get(), 100, 7, 10));
-
 
         BiomeGenerationSettings.Builder biomegenerationsettings$builder =
                 (new BiomeGenerationSettings.Builder()).withSurfaceBuilder(surfaceBuilder);
 
-
-
-
-        return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.DESERT).depth(depth).scale(scale)
+        return (new Biome.Builder()).precipitation(Biome.RainType.NONE).category(Biome.Category.NONE).depth(depth).scale(scale)
                 .temperature(0.0F).downfall(0.9F).setEffects((new BiomeAmbience.Builder()).setWaterColor(43690).setWaterFogColor(43690)
                         .setFogColor(5592575)
-
                         .withFoliageColor(-43690)
                         .withGrassColor(43690)
                         .withSkyColor(5636095)

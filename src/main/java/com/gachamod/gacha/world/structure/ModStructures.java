@@ -1,6 +1,7 @@
 package com.gachamod.gacha.world.structure;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.world.structure.structures.BrokenLab;
 import com.gachamod.gacha.world.structure.structures.CatPalace;
 import com.gachamod.gacha.world.structure.structures.JizoCastle;
 import com.google.common.collect.ImmutableList;
@@ -26,6 +27,8 @@ public class ModStructures {
             STRUCTURES.register("jizo_castle", JizoCastle::new);
     public static final RegistryObject<Structure<NoFeatureConfig>> CAT_PALACE =
             STRUCTURES.register("cat_palace", CatPalace::new);
+    public static final RegistryObject<Structure<NoFeatureConfig>> BROKEN_LAB =
+            STRUCTURES.register("broken_lab", BrokenLab::new);
 
 
 
@@ -39,6 +42,9 @@ public class ModStructures {
 
         setupMapSpacingAndLand(CAT_PALACE.get(),
                 new StructureSeparationSettings(75,30, 1254527435), true);
+
+        setupMapSpacingAndLand(BROKEN_LAB.get(),
+                new StructureSeparationSettings(75,30, 225452744), true);
     }
 
     public static <F extends Structure<?>> void setupMapSpacingAndLand(F structure, StructureSeparationSettings structureSeparationSettings,

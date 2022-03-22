@@ -28,5 +28,10 @@ public class ModStructureGeneration {
 
             structures.add(() -> ModStructures.CAT_PALACE.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         }
+        if(!types.contains(BiomeDictionary.Type.OVERWORLD)&&!types.contains(BiomeDictionary.Type.NETHER)&&!types.contains(BiomeDictionary.Type.END)) {
+            List<Supplier<StructureFeature<?, ?>>> structures = event.getGeneration().getStructures();
+
+            structures.add(() -> ModStructures.BROKEN_LAB.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+        }
     }
 }
