@@ -86,7 +86,7 @@ public class AlienPickaxeItem extends PickaxeItem {
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
         PlayerEntity player = (PlayerEntity) entityLiving;
         ItemEntity item = new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ModItems.METEORITE_CHUNK.get()));
-        if(state.getBlock() == ModBlocks.CELESTIAL_CHARGER.get()){
+        if(state.getBlock() == ModBlocks.METEOR_STONE.get()){
             worldIn.addEntity(item);
         }
         return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
