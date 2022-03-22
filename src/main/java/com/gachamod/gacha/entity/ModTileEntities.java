@@ -38,6 +38,10 @@ public class ModTileEntities {
             TILE_ENTITIES.register("evolve_table_tile", () -> TileEntityType.Builder.create(
                     EvolveTableTile::new, ModBlocks.EVOLVE_TABLE.get()).build(null));
 
+    public static RegistryObject<TileEntityType<MTFTile>> MTF_TILE =
+            TILE_ENTITIES.register("mtf_tile", () -> TileEntityType.Builder.create(
+                    MTFTile::new, ModBlocks.METEORTECH_FABRICATOR.get()).build(null));
+
 
 
 

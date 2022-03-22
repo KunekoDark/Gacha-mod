@@ -1,8 +1,10 @@
 package com.gachamod.gacha.block.blocks;
 
 import com.gachamod.gacha.container.containers.EngineerTableContainer;
+import com.gachamod.gacha.container.containers.MTFContainer;
 import com.gachamod.gacha.entity.ModTileEntities;
 import com.gachamod.gacha.entity.tileentity.EngineerTableTile;
+import com.gachamod.gacha.entity.tileentity.MTFTile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
@@ -61,7 +63,7 @@ public class MeteorTechFabricatorBlock extends Block {
     }
 
     private static final VoxelShape SHAPE = Stream.of(
-            Block.makeCuboidShape(0, 0, 2, 16, 9, 14)
+            Block.makeCuboidShape(0, 0, 2, 16, 16, 14)
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR)).get();
 
 
@@ -76,7 +78,7 @@ public class MeteorTechFabricatorBlock extends Block {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
 
 
-            if(tileEntity instanceof EngineerTableTile){
+            if(tileEntity instanceof MTFTile){
                 INamedContainerProvider containerProvider = createContainerProvider(worldIn, pos);
 
                 NetworkHooks.openGui(((ServerPlayerEntity) player), containerProvider, tileEntity.getPos());
@@ -92,13 +94,13 @@ public class MeteorTechFabricatorBlock extends Block {
         return new INamedContainerProvider() {
             @Override
             public ITextComponent getDisplayName() {
-                return new TranslationTextComponent("screen.gacha.engineer_table");
+                return new TranslationTextComponent("screen.gacha.mtf");
             }
 
             @Nullable
             @Override
             public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-                return new EngineerTableContainer(i , worldIn, pos, playerInventory, playerEntity, IWorldPosCallable.of(worldIn,pos));
+                return new MTFContainer(i , worldIn, pos, playerInventory, playerEntity, IWorldPosCallable.of(worldIn,pos));
             }
         };
     }
@@ -106,7 +108,7 @@ public class MeteorTechFabricatorBlock extends Block {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return ModTileEntities.ENGINEER_TABLE_TILE.get().create();
+        return ModTileEntities.MTF_TILE.get().create();
     }
 
     @Override
