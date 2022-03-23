@@ -131,6 +131,18 @@ public class ModItems {
     public static final RegistryObject<Item> RELIC_EVOLVE_ORB = ITEMS.register("relic_evolve_orb",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.EPIC)));
 
+    public static final RegistryObject<Item> STRANGE_COMPUTER_CHIP = ITEMS.register("strange_computer_chip",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> STRANGE_COMPUTER_CHIPBOARD = ITEMS.register("strange_computer_chipboard",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> STRANGE_COMPUTER_DRIVE = ITEMS.register("strange_computer_drive",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> STRANGE_ANTENNAE = ITEMS.register("strange_antennae",
+            () -> new Item(new Item.Properties().maxStackSize(4).group(ModItemGroup.GACHA_GROUP).rarity(Rarity.UNCOMMON)));
+
 
     //upgrades and augments
     public static final RegistryObject<Item> CANNON_UPGRADE_BASE_T1 = ITEMS.register("cannon_upgrade_base_t1",
