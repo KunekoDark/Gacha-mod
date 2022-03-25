@@ -1,6 +1,7 @@
 package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
+import com.gachamod.gacha.item.armor.ModArmorMaterial;
 import com.gachamod.gacha.item.items.BananaSwordItem;
 import com.gachamod.gacha.item.items.CannonItem;
 import com.gachamod.gacha.item.items.IceSwordItem;
@@ -14,6 +15,7 @@ import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
 import com.gachamod.gacha.item.ticketitems.TicketDropNormal;
 import com.gachamod.gacha.item.ticketitems.TicketDropPlat;
 import com.gachamod.gacha.item.ticketitems.TicketDropRare;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -219,6 +221,23 @@ public class ModItems {
 
     public static final RegistryObject<Item> METEOR_TECH_INGOT = ITEMS.register("meteor_tech_ingot",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ModItemGroup.GACHA_GROUP).isImmuneToFire().rarity(Rarity.EPIC)));
+
+    //armor
+    public static final RegistryObject<Item> METEORTECH_BOOTS = ITEMS.register("meteortech_boots",
+            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.FEET,
+                    new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> METEORTECH_CHESTPLATE = ITEMS.register("meteortech_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.CHEST,
+                    new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> METEORTECH_LEGGINGS = ITEMS.register("meteortech_leggings",
+            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.LEGS,
+                    new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
+
+    public static final RegistryObject<Item> METEORTECH_HEADGEAR = ITEMS.register("meteortech_headgear",
+            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.HEAD,
+                    new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
 
 
