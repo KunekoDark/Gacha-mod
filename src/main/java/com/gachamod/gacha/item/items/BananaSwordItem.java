@@ -44,5 +44,7 @@ public class BananaSwordItem extends SwordItem {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
+
+
 }
 /**/

@@ -17,10 +17,10 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements IArmorMaterial {
 
-    ALIEN("alien", 34, new int[]{3, 4, 10, 3}, 15, ModSoundEvents.CHIME.get(), 4.0F, 0.5F, () -> {
+    ALIEN("alien", 34, new int[]{3, 4, 10, 3}, 15, SoundEvents.BLOCK_BEACON_DEACTIVATE, 4.0F, 0.5F, () -> {
         return Ingredient.fromItems(ModItems.METEOR_TECH_INGOT.get());
     }),
-    METEORTECH("meteortech", 50, new int[]{4, 7, 10, 4}, 15, ModSoundEvents.CHIME.get(), 10.0F, 1.0F, () -> {
+    METEORTECH("meteortech", 50, new int[]{4, 7, 10, 4}, 15, SoundEvents.BLOCK_BEACON_DEACTIVATE, 10.0F, 1.0F, () -> {
         return Ingredient.fromItems(ModItems.METEOR_TECH_INGOT.get());
     });
 

@@ -1,15 +1,13 @@
-package com.gachamod.gacha.item.items.Misc;
+package com.gachamod.gacha.item.items.misc;
 
 import com.gachamod.gacha.world.dimension.DimensionTeleporter;
 import com.gachamod.gacha.world.dimension.ModDimensions;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;

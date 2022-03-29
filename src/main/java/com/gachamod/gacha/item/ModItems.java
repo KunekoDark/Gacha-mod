@@ -2,13 +2,14 @@ package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.item.armor.ModArmorMaterial;
+import com.gachamod.gacha.item.armor.meteortech.MTHelmet;
 import com.gachamod.gacha.item.items.BananaSwordItem;
 import com.gachamod.gacha.item.items.CannonItem;
 import com.gachamod.gacha.item.items.IceSwordItem;
 import com.gachamod.gacha.item.curio.JizosHatItem;
 import com.gachamod.gacha.item.curio.JizosScarfItem;
 import com.gachamod.gacha.entity.ModEntityType;
-import com.gachamod.gacha.item.items.Misc.HandHeldTimeMachineItem;
+import com.gachamod.gacha.item.items.misc.HandHeldTimeMachineItem;
 import com.gachamod.gacha.item.items.alien.*;
 import com.gachamod.gacha.item.items.terrestrial.*;
 import com.gachamod.gacha.item.ticketitems.TicketDropLegend;
@@ -236,7 +237,7 @@ public class ModItems {
                     new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> METEORTECH_HEADGEAR = ITEMS.register("meteortech_headgear",
-            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.HEAD,
+            () -> new MTHelmet(ModArmorMaterial.METEORTECH, EquipmentSlotType.HEAD,
                     new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
 
