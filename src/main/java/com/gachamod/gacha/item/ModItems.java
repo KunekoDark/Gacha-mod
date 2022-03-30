@@ -2,7 +2,10 @@ package com.gachamod.gacha.item;
 
 import com.gachamod.gacha.Gacha;
 import com.gachamod.gacha.item.armor.ModArmorMaterial;
+import com.gachamod.gacha.item.armor.meteortech.MTBoots;
+import com.gachamod.gacha.item.armor.meteortech.MTChestplate;
 import com.gachamod.gacha.item.armor.meteortech.MTHelmet;
+import com.gachamod.gacha.item.armor.meteortech.MTLeggings;
 import com.gachamod.gacha.item.items.BananaSwordItem;
 import com.gachamod.gacha.item.items.CannonItem;
 import com.gachamod.gacha.item.items.IceSwordItem;
@@ -225,15 +228,15 @@ public class ModItems {
 
     //armor
     public static final RegistryObject<Item> METEORTECH_BOOTS = ITEMS.register("meteortech_boots",
-            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.FEET,
+            () -> new MTBoots(ModArmorMaterial.METEORTECH, EquipmentSlotType.FEET,
                     new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> METEORTECH_CHESTPLATE = ITEMS.register("meteortech_chestplate",
-            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.CHEST,
+            () -> new MTChestplate(ModArmorMaterial.METEORTECH, EquipmentSlotType.CHEST,
                     new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> METEORTECH_LEGGINGS = ITEMS.register("meteortech_leggings",
-            () -> new ArmorItem(ModArmorMaterial.METEORTECH, EquipmentSlotType.LEGS,
+            () -> new MTLeggings(ModArmorMaterial.METEORTECH, EquipmentSlotType.LEGS,
                     new Item.Properties().group(ModItemGroup.GACHA_GROUP)));
 
     public static final RegistryObject<Item> METEORTECH_HEADGEAR = ITEMS.register("meteortech_headgear",
