@@ -14,6 +14,6 @@ public class MTBoots extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        player.jumpMovementFactor = 0.06F;
+
     }
 }

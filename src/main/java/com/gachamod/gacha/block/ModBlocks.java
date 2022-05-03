@@ -63,6 +63,14 @@ public class ModBlocks {
                     AbstractBlock.Properties.create(Material.ROCK).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2F).setRequiresTool()));
 
 
+    //light blocks
+    public static final RegistryObject<Block> LAB_LIGHT = registerBuildingBlock("lab_light",
+            () -> new Block(
+                    AbstractBlock.Properties.create(Material.GLASS).harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(1F).setRequiresTool().setLightLevel((state) -> {
+                        return 15;
+                    })));
+
+
 
     //Crafting Interfaces
 
