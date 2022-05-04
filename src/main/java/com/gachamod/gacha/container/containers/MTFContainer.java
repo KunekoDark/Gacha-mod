@@ -50,14 +50,18 @@ public class MTFContainer extends RecipeBookContainer<CraftingInventory> {
 
         if(tileEntity != null){
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h ->{
-                addSlot(new Slot(this.craftMatrix,0,44,32));
-                addSlot(new Slot(this.craftMatrix,1,62,32));
-                addSlot(new Slot(this.craftMatrix,2,80,32));
-                addSlot(new Slot(this.craftMatrix,3,53,50));
-                addSlot(new Slot(this.craftMatrix,4,71,50));
+                addSlot(new Slot(this.craftMatrix,0,26,20));
+                addSlot(new Slot(this.craftMatrix,1,44,20));
+                addSlot(new Slot(this.craftMatrix,2,62,38));
+                addSlot(new Slot(this.craftMatrix,3,44,38));
+                addSlot(new Slot(this.craftMatrix,4,62,38));
+                addSlot(new Slot(this.craftMatrix,4,26,56));
+                addSlot(new Slot(this.craftMatrix,4,44,56));
+                addSlot(new Slot(this.craftMatrix,4,62,56));
 
 
-                addSlot(new SlotUtils.MTFOutput(playerInventory.player, this.craftMatrix, this.craftResult, 0, 116,32));
+
+                addSlot(new SlotUtils.MTFOutput(playerInventory.player, this.craftMatrix, this.craftResult, 0, 134,38));
 
             });
 

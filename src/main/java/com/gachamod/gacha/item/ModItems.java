@@ -101,6 +101,11 @@ public class ModItems {
     public static final RegistryObject<Item> TERRESTRIAL_CORE = ITEMS.register("terrestrial_core",
             () -> new Item(new Item.Properties().maxStackSize(16).group(ModItemGroup.GACHA_GROUP)));
 
+    //Blueprints
+
+    public static final RegistryObject<Item> BLUEPRINT = ITEMS.register("blueprint",
+            () -> new Item(new Item.Properties().maxStackSize(1).group(ModItemGroup.GACHA_GROUP)));
+
 
     //weapons
 

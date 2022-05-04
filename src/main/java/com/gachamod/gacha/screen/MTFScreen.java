@@ -1,7 +1,6 @@
 package com.gachamod.gacha.screen;
 
 import com.gachamod.gacha.Gacha;
-import com.gachamod.gacha.container.containers.EngineerTableContainer;
 import com.gachamod.gacha.container.containers.MTFContainer;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -9,10 +8,11 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class MTFScreen extends ContainerScreen<MTFContainer> {
     private final ResourceLocation GUI = new ResourceLocation(Gacha.MOD_ID,
-            "textures/gui/mtf_fabricator_gui.png");
+            "textures/gui/mtf_gui.png");
 
     public MTFScreen(MTFContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);

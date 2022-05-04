@@ -18,13 +18,10 @@ public class MTChestplate extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if(player.inventory.armorItemInSlot(1).equals(new ItemStack(ModItems.METEORTECH_HEADGEAR.get())) &&
-                player.inventory.armorItemInSlot(2).equals(new ItemStack(ModItems.METEORTECH_CHESTPLATE.get())) &&
-                player.inventory.armorItemInSlot(3).equals(new ItemStack(ModItems.METEORTECH_LEGGINGS.get())) &&
-                player.inventory.armorItemInSlot(4).equals(new ItemStack(ModItems.METEORTECH_BOOTS.get()))){
+        if(WearingSet.wearingAllMeteorTechArmor(player) && !player.isCreative()){
                 player.abilities.allowFlying = true;
                 player.sendPlayerAbilities();
-        } else{
+        } else if(!player.isCreative()){
             player.abilities.allowFlying = false;
             player.abilities.isFlying = false;
             player.sendPlayerAbilities();
